@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.orders.mapper.CinemaMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.orders.entity.Cinema">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="c_name" jdbcType="VARCHAR" property="cName" />
+    <result column="c_address" jdbcType="VARCHAR" property="cAddress" />
+    <result column="id_card" jdbcType="VARCHAR" property="idCard" />
+    <result column="logo" jdbcType="VARCHAR" property="logo" />
+    <result column="copy_right" jdbcType="VARCHAR" property="copyRight" />
+    <result column="facility" jdbcType="VARCHAR" property="facility" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, c_name, c_address, id_card, logo, copy_right, facility
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from cinema
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from cinema
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.woniu.orders.entity.Cinema" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into cinema (c_name, c_address, id_card, 
+      logo, copy_right, facility
+      )
+    values (#{cName,jdbcType=VARCHAR}, #{cAddress,jdbcType=VARCHAR}, #{idCard,jdbcType=VARCHAR}, 
+      #{logo,jdbcType=VARCHAR}, #{copyRight,jdbcType=VARCHAR}, #{facility,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.woniu.orders.entity.Cinema" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into cinema
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cName != null">
+        c_name,
+      </if>
+      <if test="cAddress != null">
+        c_address,
+      </if>
+      <if test="idCard != null">
+        id_card,
+      </if>
+      <if test="logo != null">
+        logo,
+      </if>
+      <if test="copyRight != null">
+        copy_right,
+      </if>
+      <if test="facility != null">
+        facility,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cName != null">
+        #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="cAddress != null">
+        #{cAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyRight != null">
+        #{copyRight,jdbcType=VARCHAR},
+      </if>
+      <if test="facility != null">
+        #{facility,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.orders.entity.Cinema">
+    <!--@mbg.generated-->
+    update cinema
+    <set>
+      <if test="cName != null">
+        c_name = #{cName,jdbcType=VARCHAR},
+      </if>
+      <if test="cAddress != null">
+        c_address = #{cAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="idCard != null">
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        logo = #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="copyRight != null">
+        copy_right = #{copyRight,jdbcType=VARCHAR},
+      </if>
+      <if test="facility != null">
+        facility = #{facility,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.orders.entity.Cinema">
+    <!--@mbg.generated-->
+    update cinema
+    set c_name = #{cName,jdbcType=VARCHAR},
+      c_address = #{cAddress,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      logo = #{logo,jdbcType=VARCHAR},
+      copy_right = #{copyRight,jdbcType=VARCHAR},
+      facility = #{facility,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://maoyan.com/profile/orders -->
+<html><!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+
+    <link rel="stylesheet" type="text/css" href="/web/ltcss/profile-profile.13d06bf4.css"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <script type="text/javascript" src="/web/js/vue.js"></script>
+
+    <link href="/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/web/css/contactstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/web/css/faqstyle.css" type="text/css" media="all"/>
+    <link href="/web/css/single.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/medile.css" rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="/web/ltcss/profile-profile.13d06bf4.css">
+    <!-- banner-slider -->
+    <link href="/web/css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- //banner-slider -->
+    <!-- pop-up -->
+    <link href="/web/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- //pop-up -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="/web/css/font-awesome.min.css"/>
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- banner-bottom-plugin -->
+    <link href="/web/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/web/js/owl.carousel.js"></script>
+
+    <!-- //banner-bottom-plugin -->
+    <!---<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>--->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/web/js/move-top.js"></script>
+    <script type="text/javascript" src="/web/js/easing.js"></script>
+   <script type="text/javascript" src="/web/ltjs/profile-profile.59b4a3a3.js.下载"></script>
+
+</head>
+
+<body>
+<div class="header">
+    <div class="container container-head">
+        <div class="w3layouts_logo ">
+            <a href="/web/index.html">
+                <h1 class="title">爱乐<span class="webtitle-bottom">电影</span></h1></a>
+        </div>
+        <div class="w3l_search_city col-lg-3 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" list="city" value="重庆"/>
+                <datalist id="city">
+                    <option>北京</option>
+                </datalist>
+            </form>
+        </div>
+        <div class="w3_search col-lg-5 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
+                <input type="submit" value="Go">
+            </form>
+        </div>
+
+        <div class="w3l_sign_in_register col-lg-1 col-xs-12 col-sm-6">
+            <ul class="text-center">
+                <li id="p-info">
+                    <img class="user-info" style="height: 40px;" src="/web/images/default_head.png"></img>
+                    <span class="caret"></span>
+                    <ul id="info" style="display:none;">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                        <li><a href="/web/profile/orders.html">我的订单</a></li>
+                        <li><a href="/web/profile/profile.html">我的信息</a></li>
+                        <li><a href="javascript:void 0">退出登录</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+<script>
+
+    $(function () {
+        $("#p-info").mouseover(function () {
+            $("#info").show()
+        });
+        $("#p-info").click(function () {
+            $("#info").show()
+        });
+        $("#p-info").mouseout(function () {
+            $("#info").hide()
+        });
+    })
+</script>
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                欢迎使用爱乐电影
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <section>
+                <div class="modal-body">
+                    <div class="w3_login_module">
+                        <div class="module form-module">
+                            <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                                <div class="tooltip">点击注册</div>
+                            </div>
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <div class="log-toggle"><i class="switch-log">账号密码登录</i>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <input type="text" name="Username" placeholder="请输入用户名" required="required">
+                                        <input type="password" name="Password" placeholder="请输入密码" required="required">
+                                        <label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+                                        <a href="#" class="forget-a">忘记密码？</a>
+                                        <input class="btn btn-success" type="submit" value="登录">
+                                    </form>
+                                </fieldset>
+                            </div>
+                            <!--
+                                作者：971872973@qq.com
+                                时间：2019-09-07
+                                描述：手机验证的表单
+                            -->
+                            <!--<div class="log-form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <form action="#" method="post">
+                                    <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                    <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                    <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                    <input class="btn btn-success" type="submit" value="登录">
+                                  </form>
+                              </fieldset>
+                            </div>-->
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">注册账户</legend>
+                                    <form action="#" method="post">
+                                        <input type="text" name="username" placeholder="新用户名" required="">
+                                        <input type="password" name="password" placeholder="新密码" required="">
+                                        <input type="password" name="checkpwd" placeholder="请确认密码" required="">
+                                        <input type="text" name="phone" placeholder="电话" required="">
+                                        <input type="submit" value="注册">
+                                    </form>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+    $('.toggle').click(function () {
+        // Switches the Icon
+        $(this).children('i').toggleClass('fa-pencil');
+        // Switches the forms
+        $('.form').animate({
+            height: "toggle",
+            'padding-top': 'toggle',
+            'padding-bottom': 'toggle',
+            opacity: "toggle"
+        }, "slow");
+    });
+    //手机验证与密码验证切换（待处理）
+    /*$('.log-toggle').click(function(){
+        if($(this).children('i').val()=='账号密码登录'){
+            $(this).children('i').val('手机验证码登录')
+        }else if($(this).children('i').val()=='手机验证码登录'){
+            $(this).children('i').val('账号密码登录')
+        }
+        $('.log-form').animate({
+        height: "toggle",
+        'padding-top': 'toggle',
+        'padding-bottom': 'toggle',
+        opacity: "toggle"
+      }, "slow");
+    });*/
+</script>
+<!--
+	作者：offline
+	时间：2019-09-10
+	描述：中间部分
+-->
+<div class="container" id="app">
+    <div class="content">
+        <div class="main">
+            <div class="info-content clearfix">
+                <div class="user-profile-nav">
+                    <h1>个人中心</h1>
+                    <a href="/web/profile/orders.html" class="orders active">我的订单</a>
+                    <a href="/web/profile/profile.html" class="profile ">基本信息</a>
+                </div>
+
+                <div class="orders-container">
+                    <div class="profile-title">我的订单</div>
+                    <!--
+                        作者：offline
+                        时间：2019-09-09
+                        描述：订单
+                    -->
+                    <div class="order-box" v-for="orders in msg.list" :data-orderid=orders.orderId>
+                        <div class="order-header">
+                            <span class="order-date" v-text="orders.ctime">2019-09-09</span>
+                            <span class="order-id" v-text="'爱乐订单号：'+orders.orderId"></span>
+                            <span class="del-order"  @click="del(this)" :data-orderid="orders.orderId"></span>
+                        </div>
+
+                        <div class="order-body">
+                            <div class="poster">
+                                <img :src="orders.posterUrl" >
+                            </div>
+
+                            <div class="order-content">
+                                <div class="movie-name" v-text="orders.movieName"></div>
+                                <div class="cinema-name" v-text="orders.cinemaName"></div>
+                                <div class="hall-ticket" v-for="seat in orders.seatList">
+                                    <span v-text="orders.roomName">2号厅</span>
+                                    <span v-text="seat.seatName">4排3座</span>
+                                </div>
+                                <div class="show-time" v-html="orders.formatTime"></div>
+                            </div>
+
+                            <div class="order-price" v-text="'￥'+orders.money"></div>
+
+                            <div class="order-status" v-text="orders.ostateMsg">
+
+                            </div>
+                            <div class="actions">
+                                <div>
+                                    <a v-if="orders.ostateMsg=='未支付'" class="pay-btn"
+                                       data-act="orders-pay-click" data-bid="b_d2ll8ybm">付款</a>
+                                    <a href="detail.html" class="order-detail" data-act="orders-detail-click"
+                                       data-bid="b_y190atas">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orders-pager">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mask3" style="background-color: #4dbcf3 ;border: 1px solid darkblue">
+        <div >
+            <div class="modal">
+                <span class="icon"></span>
+                <p class="tip">您确定要删除该订单嘛？删除后，不可恢复～</p>
+                <div class="short btn ok-btn">确定</div>
+                <div class="short btn cancel-btn">取消</div>
+            </div>
+        </div>
+    </div>
+    <div class="mask2">
+        <div class="modal-container" style="display:none">
+            <div class="modal">
+                <span class="icon"></span>
+
+                <p class="tip">请联系客服10105335</p>
+
+                <div class="ok-btn btn">我知道了</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script type="text/javascript">
+
+    function select(obj) {
+
+        $.ajax({
+            url: "/orders/profile/orders",
+            data: {"uid": "1"},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                obj.msg = data;
+            }
+        })
+    }
+
+    $(function () {
+        var app = new Vue({
+            el: "#app",
+            data: {msg: ""},
+            created: function () {
+                var obj = this
+                select(obj);
+            },
+            methods: {
+                del(obj) {
+                    if(confirm("确实要删除吗？")){
+                      var id =$(obj).attr("data-orderid")
+                        alert(id);
+                  }else {
+                      alert("已经取消了删除操作");
+                  }
+                }
+            }
+        });
+    })
+
+
+</script>
+<div class="footer">
+    <div class="container">
+        <div class="w3ls_footer_grid">
+            <div class="col-md-6 w3ls_footer_grid_left">
+                <div class="w3ls_footer_grid_left1">
+                    <h3>关于爱乐</h3>
+                    <div class="w3ls_footer_grid_left1_pos">
+                        <div class="bottom-row">
+                            <span>商务合作邮箱：971872973@qq.com</span>
+                            <span class="bt-line">|</span>
+                            <span>客服电话：17603649546</span>
+                        </div>
+                        <div class="bottom-row">
+                            <span>用户投诉邮箱：1099773854@qq.com</span>
+                            <span class="bt-line">|</span>
+                            <span>友情链接：<a href="https://cq.meituan.com/?utm_source=wwwmaoyan"
+                                          class="bottom-chain">美团网</a></span>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">中华人民共和国增值电信业务经营许可证&nbsp;渝A1-20190909</a>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">网络文化经营许可证&nbsp;京网文(2019)3897-330号</a>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">爱乐用户服务协议</a>
+                            <span class="bt-line">|</span>
+                            <a href="#" class="bottom-chain">爱乐平台交易规则总则</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 w3ls_footer_grid_right">
+                <a href="index.html"><h2 class="title">爱乐<span class="webtitle-bottom">电影</span></h2></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-5 w3ls_footer_grid1_left">
+            <p>重庆爱乐文化传媒有限公司©2016 爱乐电影 aiyue.com </p>
+        </div>
+        <div class="col-md-7 w3ls_footer_grid1_right">
+            <div class="col-lg-6 card-left">
+                <a href="#"><img src="images/web-permission.png"/></a>
+
+            </div>
+            <div class="col-lg-6 card-right">
+                <a href="#"><img src="images/permission-card.png"/></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+<script src="/web/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".dropdown").hover(
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+<!-- //Bootstrap Core JavaScript -->
+<!-- here stars scrolling icon -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+
+</body>
+</html>

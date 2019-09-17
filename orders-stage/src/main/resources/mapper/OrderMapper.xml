@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.orders.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.orders.entity.Order">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="cTime" />
+    <result column="money" jdbcType="DOUBLE" property="money" />
+    <result column="cid" jdbcType="INTEGER" property="cid" />
+    <result column="ostate" jdbcType="TINYINT" property="ostate" />
+    <result column="pay_state" jdbcType="TINYINT" property="payState" />
+    <result column="payway" jdbcType="TINYINT" property="payway" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="order_id" property="orderId" />
+    <result column="mpic" jdbcType="VARCHAR" property="posterUrl" />
+    <result column="mName" property="movieName"/>
+    <result column="c_name" property="cinemaName"/>
+    <result column="c_address"  property="cinemaAddress"/>
+     <result column="playtime" jdbcType="TIMESTAMP" property="palyTime"/>
+     <result column="name"  property="roomName"/>
+    <result column="money"  property="money"/>
+      <result column="phone"  property="phone"/>
+
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `uid`, c_time, money, cid, ostate, pay_state, payway, code, order_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectOrder" resultType="com.woniu.orders.entity.Order" resultMap="BaseResultMap" parameterType="map">
+      SELECT o.c_time ,o.ostate,o.order_id ,o.seat,o.money ,cr.name ,o.pay_state,m.mpic ,m.mName,c.c_name,c.c_address,ms.playtime  from `orders` o
+      LEFT JOIN movie_showtime ms on o.movie_showtime_id = ms.id
+      LEFT JOIN cinema c on ms.cid = c.id
+      LEFT JOIN movie m on ms.mid = m.id
+      LEFT JOIN cinema_room cr on ms.room_id = cr.id
+      WHERE o.uid=#{uid}  and cr.cid=ms.cid  ORDER BY o.c_time asc LIMIT #{start}, #{num};
+
+    </select>
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(id) from orders where uid=#{uid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.woniu.orders.entity.Order">
+    <!--@mbg.generated-->
+    insert into order (id, `uid`, c_time, 
+      money, cid, ostate, 
+      pay_state, payway, code, 
+      order_id)
+    values (#{id,jdbcType=INTEGER}, #{uid,jdbcType=INTEGER}, #{cTime,jdbcType=TIMESTAMP}, 
+      #{money,jdbcType=DOUBLE}, #{cid,jdbcType=INTEGER}, #{ostate,jdbcType=TINYINT}, 
+      #{payState,jdbcType=TINYINT}, #{payway,jdbcType=TINYINT}, #{code,jdbcType=VARCHAR}, 
+      #{orderId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.woniu.orders.entity.Order">
+    <!--@mbg.generated-->
+    insert into order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="cTime != null">
+        c_time,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="cid != null">
+        cid,
+      </if>
+      <if test="ostate != null">
+        ostate,
+      </if>
+      <if test="payState != null">
+        pay_state,
+      </if>
+      <if test="payway != null">
+        payway,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cTime != null">
+        #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="cid != null">
+        #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="ostate != null">
+        #{ostate,jdbcType=TINYINT},
+      </if>
+      <if test="payState != null">
+        #{payState,jdbcType=TINYINT},
+      </if>
+      <if test="payway != null">
+        #{payway,jdbcType=TINYINT},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.orders.entity.Order">
+    <!--@mbg.generated-->
+    update order
+    <set>
+      <if test="uid != null">
+        `uid` = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cTime != null">
+        c_time = #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="cid != null">
+        cid = #{cid,jdbcType=INTEGER},
+      </if>
+      <if test="ostate != null">
+        ostate = #{ostate,jdbcType=TINYINT},
+      </if>
+      <if test="payState != null">
+        pay_state = #{payState,jdbcType=TINYINT},
+      </if>
+      <if test="payway != null">
+        payway = #{payway,jdbcType=TINYINT},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.orders.entity.Order">
+    <!--@mbg.generated-->
+    update order
+    set `uid` = #{uid,jdbcType=INTEGER},
+      c_time = #{cTime,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=DOUBLE},
+      cid = #{cid,jdbcType=INTEGER},
+      ostate = #{ostate,jdbcType=TINYINT},
+      pay_state = #{payState,jdbcType=TINYINT},
+      payway = #{payway,jdbcType=TINYINT},
+      code = #{code,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+    <delete id="delete" parameterType="int">
+          DELETE FROM orders where id=#{oid}
+    </delete>
+  <select id="selectDetail" resultMap="BaseResultMap" parameterType="int">
+     SELECT o.c_time ,o.ostate,o.order_id ,o.seat,o.money ,cr.name ,o.pay_state,m.mpic ,m.mName,c.c_name,c.c_address,c.phone,ms.playtime  from `orders` o
+      LEFT JOIN movie_showtime ms on o.movie_showtime_id = ms.id
+      LEFT JOIN cinema c on ms.cid = c.id
+      LEFT JOIN movie m on ms.mid = m.id
+      LEFT JOIN cinema_room cr on ms.room_id = cr.id
+      WHERE o.order_id=#{oid}  and cr.cid=ms.cid
+  </select>
+</mapper>

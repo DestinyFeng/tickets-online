@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/web/css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" href="/web/css/viwStyle.css" />
+		<script type="text/javascript" src="/web/js/jquery-3.4.0.min.js"></script>
+		<script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/web/js/vue.js"></script>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+	<div id="app">
+		<div class="head_div marginTop_head">
+			<div class="bg-danger col-sm-8 col-sm-offset-2 nopadding">
+				<div class="col-sm-2 nopadding">
+					<a href="#"><img class="logoimg" src="/web/img/woniuLogo.png" alt="LOGO图标" /></a>
+				</div>
+				<div class="col-sm-8 text-center bg-info">
+					<div class="col-sm-1 bg-warning city_div text-center">
+						城市
+					</div>
+					<div class="nav navi col-sm-7 text-left nopadding">
+						<ul class="navbar list-inline bg-primary text-center">
+							<li>首页</li>
+							<li>电影</li>
+							<li>热映</li>
+							<li>影院</li>
+							<li>榜单</li>
+							<li>热点</li>
+						</ul>
+					</div>
+					<div class="col-sm-4 top_padding">
+						<form action="" method="post">
+							<input type="search" class="search" name="" placeholder="找片、找人、找影院" autocomplete="off" maxlength="32" />
+							<input type="submit" value="      " class="search_btn" />
+						</form>
+					</div>
+				</div>
+				<div class="col-sm-2 text-right bg-success userInfo_div">
+					<div class="headimg">
+						<a href="#"><img src="/web/img/registbackground.png" class="headimage" /></a>
+						<span class="caret">username</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="body_div col-sm-12 nopadding">
+				<div class="bodyhead_div col-sm-12">
+					<div class="bodyheadimg_div">
+						<div class="photos col-sm-2 col-sm-offset-2">
+							<div class="imagesdiv">
+								<a href="#" class="pics">
+									<img class="headimages" src="/web/img/loginbackground.jpg"/>
+								</a>
+							</div>
+						</div>
+						<div class="massagesdiv col-sm-2">
+							<div class="mescontent">
+								<h3 class="cinemaname">万达影城</h3>
+							</div>
+						</div>
+						<div class="mapdiv col-sm-2 col-sm-offset-1 text-right">
+							<div class="filmmap">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="container">
+			<div class="body_div nopadding">
+				<div class="main col-sm-12">
+					<!--排片区-->
+					<div class="moviecontainer">
+						<div class="col-sm-12 moviepart">
+							<div class="movielist col-sm-1" v-for="(movie,index) in movielist">
+								<img v-if="index==0" class="filmselected" @click="changeMovie(index,$event)" :src="movie.mpic"/>
+								<img v-else class="filmtable" @click="changeMovie(index,$event)" :src="movie.mpic"/>
+							</div>
+						</div>
+						<span class="leftbtn" onclick="rightmove()"> </span>
+						<span class="rightbtn" onclick="leftmove()"> </span>
+						<script type="text/javascript">
+							function leftmove() {
+								$(".moviepart").animate({right:"0"});
+								$(".moviepart").animate({left:"-700px"});
+							}
+							function rightmove() {
+								$(".moviepart").animate({left:"0"});
+								$(".moviepart").animate({right:"-700px"});
+							}
+						</script>
+					</div>
+						
+					<!--影片详情-->
+					<div>
+						<div class="filmmessage-show col-sm-12">
+							<!--当前选中影片基本-->
+							<div class="filmInfo">
+								<div>
+									<h3 class="movie-name">{{nowMovie.mname}}</h3><span class="score">{{nowMovie.score}} <span class="sc">分</span></span>
+								</div>
+								<div class="movie-message">
+									<div class="movie-mes">
+										<span class="mestitle">时长:</span>
+										<span class="mesvalue">{{nowMovie.longtime}}分钟</span>
+									</div>
+									<div class="movie-mes">
+										<span class="mestitle">类型:</span>
+										<span class="mesvalue" v-for="type in nowMovie.types">{{type.mtype}} </span>
+									</div>
+									<div class="movie-mes">
+										<span class="mestitle">主演:</span>
+										<span class="mesvalue">道恩·强森,杰森·斯坦森</span>
+									</div>
+								</div>
+							</div>
+							<!--当前选中影片排片时间-->
+							<div class="filmtime">
+								<span class="mestitle col-sm-2">可选观影时间：</span>
+								<div class="col-sm-2" v-for="(day,index) in playTime">
+									<span :id="'date'+index" class="dateselected dates" @click="changePlayTime(index,$event)" tabindex="1"  v-if="index==0">{{day}}</span>
+									<span :id="'date'+index" class="datetable dates" @click="changePlayTime(index,$event)" tabindex="2"  v-else>{{day}}</span>
+								</div>
+							</div>
+							<!--当前选中影片排片信息-->
+							<div class="filmmess">
+								<table class="filmmes">
+									<thead class="filmmes_thead">
+									<tr class="infoTitle_tr">
+										<th class="infoTitle_th">放映时间</th>
+										<th class="infoTitle_th">语言版本</th>
+										<th class="infoTitle_th">放映厅</th>
+										<th class="infoTitle_th">票价（元）</th>
+										<th class="infoTitle_th">选座购票</th>
+									</tr>
+									</thead>
+									<tbody class="filmmes_tbody">
+									<tr class="infobody_tr_Odd" v-for="message in messageByTime">
+										<td class="infobody_td">
+											<span class="starttime">{{message.starttime}}</span><br /><span class="endtime">{{message.endtime}}散场</span>
+										</td>
+										<td class="infobody_td">
+											<span class="language">{{message.cinemaRoom.type}}</span>
+										</td>
+										<td class="infobody_td">
+											<span class="room">{{message.cinemaRoom.name}}</span>
+										</td>
+										<td class="infobody_td">
+											<span class="price"><span class="pricefont">{{message.money}}</span></span>
+										</td>
+										<td class="infobody_td">
+											<a class="btn-purchase" href="#">选座购票</a>
+										</td>
+									</tr>
+									</tbody>
+									<tfoot></tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				
+			</div>
+		</div>
+		<div class="foot marginTop">
+			关于猫眼 : 关于我们 管理团队 投资者关系 友情链接 : 美团网 格瓦拉 美团下载 欢喜首映 <br />
+			商务合作邮箱：v@maoyan.com 客服电话：10105335 违法和不良信息举报电话：4006018900 <br />
+			用户投诉邮箱：tousujubao@meituan.com 舞弊线索举报邮箱：wubijubao@maoyan.com <br />
+			中华人民共和国增值电信业务经营许可证 京B2-20190350 营业性演出许可证 京演（机构）（2019）4094号 <br />
+			广播电视节目制作经营许可证 （京）字第08478号 网络文化经营许可证 京网文（2019）3837-369号 <br />
+			猫眼用户服务协议 猫眼平台交易规则总则 隐私政策 <br />
+			京公网安备 11010102003232号 <br />
+			北京猫眼文化传媒有限公司 <br />
+			©2016 猫眼电影 maoyan.com
+		</div>
+	</div>
+		<script type="text/javascript">
+
+
+			// function datechoose(obj){
+			// 	$(obj).addClass("dateselected").removeClass("datetable");
+			// 	$(obj).siblings(":not(':first')").addClass("datetable").removeClass("dateselected");
+			// };
+			/**
+			 * 格式化时间
+			 * @param second
+			 * @param getDateType
+			 * @returns {string|number}
+			 */
+			function getTime(second) {
+				var date =new Date(second);
+				var year = date.getFullYear()
+				if((date.getMonth()+1)<=9){
+					var month ="0"+(date.getMonth()+1);
+				}else {
+					return date.getMonth()+1;
+					var month =date.getMonth()+1;
+				}
+				if(date.getDate()<=9){
+					var day =  "0"+date.getDate();
+				}else {
+					var day =   date.getDate();
+				}
+				if(date.getHours()<=9){
+					var hour =  "0"+date.getHours();
+				}else {
+					var hour =  date.getHours();
+				}
+				if(date.getMinutes()<=9){
+					var minutes =  "0"+date.getMinutes();
+				}else {
+					var minutes =  date.getMinutes();
+				}
+				if(date.getSeconds ()<=9){
+					var seconds = "0" + date.getSeconds ();
+				}else{
+					var seconds =  date.getSeconds ();
+				}
+				return year+"-"+month+"-"+day+" "+hour+":"+minutes+":"+seconds;
+			}
+
+			$(function () {
+				var app = new Vue({
+					el:"#app",
+					data:{
+						movielist:[],
+						nowMovie:{},
+						playTime:[],
+						nowMessage:[],
+						messageByTime:[]
+					},
+					methods:{
+						changeMovie:function (index,e) {
+							//改变选择电影图片的样式
+							$(e.target).addClass("filmselected").removeClass("filmtable");
+							$(e.target).parent().siblings().children().addClass("filmtable").removeClass("filmselected");
+							//更改电影时，默认选中最近一天的拍片信息
+							$(e.target).parent().parent().parent().next().children().children(":eq(1)").children(":eq(1)").children().addClass("dateselected").removeClass("datetable");
+							$(e.target).parent().parent().parent().next().children().children(":eq(1)").children(":eq(1)").children().parent().siblings().children().addClass("datetable").removeClass("dateselected");
+							//改变vue对象里面当前电影的数据
+							this.nowMovie=this.movielist[index]
+							//改变当前电影对应的拍片信息
+							this.nowMessage=this.movielist[index].movieShowtimes;
+							//获取当前电影的所有拍片日期
+							this.playTime = getPlayDay(this.nowMessage);
+							//清除当前日期的拍片信息
+							this.messageByTime.length=0;
+							//获取当前电影在最近一天的拍片信息
+							for(var i=0;i<_this.nowMessage.length;i++){
+								if(_this.nowMessage[i].startday==_this.playTime[0]){
+									_this.messageByTime.push(_this.nowMessage[i])
+								}
+							}
+
+						},
+						changePlayTime:function (index,e) {
+							this.messageByTime.length=0;
+
+							//改变点击元素的样式
+							$(e.target).addClass("dateselected").removeClass("datetable");
+							$(e.target).parent().siblings().children().addClass("datetable").removeClass("dateselected");
+
+							//获取点击天数的怕排片信息（_this.playTime[0]）messageByTime:[]
+							for(var i=0;i<this.nowMessage.length;i++){
+								if(this.nowMessage[i].startday==this.playTime[index]){
+									this.messageByTime.push(this.nowMessage[i]);
+								}
+							}
+						}
+					},
+					created:function () {
+						_this = this;
+						$.ajax({
+							url:"/movie-stage/movie/bycid/1",
+							type:"get",
+							dataType:"json",
+							success:function (data) {
+								//格式化时间格式
+								for(i in data.list){
+									for(j in data.list[i].movieShowtimes){
+										data.list[i].movieShowtimes[j].playtime = getTime(data.list[i].movieShowtimes[j].playtime)
+										data.list[i].movieShowtimes[j].starttime=data.list[i].movieShowtimes[j].playtime.split(" ")[1];
+
+										data.list[i].movieShowtimes[j].startday=data.list[i].movieShowtimes[j].playtime.split(" ")[0];
+
+										var end = Date.parse(data.list[i].movieShowtimes[j].playtime)+data.list[i].longtime*60*1000;
+										data.list[i].movieShowtimes[j].endtime=getTime(end);
+									}
+								}
+								_this.movielist=data.list;
+
+								if(_this.movielist != null && _this.movielist.length>0){
+									//获取当前展示拍片信息的电影
+									_this.nowMovie=data.list[0];
+									//获取当前展示电影的拍片信息
+									_this.nowMessage=_this.nowMovie.movieShowtimes;
+									//获取拍片的时间
+									_this.playTime=getPlayDay(_this.nowMessage)
+
+									//获取最近一天的怕排片信息（_this.playTime[0]）messageByTime:[]
+									for(var i=0;i<_this.nowMessage.length;i++){
+										if(_this.nowMessage[i].startday==_this.playTime[0]){
+											_this.messageByTime.push(_this.nowMessage[i])
+										}
+									}
+
+								}
+							}
+						})
+					}
+				})
+			})
+
+
+			/**
+			 * 根据当前电影拍片信息，获得拍片时间
+			 * @param playTime
+			 * @param nowMessage
+			 */
+			function getPlayDay(nowMessage) {
+				var playTime = [];
+				var flag = false;
+				for(var index=0;index<nowMessage.length;index++){
+					if(playTime.length < 1){
+						playTime.unshift(nowMessage[index].startday);
+						continue;
+					}
+					for (var j=0;j<playTime.length;j++) {
+						if(playTime[j]==nowMessage[index].startday){
+							flag = true;
+							break;
+						}
+					}
+					if(!flag){
+						playTime.push(nowMessage[index].startday);
+					}
+					flag=false
+				}
+				return playTime;
+			}
+
+
+
+
+		</script>
+	</body>
+
+</html>

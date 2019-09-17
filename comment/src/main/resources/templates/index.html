@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <button onclick="del()">删除点赞信息</button>
+
+    <script src="/api-comment/js/jquery-1.11.3.js"></script>
+    <script>
+       function del() {
+           alert("单击事件");
+           $.ajax({
+               url:"/api-comment/like/4/2",
+               type:"delete",
+               dataType:"json",
+               success:function (data) {
+                   alert("success");
+               }
+           });
+       }
+    </script>
+</body>
+</html>

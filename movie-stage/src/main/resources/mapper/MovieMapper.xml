@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.mapper.MovieMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.entity.Movie">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mName" jdbcType="VARCHAR" property="mname" />
+    <result column="tickets" jdbcType="DOUBLE" property="tickets" />
+    <result column="comntry" jdbcType="VARCHAR" property="comntry" />
+    <result column="uptime" jdbcType="TIMESTAMP" property="uptime" />
+    <result column="score" jdbcType="LONGVARCHAR" property="score" />
+    <result column="short_story" jdbcType="VARCHAR" property="shortStory" />
+    <result column="pre_movie" jdbcType="VARCHAR" property="preMovie" />
+    <result column="longtime" jdbcType="VARCHAR" property="longtime" />
+    <result column="mpic" jdbcType="VARCHAR" property="mpic" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, mName, tickets, comntry, uptime, score, short_story, pre_movie, longtime, mpic
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from movie
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from movie
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.woniu.entity.Movie" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into movie (mName, tickets, comntry, 
+      uptime, score, short_story, 
+      pre_movie, longtime, mpic
+      )
+    values (#{mname,jdbcType=VARCHAR}, #{tickets,jdbcType=DOUBLE}, #{comntry,jdbcType=VARCHAR}, 
+      #{uptime,jdbcType=TIMESTAMP}, #{score,jdbcType=LONGVARCHAR}, #{shortStory,jdbcType=VARCHAR}, 
+      #{preMovie,jdbcType=VARCHAR}, #{longtime,jdbcType=VARCHAR}, #{mpic,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.woniu.entity.Movie" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into movie
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="mname != null">
+        mName,
+      </if>
+      <if test="tickets != null">
+        tickets,
+      </if>
+      <if test="comntry != null">
+        comntry,
+      </if>
+      <if test="uptime != null">
+        uptime,
+      </if>
+      <if test="score != null">
+        score,
+      </if>
+      <if test="shortStory != null">
+        short_story,
+      </if>
+      <if test="preMovie != null">
+        pre_movie,
+      </if>
+      <if test="longtime != null">
+        longtime,
+      </if>
+      <if test="mpic != null">
+        mpic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="mname != null">
+        #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="tickets != null">
+        #{tickets,jdbcType=DOUBLE},
+      </if>
+      <if test="comntry != null">
+        #{comntry,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null">
+        #{uptime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="score != null">
+        #{score,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="shortStory != null">
+        #{shortStory,jdbcType=VARCHAR},
+      </if>
+      <if test="preMovie != null">
+        #{preMovie,jdbcType=VARCHAR},
+      </if>
+      <if test="longtime != null">
+        #{longtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mpic != null">
+        #{mpic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.entity.Movie">
+    <!--@mbg.generated-->
+    update movie
+    <set>
+      <if test="mname != null">
+        mName = #{mname,jdbcType=VARCHAR},
+      </if>
+      <if test="tickets != null">
+        tickets = #{tickets,jdbcType=DOUBLE},
+      </if>
+      <if test="comntry != null">
+        comntry = #{comntry,jdbcType=VARCHAR},
+      </if>
+      <if test="uptime != null">
+        uptime = #{uptime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="score != null">
+        score = #{score,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="shortStory != null">
+        short_story = #{shortStory,jdbcType=VARCHAR},
+      </if>
+      <if test="preMovie != null">
+        pre_movie = #{preMovie,jdbcType=VARCHAR},
+      </if>
+      <if test="longtime != null">
+        longtime = #{longtime,jdbcType=VARCHAR},
+      </if>
+      <if test="mpic != null">
+        mpic = #{mpic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.entity.Movie">
+    <!--@mbg.generated-->
+    update movie
+    set mName = #{mname,jdbcType=VARCHAR},
+      tickets = #{tickets,jdbcType=DOUBLE},
+      comntry = #{comntry,jdbcType=VARCHAR},
+      uptime = #{uptime,jdbcType=TIMESTAMP},
+      score = #{score,jdbcType=LONGVARCHAR},
+      short_story = #{shortStory,jdbcType=VARCHAR},
+      pre_movie = #{preMovie,jdbcType=VARCHAR},
+      longtime = #{longtime,jdbcType=VARCHAR},
+      mpic = #{mpic,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <resultMap id="movieMessageMap" type="com.woniu.entity.Movie">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mName" jdbcType="VARCHAR" property="mname" />
+    <result column="tickets" jdbcType="DOUBLE" property="tickets" />
+    <result column="comntry" jdbcType="VARCHAR" property="comntry" />
+    <result column="uptime" jdbcType="TIMESTAMP" property="uptime" />
+    <result column="score" jdbcType="LONGVARCHAR" property="score" />
+    <result column="short_story" jdbcType="VARCHAR" property="shortStory" />
+    <result column="pre_movie" jdbcType="VARCHAR" property="preMovie" />
+    <result column="longtime" jdbcType="VARCHAR" property="longtime" />
+    <result column="mpic" jdbcType="VARCHAR" property="mpic" />
+    <collection property="types" ofType="com.woniu.entity.Type">
+      <id property="id" column="tid" />
+      <result property="mtype" column="mtype"></result>
+    </collection>
+    <collection property="photos" ofType="com.woniu.entity.Photo">
+      <id property="id" column="pid"></id>
+      <result property="type" column="type"></result>
+      <result property="url" column="url"></result>
+    </collection>
+  </resultMap>
+
+    <select id="selectMovieByMid" resultMap="movieMessageMap" parameterType="int">
+        select m.*,t.id tid,t.mtype,p.id pid,p.type,p.url from movie m
+        left join movie_type mt on m.id = mt.mid
+        left join type t on mt.tid   = t.id
+        left join movie_photo mp on m.id=mp.mid
+        left join photo p on mp.pid=p.id
+        where m.id=#{mid}
+    </select>
+
+
+<resultMap id="mymap" type="com.woniu.entity.Movie">
+  <id column="id" jdbcType="INTEGER" property="id" />
+  <result column="mName" jdbcType="VARCHAR" property="mname" />
+  <result column="tickets" jdbcType="DOUBLE" property="tickets" />
+  <result column="comntry" jdbcType="VARCHAR" property="comntry" />
+  <result column="uptime" jdbcType="TIMESTAMP" property="uptime" />
+  <result column="score" jdbcType="LONGVARCHAR" property="score" />
+  <result column="short_story" jdbcType="VARCHAR" property="shortStory" />
+  <result column="pre_movie" jdbcType="VARCHAR" property="preMovie" />
+  <result column="longtime" jdbcType="VARCHAR" property="longtime" />
+  <result column="mpic" jdbcType="VARCHAR" property="mpic" />
+  <collection property="types" ofType="com.woniu.entity.Type">
+    <id property="id" column="tid" />
+    <result property="mtype" column="mtype"></result>
+  </collection>
+    <collection property="movieShowtimes" ofType="com.woniu.entity.MovieShowtime">
+        <id property="id" column="bid"></id>
+        <result property="cid" column="cid"></result>
+        <result property="mid" column="mid"></result>
+        <result property="playtime" column="playtime"></result>
+        <result property="roomId" column="room_id"></result>
+        <result property="money" column="money"></result>
+        <association property="cinemaRoom" javaType="com.woniu.entity.CinemaRoom">
+        <id property="id" column="room_id"></id>
+        <result property="name" column="room_name"></result>
+        <result property="type" column="room_type"></result>
+    </association>
+    </collection>
+
+</resultMap>
+
+  <select id="selectMoviesByCid" resultMap="mymap" parameterType="int">
+    select a.*,b.id bid,b.cid,b.mid,b.playtime,b.room_id,b.money,b.name room_name,b.type room_type from
+    (select m.*,t.id tid,t.mtype from movie m
+    inner join movie_type mt on m.id = mt.mid
+    inner join type t on mt.tid   = t.id) a
+    inner join
+    (select ms.*,cr.name,cr.type  from movie_showtime ms
+    inner join cinema_room cr on ms.room_id=cr.id
+    order by playtime  asc) b
+    on a.id=b.mid
+    where b.cid=#{cid}
+  </select>
+
+  <select id="selectMoviesByName" resultMap="movieMessageMap" parameterType="String">
+    select m.*,t.id tid,t.mtype,p.id pid,p.type,p.url from movie m
+    left join movie_type mt on m.id = mt.mid
+    left join type t on mt.tid   = t.id
+    left join movie_photo mp on m.id=mp.mid
+    left join photo p on mp.pid=p.id
+    where m.mName like #{mName}
+  </select>
+
+  <select id="selectMOviesOnByCid" resultMap="BaseResultMap" parameterType="int">
+    select * from movie where id in (
+    select distinct mid from movie_showtime
+    where cid=#{cid}) order by uptime asc
+  </select>
+</mapper>
