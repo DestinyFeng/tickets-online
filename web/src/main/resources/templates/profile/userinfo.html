@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+
+    <script src="/web/js/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="/web/ltcss/profile-profile.css"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <link href="/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/web/css/contactstyle.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="/web/css/faqstyle.css" type="text/css" media="all"/>
+    <link href="/web/css/single.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/medile.css" rel='stylesheet' type='text/css'/>
+    <link href="/web/css/userstyle.css" rel='stylesheet' type='text/css'/>
+    <!-- banner-slider -->
+    <link href="/web/css/jquery.slidey.min.css" rel="stylesheet">
+    <!-- //banner-slider -->
+    <!-- pop-up -->
+    <link href="/web/css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- //pop-up -->
+    <!-- font-awesome icons -->
+    <link rel="stylesheet" href="/web/css/font-awesome.min.css"/>
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- banner-bottom-plugin -->
+    <link href="/web/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/web/js/owl.carousel.js"></script>
+    <script>
+       /* $(document).ready(function () {
+            $("#owl-demo").owlCarousel({
+
+                autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                items: 5,
+                itemsDesktop: [640, 4],
+                itemsDesktopSmall: [414, 3]
+
+            });
+
+        });*/
+    </script>
+    <!-- //banner-bottom-plugin -->
+    <!---<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>--->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/web/js/move-top.js"></script>
+    <script type="text/javascript" src="/web/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+<!--
+    作者：offline
+    时间：2019-09-09
+    描述：头部
+-->
+<div class="header">
+    <div class="container container-head">
+        <div class="w3layouts_logo ">
+            <a href="/web/index.html">
+                <h1 class="title">爱乐<span class="webtitle-bottom">电影</span></h1></a>
+        </div>
+        <div class="w3l_search_city col-lg-3 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" list="city" value="重庆"/>
+                <datalist id="city">
+                    <option>北京</option>
+                </datalist>
+            </form>
+        </div>
+        <div class="w3_search col-lg-5 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
+                <input type="submit" value="Go">
+            </form>
+        </div>
+
+        <div class="w3l_sign_in_register col-lg-1 col-xs-12 col-sm-6">
+            <ul class="text-center">
+                <li id="p-info">
+                    <img class="user-info" style="height: 40px;" src="/web/images/default_head.png"></img>
+                    <span class="caret"></span>
+                    <ul id="info" style="display:none;">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                        <li><a href="/web/profile/orders.html">我的订单</a></li>
+                        <li><a href="/web/profile/profile.html">我的信息</a></li>
+                        <li><a href="javascript:void 0">退出登录</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            $("#p-info").mouseover(function () {
+                $("#info").show()
+            });
+            $("#p-info").click(function () {
+                $("#info").show()
+            });
+            $("#p-info").mouseout(function () {
+                $("#info").hide()
+            });
+        })
+    </script>
+</div>
+<!-- //header -->
+<!-- bootstrap-pop-up -->
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                欢迎使用爱乐电影
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <section>
+                <div class="modal-body">
+                    <div class="w3_login_module">
+                        <div class="module form-module">
+                            <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                                <div class="tooltip">点击注册</div>
+                            </div>
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <div class="log-toggle"><i class="switch-log">账号密码登录</i>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <input type="text" name="Username" placeholder="请输入用户名" required="required">
+                                        <input type="password" name="Password" placeholder="请输入密码" required="required">
+                                        <label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+                                        <a href="#" class="forget-a">忘记密码？</a>
+                                        <input class="btn btn-success" type="submit" value="登录">
+                                    </form>
+                                </fieldset>
+                            </div>
+                            <!--
+                                作者：971872973@qq.com
+                                时间：2019-09-07
+                                描述：手机验证的表单
+                            -->
+                            <!--<div class="log-form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <form action="#" method="post">
+                                    <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                    <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                    <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                    <input class="btn btn-success" type="submit" value="登录">
+                                  </form>
+                              </fieldset>
+                            </div>-->
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">注册账户</legend>
+                                    <form action="#" method="post">
+                                        <input type="text" name="username" placeholder="新用户名" required="">
+                                        <input type="password" name="password" placeholder="新密码" required="">
+                                        <input type="password" name="checkpwd" placeholder="请确认密码" required="">
+                                        <input type="text" name="phone" placeholder="电话" required="">
+                                        <input type="submit" value="注册">
+                                    </form>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+
+    $('.toggle').click(function () {
+        alert(1)
+        // Switches the Icon
+        $(this).children('i').toggleClass('fa-pencil');
+        // Switches the forms
+        $('.form').animate({
+            height: "toggle",
+            'padding-top': 'toggle',
+            'padding-bottom': 'toggle',
+            opacity: "toggle"
+        }, "slow");
+    });
+</script>
+
+<div class="container">
+    <div class="content">
+        <div class="main f-size" id="app">
+            <div class="info-content clearfix">
+                <div class="user-profile-nav">
+                    <h1>个人中心</h1>
+                    <a href="orders.html" class="orders ">我的订单</a>
+                    <a href="https://maoyan.com/profile" class="profile active">基本信息</a>
+                </div>
+
+                <div class="profile-container" style="height: 550px">
+                    <div class="profile-title">
+                        <span class="spa">基本信息</span><span class="m-left2 spa"> <a href="userupdate.html">修改信息</a></span>
+                    </div>
+
+                    <div class="avatar-container">
+                        <div class="avatar-content">
+                            <img class="J-setted-avatar" :src="user.upic">
+                            <div class="J-upload-avatar-w upload-avatar-image" style="display: none;">
+                                <input type="button" class="J-upload-avatar upload-btn" value="更换头像" >
+                                <input type="file" id="fileUpload" name="file" onchange="imgshow(this)" data-toggle="modal" data-target=".bs-example-modal-sm">
+                                <!--<div class="layui-input-block dis m-top" id="id_img"></div>-->
+                            </div>
+                            <!--<div class="tips">支持JPG,JPEG,PNG格式,且文件需小于1M</div>-->
+                        </div>
+                    </div>
+                    <!--弹出层-->
+                    <!-- Small modal -->
+                    <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>-->
+
+                    <!--<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">-->
+                        <div class="non yimg" id="img">
+                            <div class="modal-content">
+                                <span class="m-top dis">预览</span>
+                                <div class="layui-input-block dis" id="id_img"></div>
+                                <button class="btn btn-success m-top m-bot">确定</button>
+                                <button class="btn btn-warning m-top m-left m-bot" onclick="hid()">取消</button>
+                            </div>
+                        </div>
+                    <!--</div>-->
+                    <!--用户信息-->
+                    <div style="display: inline-block;margin-left: 20px;">
+                        <table class="table table-hover">
+                            <tr><td>姓名：<span v-text="user.username"></span></td></tr>
+                            <tr><td>性别：<span v-text="user.sex"></span></td></tr>
+                            <tr><td>生日：<span v-text="user.birth"></span></td></tr>
+                            <tr><td>电话：<span v-text="user.phone"></span></td></tr>
+                            <tr><td>喜欢的影片类型：<div v-for="type in user.types" class="mtype"><span v-if="type!=null" v-text="type.mtype">您暂未添加喜欢的电影类型哦</span></div></td></tr>
+                            <tr><td>个性签名：<span v-text="user.sign"></span></td></tr>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <script src="/web/js/bootstrap.min.js"></script>
+        <script src="/web/js/jquery-2.1.4.min.js"></script>
+        <script crossorigin="anonymous" src="//s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:5788b470/stat.88d57c80.js"></script>
+        <script crossorigin="anonymous" src="//www.dpfile.com/app/owl/static/owl_1.7.11.js"></script>
+        <script crossorigin="anonymous" src="//s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:5788b470/common.9fc677f9.js"></script>
+        <script crossorigin="anonymous" src="//s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:5788b470/profile-profile.59b4a3a3.js"></script>
+        <!--<script src="/web/js/user2.js"></script>
+        <script src="/web/js/user3.js"></script>
+        <script src="/web/js/user4.js"></script>
+        <script src="/web/js/web.js"></script>-->
+        <script>
+            var _data;
+            var app=new Vue({
+                el:"#app",
+                data:{
+                    user:{}
+                },
+                created:function () {
+                    _data=this;
+                    /*查询用户信息*/
+                    $.ajax({
+                        url:"/api-user/user",
+                        type:"get",
+                        dataType:"json",
+                        success:function (data) {
+                            if(data.code=="success"){
+                                _data.user=data.object;
+                            }else{
+                                alert(data.message);
+                            }
+                        }
+                    });
+                }
+            });
+
+            // 隐藏图片预览div
+            function hid(){
+                $("#img").css("display","none");
+            }
+            // 图片上传
+            
+            // 图片预览
+            window.URL = window.URL || window.webkitURL;
+            function imgshow(obj) {
+                fileList = document.getElementById("id_img");
+                var files = obj.files;
+                img = new Image();
+                if(window.URL){
+                    img.src = window.URL.createObjectURL(files[0]); //创建一个object URL，并不是你的本地路径
+                    img.className = "lay-img";
+                    img.style="width:200px";
+                    img.onload = function(e) {
+                        window.URL.revokeObjectURL(this.src); //图片加载后，释放object URL
+                    }
+                    if(fileList.firstElementChild){
+                        fileList.removeChild(fileList.firstElementChild);
+                    }
+                    fileList.appendChild(img);
+                    // 显示预览图片
+                    $("#img").css("display","block");
+                }else if(window.FileReader){
+                    //opera不支持createObjectURL/revokeObjectURL方法。我们用FileReader对象来处理
+                    var reader = new FileReader();
+                    reader.readAsDataURL(files[0]);
+                    reader.onload = function(e){
+                        img.src = this.result;
+                        img.className = "lay-img";
+                        img.style="width:200px";
+                        fileList.removeChild(fileList.firstElementChild);
+                        fileList.appendChild(img);
+                    }
+                }else
+                {
+                    //ie
+                    obj.select();
+                    obj.blur();
+                    var nfile = document.selection.createRange().text;
+                    document.selection.empty();
+                    img.src = nfile;
+                    img.style="width:200px";
+                    img.className = "lay-img";
+                    fileList.removeChild(fileList.firstElementChild);
+                    fileList.appendChild(img);
+                }
+
+            }
+        </script>
+
+        <div class="body-mask"></div>
+        <div id="img-cropper" class="img-cropper">
+            <div class="img-cropper-container">
+                <div class="img-cropper-header">
+                    上传头像
+                    <span class="close-icon"></span>
+                </div>
+                <div class="img-cropper-content">
+                    <div class="img-main">
+                        <div class="img-main-wrapper">
+                            <img src="./猫眼电影 - 一网打尽好电影_files/7050be720bc70eee8c86c0add2026bc87764.png">
+                        </div>
+                    </div>
+                    <div class="img-preview">
+                        <p>预览</p>
+                        <div class="layui-input-block" ></div>
+                    </div>
+                </div>
+                <div class="img-cropper-footer">
+                    <div class="img-btn-confirm">
+                        确认
+                    </div>
+                    <div class="img-btn-cancel">
+                        取消
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="mask3">
+        <div class="modal-container" style="display:none">
+            <div class="modal">
+                <span class="icon"></span>
+
+                <p class="tip">您确定要删除该订单嘛？删除后，不可恢复～</p>
+
+                <div class="short btn ok-btn">确定</div>
+                <div class="short btn cancel-btn">取消</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mask1">
+        <div class="modal-container" style="display:none">
+            <div class="modal">
+                <span class="icon"></span>
+
+                <p class="tip">请注意，注销账号会清空所有订单信息、影评、积分、<br>账户余额等信息且无法找回，是否继续？</p>
+
+                <div class="short btn ok-btn">确定</div>
+                <div class="short btn cancel-btn">取消</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mask2">
+        <div class="modal-container" style="display:none">
+            <div class="modal">
+                <span class="icon"></span>
+
+                <p class="tip">请联系客服10105335</p>
+
+                <div class="ok-btn btn">我知道了</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>

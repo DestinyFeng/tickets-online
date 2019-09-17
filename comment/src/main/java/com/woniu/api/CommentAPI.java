@@ -4,10 +4,7 @@ import com.woniu.entity.Comment;
 import com.woniu.service.CommentService;
 import com.woniu.util.Page;
 import com.woniu.util.Result;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -53,5 +50,4 @@ public class CommentAPI {
         commentService.insertComment(comment);
         return new Result("success",null,null,null);
     }
-
 }
