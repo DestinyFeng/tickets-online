@@ -1,11 +1,15 @@
 package com.woniu.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cinema implements Serializable {
     /**
     * 影院id
@@ -45,5 +49,5 @@ public class Cinema implements Serializable {
     /**
      * 影院设施图片集合
      */
-    private List<String> pics;
+    private List<Picture> pics;
 }

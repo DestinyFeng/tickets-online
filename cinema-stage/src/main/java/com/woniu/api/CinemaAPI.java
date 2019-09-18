@@ -14,7 +14,8 @@ import java.util.List;
 public class CinemaAPI {
     @Resource
     private CinemaService cinemaService;
-    @RequestMapping
+    @GetMapping
+    @RequestMapping("all")
     public Result selectCinemas(Integer pageIndex){
         if(pageIndex==null||pageIndex==0){
             pageIndex = 1;
@@ -25,7 +26,7 @@ public class CinemaAPI {
         Page page = new Page(pageIndex, count%num==0?count/num:count/num+1, count);
         return new Result("success",null,page,cinemas);
     }
-    @GetMapping
+    @GetMapping("bycid")
     public Result selectCinema(Integer cid){
         Cinema cinema = cinemaService.selectById(cid);
         System.out.println(cinema);
