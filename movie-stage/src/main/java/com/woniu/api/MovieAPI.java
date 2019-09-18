@@ -1,6 +1,8 @@
 package com.woniu.api;
 
 import com.woniu.entity.Movie;
+import com.woniu.entity.MoviePerson;
+import com.woniu.service.MoviePersonService;
 import com.woniu.service.MovieService;
 import com.woniu.util.Result;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -16,11 +19,19 @@ import java.util.Map;
 @RequestMapping("movie")
 public class MovieAPI {
     @Resource
+    private MoviePersonService moviePersonService;
+    @Resource
     private MovieService movieService;
     @GetMapping
-    @RequestMapping("/bymid")
-    public Result selectMovieByMid(Integer cid,Integer mid) throws Exception{
-        return new Result("success",null,movieService.selectMovieByMid(mid),null);
+    @RequestMapping("/bymid/{mid}")
+    public Result selectMovieByMid(@PathVariable Integer mid) throws Exception{
+        Movie movie = movieService.selectMovieByMid(mid);
+        MoviePerson moviePerson = moviePersonService.selectByMid(mid);
+        HashMap<String, Object> map = new HashMap<>(2);
+        map.put("movie",movie);
+        map.put("moviePerson",moviePerson);
+
+        return new Result("success",null,map,null);
     }
 
     @GetMapping
