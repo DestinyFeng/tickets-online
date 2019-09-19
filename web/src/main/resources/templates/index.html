@@ -9,27 +9,28 @@
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="css/contactstyle.css" type="text/css" media="all" />
-<link rel="stylesheet" href="css/faqstyle.css" type="text/css" media="all" />
-<link href="css/single.css" rel='stylesheet' type='text/css' />
-<link href="css/medile.css" rel='stylesheet' type='text/css' />
+<link href="/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="/web/css/contactstyle.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/web/css/faqstyle.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/web/css/viwStyle.css" />
+<link href="/web/css/single.css" rel='stylesheet' type='text/css' />
+<link href="/web/css/medile.css" rel='stylesheet' type='text/css' />
 <!-- banner-slider -->
-<link href="css/jquery.slidey.min.css" rel="stylesheet">
+<link href="/web/css/jquery.slidey.min.css" rel="stylesheet">
 <!-- //banner-slider -->
 <!-- pop-up -->
-<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/web/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
 <!-- //pop-up -->
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font-awesome.min.css" />
+<link rel="stylesheet" href="/web/css/font-awesome.min.css" />
 <!-- //font-awesome icons -->
 <!-- js -->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
 <!-- //js -->
 <!-- banner-bottom-plugin -->
-<link href="css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
-<script src="js/owl.carousel.js"></script>
+<link href="/web/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
+<script src="/web/js/owl.carousel.js"></script>
 <style>
 	.title{
 		font-family: "楷体";
@@ -81,8 +82,8 @@
 <!-- //banner-bottom-plugin -->
 <!---<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>--->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="/web/js/move-top.js"></script>
+<script type="text/javascript" src="/web/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -96,195 +97,197 @@
 	
 <body>
 <!-- header -->
-	<div class="header">
-		<div class="container">
-			<div class="w3layouts_logo">
-				<a href="index.html"><h1 class="title">爱乐<span id="webtitle-bottom">电影</span></h1></a>
-			</div>
-			<div class="w3l_search_city">
-				<form action="#" method="post">
-					<input type="text" list="city" value="重庆"/>
-					<datalist id="city">
-						<option>北京</option>
-					</datalist>
-				</form>
-			</div>
-			<div class="w3_search">
-				<form action="#" method="post">
-					<input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
-					<input type="submit" value="Go">
-				</form>
-			</div>
-			<div class="w3l_sign_in_register">
-				<ul>
-					<li><i class="glyphicon glyphicon-user"></i></li>
-					<li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-<!-- //header -->
-<!-- bootstrap-pop-up -->
-	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					欢迎使用爱乐电影
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+	<div class="head_div2">
+		<div class="header">
+			<div class="container">
+				<div class="w3layouts_logo">
+					<a href="index.html"><h1 class="title">爱乐<span id="webtitle-bottom">电影</span></h1></a>
 				</div>
-				<section>
-					<div class="modal-body">
-						<div class="w3_login_module">
-							<div class="module form-module">
-							  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-								<div class="tooltip">点击注册</div>
-							  </div>
-							  <div class="form">
-							  	<fieldset>
-							  		<legend class="form-legend">账号登录</legend>
-							  		<div class="log-toggle"><i class="switch-log">账号密码登录</i>
-							  		</div>
-							  		<form action="#" method="post">
-									  <input type="text" name="Username" placeholder="请输入用户名" required="required">
-									  <input type="password" name="Password" placeholder="请输入密码" required="required">
-									  <label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
-									  <a href="#" class="forget-a">忘记密码？</a>
-									  <input class="btn btn-success" type="submit" value="登录">
-									</form>
-							  	</fieldset>
-							  </div>
-							  <!--
-                              	作者：971872973@qq.com
-                              	时间：2019-09-07
-                              	描述：手机验证的表单
-                              -->
-							  <!--<div class="log-form">
-							  	<fieldset>
-							  		<legend class="form-legend">账号登录</legend>
-								  	<form action="#" method="post">
-									  <input type="text" name="Username" placeholder="请输入手机号" required="required">
-									  <input type="password" name="Password" placeholder="请输入验证码" required="required">
-									  <input type="button" class="code-button" name="getcode" value="获取验证码"/>
-									  <input class="btn btn-success" type="submit" value="登录">
-									</form>
-								</fieldset>
-							  </div>-->
-							  <div class="form">
-								<fieldset>
-									<legend class="form-legend">注册账户</legend>
-									<form action="#" method="post">
-									  <input type="text" name="username" placeholder="新用户名" required="">
-									  <input type="password" name="password" placeholder="新密码" required="">
-									  <input type="password" name="checkpwd" placeholder="请确认密码" required="">
-									  <input type="text" name="phone" placeholder="电话" required="">
-									  <input type="submit" value="注册">
-									</form>
-								</fieldset>
-							  </div>
+				<div class="w3l_search_city">
+					<form action="#" method="post">
+						<input type="text" list="city" value="重庆"/>
+						<datalist id="city">
+							<option>北京</option>
+						</datalist>
+					</form>
+				</div>
+				<div class="w3_search">
+					<form action="#" method="post">
+						<input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
+						<input type="submit" value="Go">
+					</form>
+				</div>
+				<div class="w3l_sign_in_register">
+					<ul>
+						<li><i class="glyphicon glyphicon-user"></i></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<!-- //header -->
+		<!-- bootstrap-pop-up -->
+		<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						欢迎使用爱乐电影
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<section>
+						<div class="modal-body">
+							<div class="w3_login_module">
+								<div class="module form-module">
+									<div class="toggle"><i class="fa fa-times fa-pencil"></i>
+										<div class="tooltip">点击注册</div>
+									</div>
+									<div class="form">
+										<fieldset>
+											<legend class="form-legend">账号登录</legend>
+											<div class="log-toggle"><i class="switch-log">账号密码登录</i>
+											</div>
+											<form action="#" method="post">
+												<input type="text" name="Username" placeholder="请输入用户名" required="required">
+												<input type="password" name="Password" placeholder="请输入密码" required="required">
+												<label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+												<a href="#" class="forget-a">忘记密码？</a>
+												<input class="btn btn-success" type="submit" value="登录">
+											</form>
+										</fieldset>
+									</div>
+									<!--
+                                        作者：971872973@qq.com
+                                        时间：2019-09-07
+                                        描述：手机验证的表单
+                                    -->
+									<!--<div class="log-form">
+                                        <fieldset>
+                                            <legend class="form-legend">账号登录</legend>
+                                            <form action="#" method="post">
+                                            <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                            <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                            <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                            <input class="btn btn-success" type="submit" value="登录">
+                                          </form>
+                                      </fieldset>
+                                    </div>-->
+									<div class="form">
+										<fieldset>
+											<legend class="form-legend">注册账户</legend>
+											<form action="#" method="post">
+												<input type="text" name="username" placeholder="新用户名" required="">
+												<input type="password" name="password" placeholder="新密码" required="">
+												<input type="password" name="checkpwd" placeholder="请确认密码" required="">
+												<input type="text" name="phone" placeholder="电话" required="">
+												<input type="submit" value="注册">
+											</form>
+										</fieldset>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 			</div>
 		</div>
-	</div>
-	<script>
-		$('.toggle').click(function(){
-		  // Switches the Icon
-		  $(this).children('i').toggleClass('fa-pencil');
-		  // Switches the forms  
-		  $('.form').animate({
-			height: "toggle",
-			'padding-top': 'toggle',
-			'padding-bottom': 'toggle',
-			opacity: "toggle"
-		  }, "slow");
-		});
-		//手机验证与密码验证切换（待处理）
-		/*$('.log-toggle').click(function(){
-			if($(this).children('i').val()=='账号密码登录'){
-				$(this).children('i').val('手机验证码登录')
-			}else if($(this).children('i').val()=='手机验证码登录'){
-				$(this).children('i').val('账号密码登录')
-			}
-			$('.log-form').animate({
-			height: "toggle",
-			'padding-top': 'toggle',
-			'padding-bottom': 'toggle',
-			opacity: "toggle"
-		  }, "slow");
-		});*/
-	</script>
-<!-- //bootstrap-pop-up -->
-<!-- nav -->
-	<div class="movies_nav">
-		<div class="container">
-			<nav class="navbar navbar-default">
-				<div class="navbar-header navbar-left">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-					<nav>
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">首页</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">类型 <b class="caret"></b></a>
-								<ul class="dropdown-menu multi-column columns-3">
-									<li>
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<li><a href="genres.html">Action</a></li>
-											<li><a href="genres.html">Biography</a></li>
-											<li><a href="genres.html">Crime</a></li>
-											<li><a href="genres.html">Family</a></li>
-											<li><a href="horror.html">Horror</a></li>
-											<li><a href="genres.html">Romance</a></li>
-											<li><a href="genres.html">Sports</a></li>
-											<li><a href="genres.html">War</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<li><a href="genres.html">Adventure</a></li>
-											<li><a href="comedy.html">Comedy</a></li>
-											<li><a href="genres.html">Documentary</a></li>
-											<li><a href="genres.html">Fantasy</a></li>
-											<li><a href="genres.html">Thriller</a></li>
-										</ul>
-									</div>
-									<div class="col-sm-4">
-										<ul class="multi-column-dropdown">
-											<li><a href="genres.html">Animation</a></li>
-											<li><a href="genres.html">Costume</a></li>
-											<li><a href="genres.html">Drama</a></li>
-											<li><a href="genres.html">History</a></li>
-											<li><a href="genres.html">Musical</a></li>
-											<li><a href="genres.html">Psychological</a></li>
-										</ul>
-									</div>
-									<div class="clearfix"></div>
-									</li>
-								</ul>
-							</li>
-							<li><a href="series.html">影院</a></li>
-							<li><a href="NEWs.html">热点</a></li>
-							<li><a href="short-codes.html">榜单</a></li>
-						</ul>
-					</nav>
-				</div>
-			</nav>	
+		<script>
+			$('.toggle').click(function(){
+				// Switches the Icon
+				$(this).children('i').toggleClass('fa-pencil');
+				// Switches the forms
+				$('.form').animate({
+					height: "toggle",
+					'padding-top': 'toggle',
+					'padding-bottom': 'toggle',
+					opacity: "toggle"
+				}, "slow");
+			});
+			//手机验证与密码验证切换（待处理）
+			/*$('.log-toggle').click(function(){
+                if($(this).children('i').val()=='账号密码登录'){
+                    $(this).children('i').val('手机验证码登录')
+                }else if($(this).children('i').val()=='手机验证码登录'){
+                    $(this).children('i').val('账号密码登录')
+                }
+                $('.log-form').animate({
+                height: "toggle",
+                'padding-top': 'toggle',
+                'padding-bottom': 'toggle',
+                opacity: "toggle"
+              }, "slow");
+            });*/
+		</script>
+		<!-- //bootstrap-pop-up -->
+		<!-- nav -->
+		<div class="movies_nav">
+			<div class="container">
+				<nav class="navbar navbar-default">
+					<div class="navbar-header navbar-left">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+						<nav>
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="index.html">首页</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown">类型 <b class="caret"></b></a>
+									<ul class="dropdown-menu multi-column columns-3">
+										<li>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<li><a href="genres.html">Action</a></li>
+													<li><a href="genres.html">Biography</a></li>
+													<li><a href="genres.html">Crime</a></li>
+													<li><a href="genres.html">Family</a></li>
+													<li><a href="horror.html">Horror</a></li>
+													<li><a href="genres.html">Romance</a></li>
+													<li><a href="genres.html">Sports</a></li>
+													<li><a href="genres.html">War</a></li>
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<li><a href="genres.html">Adventure</a></li>
+													<li><a href="comedy.html">Comedy</a></li>
+													<li><a href="genres.html">Documentary</a></li>
+													<li><a href="genres.html">Fantasy</a></li>
+													<li><a href="genres.html">Thriller</a></li>
+												</ul>
+											</div>
+											<div class="col-sm-4">
+												<ul class="multi-column-dropdown">
+													<li><a href="genres.html">Animation</a></li>
+													<li><a href="genres.html">Costume</a></li>
+													<li><a href="genres.html">Drama</a></li>
+													<li><a href="genres.html">History</a></li>
+													<li><a href="genres.html">Musical</a></li>
+													<li><a href="genres.html">Psychological</a></li>
+												</ul>
+											</div>
+											<div class="clearfix"></div>
+										</li>
+									</ul>
+								</li>
+								<li><a href="series.html">影院</a></li>
+								<li><a href="NEWs.html">热点</a></li>
+								<li><a href="short-codes.html">榜单</a></li>
+							</ul>
+						</nav>
+					</div>
+				</nav>
+			</div>
 		</div>
 	</div>
 <!-- //nav -->
 <!-- banner -->
-	<div id="slidey" style="display:none;">
+	<div class="marginTop_indexhead" id="slidey" style="display:none;">
 		<ul>
 			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'> Tarzan, having acclimated to life in London, is called back to his former home in the jungle to investigate the activities at a mining encampment.</p></li>
 			<li><img src="images/2.jpg" alt=" "><p class='title'>Maximum Ride</p><p class='description'>Six children, genetically cross-bred with avian DNA, take flight around the country to discover their origins. Along the way, their mysterious past is ...</p></li>

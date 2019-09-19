@@ -19,7 +19,7 @@
 						<div class="topleaderdiv">
 							<!--logo图标div-->
 							<div class="cinemalogo">
-								<a href="cinemaIndex.html"><img class="cinemalogoimg" src="/web/img/woniuLogo.png"/></a>
+								<a href="cinemaIndex.html"><img class="cinemalogoimg" :src="cinema.logo"/></a>
 							</div>
 							<!--头部导航栏div-->
 							<div class="cinemaleader">
@@ -60,20 +60,20 @@
 							<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 								<!-- 底部按钮区-->
 								<ol class="carousel-indicators">
-									<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-									<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                        <li v-for="(pic,index) in cinema.pics" :class="{'active':activeIndex===index}" data-target="#carousel-example-generic" :data-slide-to="index"></li>
+                                    <!--									<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
 									<!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
 								</ol>
 								<!-- 图片区 -->
 								<div class="carousel-inner" role="listbox">
-									<div class="item active">
-										<img class="chartsimg" src="/web/img/registbackground.jpg" alt="...">
+									<div class="item" :class="{'active':activeIndex===index}" v-for="(pic,index) in cinema.pics">
+										<img class="chartsimg" :src="pic.url" alt="...">
 										<div class="carousel-caption"></div>
 									</div>
-									<div class="item">
-										<img class="chartsimg" src="/web/img/loginbackground.jpg" alt="...">
-										<div class="carousel-caption"></div>
-									</div>
+<!--									<div class="item">-->
+<!--										<img class="chartsimg" src="/web/img/loginbackground.jpg" alt="...">-->
+<!--										<div class="carousel-caption"></div>-->
+<!--									</div>-->
 								</div>
 								<!-- 左右翻页按钮 -->
 								<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -111,7 +111,7 @@
 							<div class="playarea">
 								<div class="playtrailer">
 									<video class="playview" controls preload="auto" poster="/web/img/registbackground.jpg" >
-										<source src="video/sintel.mp4" type='video/mp4' />
+										<source src="/web/video/sintel.mp4" type='video/mp4' />
 									</video>
 								</div>
 							</div>
@@ -184,7 +184,7 @@
 									</div>
 									<div class="righttextdiv">
 										<div class="rightcontentdiv">
-											<img class="rightimg" src="/web/img/registbackground.jpg"/>
+											<img class="rightimg" :src="onepic.url"/>
 										</div>
 									</div>
 								</div>
@@ -219,7 +219,7 @@
 																<a href="javascript:;" @click="gotoMovieMessage(1,m1.id)">
 																	<img class="movie-img" :src="m1.mpic"/>
 																	<div class="itemname">
-																		<h5><strong v-text="m1.mName"></strong></h5>
+																		<h5><strong v-text="m1.mname"></strong></h5>
 																	</div>
 																</a>
 															</div>
@@ -231,7 +231,7 @@
 																<a href="javascript:;" @click="gotoMovieMessage(1,m2.id)">
 																	<img class="movie-img" :src="m2.mpic"/>
 																	<div class="itemname">
-																		<h5><strong v-text="m2.mName"></strong></h5>
+																		<h5><strong v-text="m2.mname"></strong></h5>
 																	</div>
 																</a>
 															</div>
@@ -270,8 +270,12 @@
 				var app=new Vue({
 					el:"#app",
 					data:{
-						onshow:null,
-						willshow:null
+						onshow:[],
+						willshow:[],
+						cinema:{},
+                        activeIndex:0,
+						onepic:{}
+
 					},
 					created:function () {
 						_this=this;
@@ -282,6 +286,18 @@
 							success:function (data) {
 								_this.onshow=data.object.onShow;
 								_this.willshow=data.object.willShow;
+								console.log(data.object)
+							}
+						})
+						//根据影院id查出影院信息
+						$.ajax({
+							url:"/cinema-stage/cinema/bycid?cid=1",
+							type:"get",
+							dataType:"json",
+							success:function (data) {
+								_this.cinema=data.object;
+								_this.onepic=data.object.pics[2];
+								console.log(data)
 							}
 						})
 

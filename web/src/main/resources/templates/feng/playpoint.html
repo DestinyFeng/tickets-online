@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="/web/css/bootstrap.css" rel="stylesheet">
 		<link rel="stylesheet" href="/web/css/viwStyle.css" />
+		<link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all">
 		<script type="text/javascript" src="/web/js/jquery-3.4.0.min.js"></script>
 		<script type="text/javascript" src="/web/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="/web/js/vue.js"></script>
@@ -17,37 +18,33 @@
 
 	<body>
 	<div id="app">
-		<div class="head_div marginTop_head">
-			<div class="bg-danger col-sm-8 col-sm-offset-2 nopadding">
-				<div class="col-sm-2 nopadding">
-					<a href="#"><img class="logoimg" src="/web/img/woniuLogo.png" alt="LOGO图标" /></a>
-				</div>
-				<div class="col-sm-8 text-center bg-info">
-					<div class="col-sm-1 bg-warning city_div text-center">
-						城市
+		<div class="head_div">
+			<div class="header">
+				<div class="container">
+					<div class="w3layouts_logo">
+						<a href="index.html"><h1 class="title">爱乐<span id="webtitle-bottom">电影</span></h1></a>
 					</div>
-					<div class="nav navi col-sm-7 text-left nopadding">
-						<ul class="navbar list-inline bg-primary text-center">
-							<li>首页</li>
-							<li>电影</li>
-							<li>热映</li>
-							<li>影院</li>
-							<li>榜单</li>
-							<li>热点</li>
-						</ul>
-					</div>
-					<div class="col-sm-4 top_padding">
-						<form action="" method="post">
-							<input type="search" class="search" name="" placeholder="找片、找人、找影院" autocomplete="off" maxlength="32" />
-							<input type="submit" value="      " class="search_btn" />
+					<div class="w3l_search_city">
+						<form action="#" method="post">
+							<input type="text" list="city" value="重庆"/>
+							<datalist id="city">
+								<option>北京</option>
+							</datalist>
 						</form>
 					</div>
-				</div>
-				<div class="col-sm-2 text-right bg-success userInfo_div">
-					<div class="headimg">
-						<a href="#"><img src="/web/img/registbackground.png" class="headimage" /></a>
-						<span class="caret">username</span>
+					<div class="w3_search">
+						<form action="#" method="post">
+							<input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
+							<input type="submit" value="Go">
+						</form>
 					</div>
+					<div class="w3l_sign_in_register">
+						<ul>
+							<li><i class="glyphicon glyphicon-user"></i></li>
+							<li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
 				</div>
 			</div>
 		</div>
@@ -58,13 +55,17 @@
 						<div class="photos col-sm-2 col-sm-offset-2">
 							<div class="imagesdiv">
 								<a href="#" class="pics">
-									<img class="headimages" src="/web/img/loginbackground.jpg"/>
+									<img class="headimages" :src="cinema.facility"/>
 								</a>
 							</div>
 						</div>
 						<div class="massagesdiv col-sm-2">
 							<div class="mescontent">
-								<h3 class="cinemaname">万达影城</h3>
+								<a href="/web/feng/cinemaIndex.html">
+									<h3 class="cinemaname" v-text="cinema.cname"></h3>
+									<h5  v-text="cinema.caddress"></h5>
+									<h5  v-text="cinema.phone"></h5>
+								</a>
 							</div>
 						</div>
 						<div class="mapdiv col-sm-2 col-sm-offset-1 text-right">
@@ -238,7 +239,8 @@
 						nowMovie:{},
 						playTime:[],
 						nowMessage:[],
-						messageByTime:[]
+						messageByTime:[],
+						cinema:{}
 					},
 					methods:{
 						changeMovie:function (index,e) {
@@ -281,6 +283,8 @@
 					},
 					created:function () {
 						_this = this;
+
+						//根据影院id查出拍片的所有电影及拍片详情
 						$.ajax({
 							url:"/movie-stage/movie/bycid/1",
 							type:"get",
@@ -316,6 +320,17 @@
 									}
 
 								}
+							}
+						})
+
+						//根据影院id查出影院信息
+						$.ajax({
+							url:"/cinema-stage/cinema/bycid?cid=1",
+							type:"get",
+							dataType:"json",
+							success:function (data) {
+								_this.cinema=data.object
+								console.log(data)
 							}
 						})
 					}
