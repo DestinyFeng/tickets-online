@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+		<title>查看套餐</title>
+		<link rel="stylesheet" href="/web/layui/css/layui.css?t=2" media="all">
+		<link rel="stylesheet" href="/web/css/common.css?t=2" media="all">
+		<link href="/web/css/bootstrap.min.css" rel="stylesheet">
+		<meta property="og:image" content="https://ianlunn.github.io/Hover/hover.jpg" />
+		<meta property="og:site_name" content="Hover.css"/>
+		<meta property="og:title" content="Hover.css - A collection of CSS3 powered hover effects" />
+		<link href="/web/css/demo-page.css" rel="stylesheet" media="all">
+		<link href="/web/css/hover.css" rel="stylesheet" media="all">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+	</head>
+	<style type="text/css" id="LAY_layadmin_theme"></style>
+	<style>
+		.search-sign{
+			margin-right: 5px;
+			color: black;
+		}	
+		.menu-pic {
+			height: 60%;
+			margin-bottom: 10px;
+		}
+		
+		.menu-pic img {
+			height: 100%;
+			width: 50%;
+		}
+		
+		.menu-name {
+			height: 40%;
+			text-align: center;
+		}
+		
+		.name-span {
+			font-weight: 900;
+			font-size: 20px;
+		}
+		
+		.menu-detail {
+			font-size: 15px;
+			font-family: "楷体";
+			color: red;
+		}
+		
+		.menu-vue {
+			font-size: 15px;
+			font-family: "楷体";
+			color: red;
+			font-style: italic;
+		}
+		
+		input {
+			color: black;
+		}
+		.menu-input{
+			border: none;
+			outline: none;
+			background-color: #A7E4F9;
+		}
+		.menu-input:hover{
+			border-bottom: #93ED52 3px solid;
+		}
+		.sertain-btn{
+			float: right;
+			background-color: #BA2939;
+		}
+		.layui-field-title span{
+			margin-left: 13px;
+			font-family: "仿宋";
+			font-style: oblique;
+			font-size: 17px;
+			font-weight: 700;
+		}
+		#update-menu{
+			display: none;
+		}
+		#del-menu{
+			display: none;
+		}
+		#insert-menu{
+			display: none;
+		}
+		.op-word{
+			font-size: 25px;
+			font-family: "微软雅黑";
+			font-weight: 900;
+			font-style: italic;
+			color: #1A5667;
+		}
+		.check-menu{
+			display: none;
+		}
+		.show-check{
+			color: red;
+			font-family: "楷体";
+			font-size: 17px;
+		}
+	</style>
+
+	<body style="background-image: url(/web/images/backpic.png);">
+		<div id="LAY_WRAP">
+			<div id='LAY_app' class="layui-side layui-bg-black">
+				<div class="layui-side-scroll">
+					<div class="layui-logo" lay-href=""> <span>导航菜单</span> </div>
+					<!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+					<ul class="layui-nav layui-nav-left layui-nav-tree" lay-filter="layui-nav-left">
+						<li class="layui-nav-item">
+							<a class="" href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i> <cite>套餐管理</cite></a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="" href="javascript:;"> <cite>查看套餐</cite></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i> <cite>影院管理</cite></a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a href="javascript:;"> <cite>影院资料</cite></a>
+									<dl class="layui-nav-child layui-cite-2">
+										<dd>
+											<a href="javascript:;"> <cite>影院详情</cite></a>
+										</dd>
+										<dd>
+											<a href="javascript:;"> <cite>套餐状况</cite></a>
+										</dd>
+									</dl>
+								</dd>
+								<dd>
+									<a href="javascript:;"> <cite>即将到期</cite></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a class="" href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i> <cite>日志管理</cite></a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="" href="javascript:;"> <cite>查看日志</cite></a>
+								</dd>
+							</dl>
+						</li>
+						<li class="layui-nav-item">
+							<a class="" href="javascript:;"><i class="layui-icon layui-icon-face-smile"></i> <cite>收益管理</cite></a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a class="" href="javascript:;"> <cite>查看收益</cite></a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<!--主体-->
+			<div class="layui-body" id="LAY_app_body">
+				<!-- 头部区域 -->
+				<div class="layui-header head">
+					<ul class="layui-nav layui-layout-left" lay-filter="layadmin-layout-left">
+						<li class="layui-nav-item layadmin-flexible" lay-unselect="">
+							<a href="javascript:;" layadmin-event="flexible" title="侧边伸缩">
+								<i class="layui-icon layui-icon-shrink-right" id="LAY_app_flexible"></i>
+							</a>
+						</li>
+						<li class="layui-nav-item" lay-unselect="">
+							<a href="#" layadmin-event="refresh" title="刷新">
+								<i class="layui-icon layui-icon-refresh-3"></i>
+							</a>
+						</li>
+						<li class="layui-nav-item layui-hide-xs" lay-unselect="">
+							<form action="#" method="post">
+								<span class="glyphicon glyphicon-search search-sign"></span>
+								<input type="text" placeholder="搜索一家影院..." autocomplete="off" class="layui-input layui-input-search" layadmin-event="serach" lay-action="template/search/keywords=">
+								<button class="layui-btn layui-btn-danger" onclick="searchcinema()" style="float: right;margin-top: 5px;">搜索</button>
+							</form>
+						</li>
+					</ul>
+					<ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+						<li class="layui-nav-item stage-title" lay-unselect="">
+							爱乐后台管理系统
+						</li>
+						<li class="layui-nav-item" lay-unselect="">
+							<a href="javascript:;"> <span>管理员名称</span> <span class="layui-nav-more"></span></a>
+							<dl class="layui-nav-child">
+								<dd>
+									<a lay-href="set/user/info">基本资料</a>
+								</dd>
+								<dd>
+									<a lay-href="set/user/password">修改密码</a>
+								</dd>
+								
+								<dd layadmin-event="logout" style="text-align: center;">
+									<a>退出</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</div>
+				<div class="layui-fluid" id="menu">
+					<div class="layui-card" style="height: 30%;">
+						<div class="layui-card-header ">套餐管理</div>
+						<div v-for="(menu,index) in list">
+							<div class="col-lg-4" style="height: 100%;">
+								<div align="center" class="menu-pic">
+									<img src="/web/images/menu.jpg" />
+								</div>
+								<div class="menu-name">
+									<span class="name-span" v-text="menu.name"></span>
+									</br>
+									<span class="menu-detail">套餐资费:</span>
+									<span class="menu-vue" v-text="menu.money"></span>
+									<span class="menu-detail">元</span>
+									</br>
+									<span class="menu-detail">使用期限:</span>
+									<span class="menu-vue" v-text="menu.period"></span>
+									<span class="menu-detail">年</span>
+								</div>
+							</div>
+						</div>
+						<!--<div class="col-lg-4" style="height: 100%;">
+							<div align="center" class="menu-pic">
+								<img src="image/menu.jpg" />
+							</div>
+							<div class="menu-name">
+								<span class="name-span">B套餐</span>
+								</br>
+								<span class="menu-detail">套餐资费:</span>
+								<span class="menu-vue" v-text="money"></span>
+								<span class="menu-detail">元</span>
+								</br>
+								<span class="menu-detail">使用期限:</span>
+								<span class="menu-vue" v-text="period"></span>
+								<span class="menu-detail">年</span>
+							</div>
+						</div>
+						<div class="col-lg-4" style="height: 100%;">
+							<div align="center" class="menu-pic">
+								<img src="image/menu.jpg" />
+							</div>
+							<div class="menu-name">
+								<span class="name-span">C套餐</span>
+								</br>
+								<span class="menu-detail">套餐资费:</span>
+								<span class="menu-vue" v-text="money"></span>
+								<span class="menu-detail">元</span>
+								</br>
+								<span class="menu-detail">使用期限:</span>
+								<span class="menu-vue" v-text="period"></span>
+								<span class="menu-detail">年</span>
+							</div>
+						</div>-->
+					</div>
+					<div class="layui-col-md12">
+						<div class="layui-card">
+							<div class="layui-card-body">
+								<br><br><br>
+								<br><br><br>
+								<div class="layui-nav">
+									<ul>
+									<li class="layui-nav-item">
+										<button class="btn btn-success hvr-float-shadow" @click="update()">修改套餐</button>
+									</li>
+									<li class="layui-nav-item">
+										<button class="btn btn-success hvr-float-shadow" @click="insert()">新增套餐</button>
+									</li>
+									<li class="layui-nav-item">
+										<button class="btn btn-success hvr-float-shadow" @click="del()">删除套餐</button>
+									</li>
+									<div style="text-align:right;float: right;">
+										<li class="layui-nav-item">
+											<button class="btn hvr-shutter-out-horizontal" style="color: black;" @click="hideall()">控制台</button>
+										</li>
+										<li class="layui-nav-item">
+											<button class="btn hvr-bounce-to-top" style="color: black;">个人中心</button>
+										</li>
+										<span class="layui-nav-bar" style="width: 0px; left: 0px; opacity: 0;"></span>
+									</div>
+								</ul>
+								</div>
+								<!--选择性的显示，根据按钮来判断-->
+								<!--若点击的是修改套餐-->
+								<div class="col-lg-12" id="update-menu" style="border-top: red 1px solid;">
+									<div class="layui-field-title col-lg-4">
+										<span>套餐类型</span>
+									</div>
+									<div class="layui-field-title col-lg-4">
+										<span>套餐资费</span>
+									</div>
+									<div class="layui-field-title col-lg-4">
+										<span>套餐使用期限</span>
+									</div>
+									<div v-for="(menu,index) in list">
+										<div class="col-lg-12">
+											<div class="layui-field-box col-lg-4">
+												<span class="name-span" v-text="menu.name"></span>
+											</div>
+											<div class="layui-field-box col-lg-4">
+												<input type="text" hidden="hidden" name="mid" v-model="menu.id"/>
+												<input type="text" style="padding-left: 13px;" class="menu-input" v-model="menu.money" name="money" placeholder="请输入新的金额..."/>
+											</div>
+											<div class="layui-field-box col-lg-4">
+												<input type="text" name="period" style="text-align: center" v-model="menu.period" class="menu-input" placeholder="请输入新的套餐时限..."/>
+											</div>
+										</div>
+									</div>
+									<!--<div class="col-lg-12">
+										<div class="layui-field-box col-lg-4">
+											<span class="name-span">套餐B</span>
+										</div>
+										<div class="layui-field-box col-lg-4">
+											<input type="text" class="menu-input" placeholder="请输入新的金额..."/>
+										</div>
+										<div class="layui-field-box col-lg-4">
+											<input type="text" class="menu-input" placeholder="请输入新的套餐时限..."/>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="layui-field-box col-lg-4">
+											<span class="name-span">套餐C</span>
+										</div>
+										<div class="layui-field-box col-lg-4">
+											<input type="text" class="menu-input" placeholder="请输入新的金额..."/>
+										</div>
+										<div class="layui-field-box col-lg-4">
+											<input type="text" class="menu-input" placeholder="请输入新的套餐时限..."/>
+										</div>
+									</div>-->
+									<div class="col-lg-12">
+										<button class="sertain-btn btn hvr-shutter-in-vertical" @click="confirmupdate()">确定</button>
+									</div>
+								</div>
+								<!--
+                                	作者：971872973@qq.com
+                                	时间：2019-09-17
+                                	描述：新增一个套餐
+                                -->
+                                <div class="col-lg-12" id="insert-menu" style="border-top: red 1px solid;">
+                                	<div>
+                                		<span class="op-word">新套餐设定</span>
+                                	</div>
+                                	<div style="margin-top: 40px;">
+                                		<div class="col-lg-4">
+                                			<span class="name-span">套餐名:</span>
+                                			<input id="new-name" type="text" class="menu-input" placeholder="新套餐名..."/>
+                                			<br>
+											<span class="show-check" style="font-size: 15px;"></span>
+										</div>
+                                		<div class="col-lg-4">
+                                			<span class="name-span">套餐资费:</span>
+                                			<input id="new-price" type="text" class="menu-input" placeholder="新套餐资费..."/>
+											<br>
+											<span class="show-check" style="font-size: 15px;"></span>
+										</div>
+                                		<div class="col-lg-4">
+                                			<span class="name-span">套餐年限:</span>
+                                			<input id="new-period" type="text" class="menu-input" placeholder="新套餐的年限..."/>
+											<br>
+											<span class="show-check" style="font-size: 15px;"></span>
+										</div>
+                                	</div>
+                                	<div style="margin-top: 100px;">
+                                		<button class="sertain-btn btn hvr-shutter-in-vertical" @click="confirminsert()">确定</button>
+                                	</div>
+                                </div>
+								<!--
+                                	作者：971872973@qq.com
+                                	时间：2019-09-17
+                                	描述：删除一个套餐
+                                -->
+                                <div class="col-lg-12" id="del-menu" style="border-top: red 1px solid;">
+                                	<div>
+                                		<span class="op-word">删除套餐</span>
+                                		<span class="layui-badge">高危操作!</span>
+                                	</div>
+									<!--<form id="form">-->
+									<div style="margin-top: 30px;margin-left: 50px;" v-for="(menu,index) in list">
+										<button class="btn btn-danger hvr-curl-top-left" v-text="menu.name" @click="choose($event)"></button>
+										<span class="show-check"></span>
+										<input type="checkbox" class="check-menu" name="mid" :value="menu.id"/>
+									</div>
+									<!--</form>-->
+                                	<button class="sertain-btn btn hvr-shutter-in-vertical" @click="confirmdel(this)">确定</button>
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="/web/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/web/layui/layui.js?t=2"></script>
+	<script type="text/javascript" src="/web/js/common.js?t=2"></script>
+	<script type="text/javascript" src="/web/js/vue.js"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el: "#menu",
+			data: {
+				list:[]
+			},
+			methods:{
+				update:function(){
+					$("#insert-menu").hide();
+					$("#del-menu").hide();
+					$("#update-menu").show();
+				},
+				insert:function(){
+					$("#insert-menu").show();
+					$("#del-menu").hide();
+					$("#update-menu").hide();
+				},
+				del:function(){
+					$("#insert-menu").hide();
+					$("#del-menu").show();
+					$("#update-menu").hide();
+				},
+				hideall:function(){
+					$("#insert-menu").hide();
+					$("#del-menu").hide();
+					$("#update-menu").hide();
+				},
+				choose:function(e){
+					if($(e.target).next().next().prop("checked")==false){
+						$(e.target).next().next().prop("checked",true);
+						$(e.target).next().html("&nbsp;&nbsp;&nbsp;已选中!");
+					}else{
+						$(e.target).next().next().attr("checked",false);
+						$(e.target).next().empty();
+					}
+				},
+				confirmdel:function (t) {
+					var checkID = [];
+					$("input[name='mid']:checked").each(function (i) {
+						checkID[i] = $(this).val();
+					})
+					if(checkID.length==0){
+						alert("没找到可删除的目标！");
+						return;
+					}
+					var flag = confirm("您真的要删除这些套餐么？");
+					if(flag==true){
+						alert("checkID-----"+checkID);
+						$.ajax({
+							url:"/cinema-stage/menu",
+							data: {"checkID":checkID},
+							type: "delete",
+							dataType: "json",
+							traditional:true,
+							success:function (rt) {
+								alert(rt.code);
+								window.location.reload();
+							}
+						});
+					}
+				},
+				confirminsert:function () {
+					var name = $("#new-name").val();
+					var money = $("#new-price").val();
+					var period = $("#new-period").val();
+					var patrn = /^[0-9]*$/;
+					for(var i=0;i<this.list.length;i++){
+						if(money==this.list[i].money&&period==this.list[i].period){
+							alert("套餐重复！");
+							return;
+						}
+						if(name==this.list[i].name){
+							alert("当前套餐已存在！");
+							return;
+						}
+
+					}
+					if(name!=null&&name!=""&&money!=null&&money!=""&&period!=null
+							&&period!=""&&name.length<=8&&money>=0&&period>=1&&patrn.test(name)==false){
+						$.ajax({
+							url:"/cinema-stage/menu",
+							data:{"name":name,"money":money,"period":period},
+							dataType:"json",
+							type:"post",
+							success:function (rt) {
+								if(rt.message!=null&&rt.message!=""){
+									alert(rt.message);
+								}else{
+									alert(rt.code);
+									window.location.reload();
+								}
+							}
+						});
+					}else{
+						alert("请检查您的新增数据！");
+					}
+				},
+				confirmupdate:function () {
+					var v = this;
+					alert(v.list);
+					for(var i=0;i<v.list.length;i++){
+						$.ajax({
+							url:"/cinema-stage/menu",
+							dataType:"json",
+							data:{"id":v.list[i].id,"name":v.list[i].name,"money":v.list[i].money,"period":v.list[i].period},
+							type:"put",
+							success:function (rt) {
+							}
+						});
+					}
+					window.location.reload();
+				}
+			},
+			created: function () {
+				var v = this;
+				$.ajax({
+					url:"/cinema-stage/menu",
+					dataType:"json",
+					type:"get",
+					success:function (rt) {
+						v.list = rt.list;
+					}
+				});
+			}
+
+		});
+		$(function(){
+			if($("input:checkbox").prop("checked")==true){
+				alert("进来了");
+				$("input:checkbox").prop("checked",false);
+			}
+		});
+		/*当input获得焦点，后面的提示信息清除*/
+		$("#new-name").focus(function () {
+			$("#new-name").next().next().text("");
+		});
+		$("#new-price").focus(function () {
+			$("#new-price").next().next().text("");
+		});
+		$("#new-period").focus(function () {
+			$("#new-period").next().next().text("");
+		});
+		$("#new-name").blur(function () {
+			var name = $("#new-name").val();
+			var patrn = /^[0-9]*$/;
+			if(name==null||name==""){
+				$("#new-name").next().next().text("套餐名不可为空！");
+			}else if(patrn.test(name)){
+				$("#new-name").next().next().text("套餐名不得为纯数字");
+			}else if(name.length>8){
+				$("#new-name").next().next().text("套餐名不得大于8位！");
+			}
+		});
+		$("#new-price").blur(function () {
+			var money = $("#new-price").val();
+			if(money==null||money==""){
+				$("#new-price").next().next().text("套餐资费不可为空！");
+			}else if(money<0){
+				$("#new-price").next().next().text("套餐资费至少为0元！");
+			}
+		});
+		$("#new-period").blur(function () {
+			var period = $("#new-period").val();
+			if(period==null||period==""){
+				$("#new-period").next().next().text("套餐使用期不得为空！");
+			}else if(period<1){
+				$("#new-period").next().next().text("套餐使用期不得小于1年！");
+			}
+		});
+	</script>
+
+</html>

@@ -30,4 +30,10 @@ public class MenuServiceImpl implements MenuService {
         int row = menuMapper.insertSelective(menu);
         return row;
     }
+
+    @Override
+    public Integer updateById(Menu menu) {
+        int row = menuMapper.updateByPrimaryKeySelective(menu);
+        return row;
+    }
 }
