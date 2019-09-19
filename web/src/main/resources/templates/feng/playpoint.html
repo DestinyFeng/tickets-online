@@ -49,96 +49,7 @@
 			</div>
 			<!-- //header -->
 			<!-- bootstrap-pop-up -->
-			<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-				<div class="modal-dialog" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							欢迎使用爱乐电影
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						</div>
-						<section>
-							<div class="modal-body">
-								<div class="w3_login_module">
-									<div class="module form-module">
-										<div class="toggle"><i class="fa fa-times fa-pencil"></i>
-											<div class="tooltip">点击注册</div>
-										</div>
-										<div class="form">
-											<fieldset>
-												<legend class="form-legend">账号登录</legend>
-												<div class="log-toggle"><i class="switch-log">账号密码登录</i>
-												</div>
-												<form action="#" method="post">
-													<input type="text" name="Username" placeholder="请输入用户名" required="required">
-													<input type="password" name="Password" placeholder="请输入密码" required="required">
-													<label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
-													<a href="#" class="forget-a">忘记密码？</a>
-													<input class="btn btn-success" type="submit" value="登录">
-												</form>
-											</fieldset>
-										</div>
-										<!--
-                                            作者：971872973@qq.com
-                                            时间：2019-09-07
-                                            描述：手机验证的表单
-                                        -->
-										<!--<div class="log-form">
-                                            <fieldset>
-                                                <legend class="form-legend">账号登录</legend>
-                                                <form action="#" method="post">
-                                                <input type="text" name="Username" placeholder="请输入手机号" required="required">
-                                                <input type="password" name="Password" placeholder="请输入验证码" required="required">
-                                                <input type="button" class="code-button" name="getcode" value="获取验证码"/>
-                                                <input class="btn btn-success" type="submit" value="登录">
-                                              </form>
-                                          </fieldset>
-                                        </div>-->
-										<div class="form">
-											<fieldset>
-												<legend class="form-legend">注册账户</legend>
-												<form action="#" method="post">
-													<input type="text" name="username" placeholder="新用户名" required="">
-													<input type="password" name="password" placeholder="新密码" required="">
-													<input type="password" name="checkpwd" placeholder="请确认密码" required="">
-													<input type="text" name="phone" placeholder="电话" required="">
-													<input type="submit" value="注册">
-												</form>
-											</fieldset>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</div>
-			<script>
-				$('.toggle').click(function(){
-					// Switches the Icon
-					$(this).children('i').toggleClass('fa-pencil');
-					// Switches the forms
-					$('.form').animate({
-						height: "toggle",
-						'padding-top': 'toggle',
-						'padding-bottom': 'toggle',
-						opacity: "toggle"
-					}, "slow");
-				});
-				//手机验证与密码验证切换（待处理）
-				/*$('.log-toggle').click(function(){
-                    if($(this).children('i').val()=='账号密码登录'){
-                        $(this).children('i').val('手机验证码登录')
-                    }else if($(this).children('i').val()=='手机验证码登录'){
-                        $(this).children('i').val('账号密码登录')
-                    }
-                    $('.log-form').animate({
-                    height: "toggle",
-                    'padding-top': 'toggle',
-                    'padding-bottom': 'toggle',
-                    opacity: "toggle"
-                  }, "slow");
-                });*/
-			</script>
+
 			<!-- //bootstrap-pop-up -->
 			<!-- nav -->
 			<div class="movies_nav">
@@ -206,6 +117,96 @@
 				</div>
 			</div>
 		</div>
+		<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						欢迎使用爱乐电影
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</div>
+					<section>
+						<div class="modal-body">
+							<div class="w3_login_module">
+								<div class="module form-module">
+									<div class="toggle"><i class="fa fa-times fa-pencil"></i>
+										<div class="tooltip">点击注册</div>
+									</div>
+									<div class="form">
+										<fieldset>
+											<legend class="form-legend">账号登录</legend>
+											<div class="log-toggle"><i class="switch-log">账号密码登录</i>
+											</div>
+											<form action="#" method="post">
+												<input type="text" name="Username" placeholder="请输入用户名" required="required">
+												<input type="password" name="Password" placeholder="请输入密码" required="required">
+												<label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+												<a href="#" class="forget-a">忘记密码？</a>
+												<input class="btn btn-success" type="submit" value="登录">
+											</form>
+										</fieldset>
+									</div>
+									<!--
+                                        作者：971872973@qq.com
+                                        时间：2019-09-07
+                                        描述：手机验证的表单
+                                    -->
+									<!--<div class="log-form">
+                                        <fieldset>
+                                            <legend class="form-legend">账号登录</legend>
+                                            <form action="#" method="post">
+                                            <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                            <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                            <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                            <input class="btn btn-success" type="submit" value="登录">
+                                          </form>
+                                      </fieldset>
+                                    </div>-->
+									<div class="form">
+										<fieldset>
+											<legend class="form-legend">注册账户</legend>
+											<form action="#" method="post">
+												<input type="text" name="username" placeholder="新用户名" required="">
+												<input type="password" name="password" placeholder="新密码" required="">
+												<input type="password" name="checkpwd" placeholder="请确认密码" required="">
+												<input type="text" name="phone" placeholder="电话" required="">
+												<input type="submit" value="注册">
+											</form>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<script>
+			$('.toggle').click(function(){
+				// Switches the Icon
+				$(this).children('i').toggleClass('fa-pencil');
+				// Switches the forms
+				$('.form').animate({
+					height: "toggle",
+					'padding-top': 'toggle',
+					'padding-bottom': 'toggle',
+					opacity: "toggle"
+				}, "slow");
+			});
+			//手机验证与密码验证切换（待处理）
+			/*$('.log-toggle').click(function(){
+                if($(this).children('i').val()=='账号密码登录'){
+                    $(this).children('i').val('手机验证码登录')
+                }else if($(this).children('i').val()=='手机验证码登录'){
+                    $(this).children('i').val('账号密码登录')
+                }
+                $('.log-form').animate({
+                height: "toggle",
+                'padding-top': 'toggle',
+                'padding-bottom': 'toggle',
+                opacity: "toggle"
+              }, "slow");
+            });*/
+		</script>
 		<div class="container-fluid">
 			<div class="body_div col-sm-12 nopadding">
 				<div class="bodyhead_div col-sm-12">

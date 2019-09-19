@@ -128,96 +128,7 @@
 		</div>
 		<!-- //header -->
 		<!-- bootstrap-pop-up -->
-		<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						欢迎使用爱乐电影
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					</div>
-					<section>
-						<div class="modal-body">
-							<div class="w3_login_module">
-								<div class="module form-module">
-									<div class="toggle"><i class="fa fa-times fa-pencil"></i>
-										<div class="tooltip">点击注册</div>
-									</div>
-									<div class="form">
-										<fieldset>
-											<legend class="form-legend">账号登录</legend>
-											<div class="log-toggle"><i class="switch-log">账号密码登录</i>
-											</div>
-											<form action="#" method="post">
-												<input type="text" name="Username" placeholder="请输入用户名" required="required">
-												<input type="password" name="Password" placeholder="请输入密码" required="required">
-												<label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
-												<a href="#" class="forget-a">忘记密码？</a>
-												<input class="btn btn-success" type="submit" value="登录">
-											</form>
-										</fieldset>
-									</div>
-									<!--
-                                        作者：971872973@qq.com
-                                        时间：2019-09-07
-                                        描述：手机验证的表单
-                                    -->
-									<!--<div class="log-form">
-                                        <fieldset>
-                                            <legend class="form-legend">账号登录</legend>
-                                            <form action="#" method="post">
-                                            <input type="text" name="Username" placeholder="请输入手机号" required="required">
-                                            <input type="password" name="Password" placeholder="请输入验证码" required="required">
-                                            <input type="button" class="code-button" name="getcode" value="获取验证码"/>
-                                            <input class="btn btn-success" type="submit" value="登录">
-                                          </form>
-                                      </fieldset>
-                                    </div>-->
-									<div class="form">
-										<fieldset>
-											<legend class="form-legend">注册账户</legend>
-											<form action="#" method="post">
-												<input type="text" name="username" placeholder="新用户名" required="">
-												<input type="password" name="password" placeholder="新密码" required="">
-												<input type="password" name="checkpwd" placeholder="请确认密码" required="">
-												<input type="text" name="phone" placeholder="电话" required="">
-												<input type="submit" value="注册">
-											</form>
-										</fieldset>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</div>
-		<script>
-			$('.toggle').click(function(){
-				// Switches the Icon
-				$(this).children('i').toggleClass('fa-pencil');
-				// Switches the forms
-				$('.form').animate({
-					height: "toggle",
-					'padding-top': 'toggle',
-					'padding-bottom': 'toggle',
-					opacity: "toggle"
-				}, "slow");
-			});
-			//手机验证与密码验证切换（待处理）
-			/*$('.log-toggle').click(function(){
-                if($(this).children('i').val()=='账号密码登录'){
-                    $(this).children('i').val('手机验证码登录')
-                }else if($(this).children('i').val()=='手机验证码登录'){
-                    $(this).children('i').val('账号密码登录')
-                }
-                $('.log-form').animate({
-                height: "toggle",
-                'padding-top': 'toggle',
-                'padding-bottom': 'toggle',
-                opacity: "toggle"
-              }, "slow");
-            });*/
-		</script>
+
 		<!-- //bootstrap-pop-up -->
 		<!-- nav -->
 		<div class="movies_nav">
@@ -285,6 +196,69 @@
 			</div>
 		</div>
 	</div>
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				欢迎使用爱乐电影
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<section>
+				<div class="modal-body">
+					<div class="w3_login_module">
+						<div class="module form-module">
+							<div class="toggle"><i class="fa fa-times fa-pencil"></i>
+								<div class="tooltip">点击注册</div>
+							</div>
+							<div class="form">
+								<fieldset>
+									<legend class="form-legend">账号登录</legend>
+									<div class="log-toggle"><i class="switch-log">账号密码登录</i>
+									</div>
+									<form action="#" method="post">
+										<input type="text" name="Username" placeholder="请输入用户名" required="required">
+										<input type="password" name="Password" placeholder="请输入密码" required="required">
+										<label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+										<a href="#" class="forget-a">忘记密码？</a>
+										<input class="btn btn-success" type="submit" value="登录">
+									</form>
+								</fieldset>
+							</div>
+							<!--
+                                作者：971872973@qq.com
+                                时间：2019-09-07
+                                描述：手机验证的表单
+                            -->
+							<!--<div class="log-form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <form action="#" method="post">
+                                    <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                    <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                    <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                    <input class="btn btn-success" type="submit" value="登录">
+                                  </form>
+                              </fieldset>
+                            </div>-->
+							<div class="form">
+								<fieldset>
+									<legend class="form-legend">注册账户</legend>
+									<form action="#" method="post">
+										<input type="text" name="username" placeholder="新用户名" required="">
+										<input type="password" name="password" placeholder="新密码" required="">
+										<input type="password" name="checkpwd" placeholder="请确认密码" required="">
+										<input type="text" name="phone" placeholder="电话" required="">
+										<input type="submit" value="注册">
+									</form>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
 <!-- //nav -->
 <!-- banner -->
 	<div class="marginTop_indexhead" id="slidey" style="display:none;">
@@ -1325,170 +1299,6 @@
 									</p>
 								</div>
 								<div class="clearfix"> </div>
-								<!--
-                                	作者：971872973@qq.com
-                                	时间：2019-09-09
-                                	描述：票房冠军电影展示，用循环写，真实开发时删除
-                                -->
-<!--								<div class="agileinfo_flexislider_grids">
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m22.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Assassin's Creed 3</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Bad Moms</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Central Intelligence</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Light B/t Oceans</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">X-Men</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Peter</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
 -->							</div>
 						</li>
 						<!--
@@ -1524,165 +1334,6 @@
 									</p>
 								</div>
 								<div class="clearfix"> </div>
-								<!--<div class="agileinfo_flexislider_grids">
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Bad Moms</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Central Intelligence</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Light B/t Oceans</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">X-Men</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Peter</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m21.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">The Jungle Book</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>-->
 							</div>
 						</li>
 						<li>
@@ -1713,165 +1364,6 @@
 									</p>
 								</div>
 								<div class="clearfix"> </div>
-								<!--<div class="agileinfo_flexislider_grids">
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m2.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Bad Moms</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m9.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Central Intelligence</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m7.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Light B/t Oceans</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m11.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">X-Men</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m17.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">Peter</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="col-md-2 w3l-movie-gride-agile">
-										<a href="single.html" class="hvr-shutter-out-horizontal"><img src="images/m20.jpg" title="album-name" class="img-responsive" alt=" " />
-											<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-										</a>
-										<div class="mid-1 agileits_w3layouts_mid_1_home">
-											<div class="w3l-movie-text">
-												<h6><a href="single.html">The Secret Life of Pets</a></h6>							
-											</div>
-											<div class="mid-2 agile_mid_2_home">
-												<p>2016</p>
-												<div class="block-stars">
-													<ul class="w3l-ratings">
-														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
-													</ul>
-												</div>
-												<div class="clearfix"></div>
-											</div>
-										</div>
-										<div class="ribben">
-											<p>NEW</p>
-										</div>
-									</div>
-									<div class="clearfix"> </div>
-								</div>-->
 							</div>
 						</li>
 					</ul>
@@ -1995,6 +1487,31 @@ $(document).ready(function(){
 <!-- //Bootstrap Core JavaScript -->
 <!-- here stars scrolling icon -->
 	<script type="text/javascript">
+		$('.toggle').click(function(){
+			// Switches the Icon
+			$(this).children('i').toggleClass('fa-pencil');
+			// Switches the forms
+			$('.form').animate({
+				height: "toggle",
+				'padding-top': 'toggle',
+				'padding-bottom': 'toggle',
+				opacity: "toggle"
+			}, "slow");
+		});
+		//手机验证与密码验证切换（待处理）
+		/*$('.log-toggle').click(function(){
+            if($(this).children('i').val()=='账号密码登录'){
+                $(this).children('i').val('手机验证码登录')
+            }else if($(this).children('i').val()=='手机验证码登录'){
+                $(this).children('i').val('账号密码登录')
+            }
+            $('.log-form').animate({
+            height: "toggle",
+            'padding-top': 'toggle',
+            'padding-bottom': 'toggle',
+            opacity: "toggle"
+          }, "slow");
+        });*/
 		$(document).ready(function() {
 			/*
 				var defaults = {
