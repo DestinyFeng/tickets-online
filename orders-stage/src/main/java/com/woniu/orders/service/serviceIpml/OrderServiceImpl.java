@@ -39,42 +39,28 @@ public class OrderServiceImpl implements OrderService {
         map.put("num", num);
         List<Order> orders = orderMapper.selectOrder(map);
         //由于座位是存的字符串，以，隔开，在这里拆分放入list集合
-        List<Seat> list = new ArrayList<>();
         for (Order order : orders) {
             //格式化日期显示到前台，根据当前日期动态变化
-            System.out.println(order.getPalyTime());
-            order.setFormatTime(showdate(order.getPalyTime()) + "\n" + DateUtil.dateToString(order.getPalyTime()));
+            order.setFormatTime(DateUtil.formatDate(order.getPalyTime()) + "\n" + DateUtil.dateToString(order.getPalyTime()));
             String seat = order.getSeat();
-            String[] split = seat.split(",");
+            String[] split = seat.split("=");
+            List<Seat> list = new ArrayList<>();
             for (int i = 0; i < split.length; i++) {
                 Seat seatname = new Seat();
                 seatname.setSeatName(split[i]);
                 list.add(seatname);
+
             }
-            order.setSeatList(list);
+              order.setSeatList(list);
+
             //将数据库中的code转为字符串信息
-            if (order.getOstate() == Constant.OrderStatusEnum.NO_PAY.getCode()) {
-                order.setOstateMsg(Constant.OrderStatusEnum.NO_PAY.getValue());
-            } else {
-                order.setOstateMsg(Constant.OrderStatusEnum.ORDER_SUCCESS.getValue());
-            }
+            order =this.ostateToString(order);
         }
         return orders;
     }
 
     //根据传入的时间与当前时间比较，该显示什么，今天，明天，后天，其他则显示周几
-    private String showdate(Date date) throws ParseException {
-        Date datenow = new Date();
-        if (date.getTime() - datenow.getTime() <= 24 * 60 * 60 * 1000 && date.getTime() - datenow.getTime() > 0) {
-            return "今天";
-        } else if (date.getTime() - datenow.getTime() <= 24 * 60 * 60 * 1000 * 2 && date.getTime() - datenow.getTime() > 24 * 60 * 60 * 1000) {
-            return "明天";
-        } else if (date.getTime() - datenow.getTime() <= 24 * 60 * 60 * 1000 * 3 && date.getTime() - datenow.getTime() > 24 * 60 * 60 * 1000 * 2) {
-            return "后天";
-        } else {
-            return DateUtil.dayForWeek(date);
-        }
-    }
+
 
     @Override
     //查询订单总数
@@ -90,24 +76,74 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order selectDatail(Integer oid) throws ParseException {
+    public Order selectDatail(String oid) throws ParseException {
         Order order = orderMapper.selectDetail(oid);
-        order.setFormatTime(showdate(order.getPalyTime()) + "\n" + DateUtil.dateToString(order.getPalyTime()));
+        order.setFormatTime(DateUtil.formatDate(order.getPalyTime()) + "\n" + DateUtil.dateToString(order.getPalyTime()));
         List<Seat> list = new ArrayList<>();
         String seat = order.getSeat();
-        String[] split = seat.split(",");
+        String[] split = seat.split("=");
         for (int i = 0; i < split.length; i++) {
             Seat seatname = new Seat();
             seatname.setSeatName(split[i]);
             list.add(seatname);
         }
         order.setSeatList(list);
-        if (order.getOstate() == Constant.OrderStatusEnum.NO_PAY.getCode()) {
-            order.setOstateMsg(Constant.OrderStatusEnum.NO_PAY.getValue());
-        } else {
-            order.setOstateMsg(Constant.OrderStatusEnum.ORDER_SUCCESS.getValue());
-        }
+        order = this.ostateToString(order);
+
+
         return order;
     }
+
+    @Override
+    public void updatebyOid(String oid, Byte ostate, int payinfo_id) {
+        Map<String ,Object> map = new HashMap<>();
+        map.put("oid" ,oid);
+        map.put("ostate",ostate);
+        map.put("payinfo_id",payinfo_id);
+        orderMapper.updatepay(map);
+    }
+
+    @Override
+    //根据订单号修改订单状态
+    public int updateStateByOid(String oid, Byte ostate) {
+        System.out.println("修改订单");
+         Map<String ,Object> map = new HashMap<>();
+        map.put("oid" ,oid);
+        map.put("ostate",ostate);
+        System.out.println(map);
+        int updatepay = orderMapper.updatepay(map);
+        return updatepay;
+    }
+
+    @Override
+    //删除订单
+    public int deleteByOid(String Oid) throws Exception {
+       return orderMapper.deleteByOid(Oid);
+    }
+
+    //一个工具将订单状态转为字符串信息
+    public Order ostateToString (Order order){
+         if (order.getOstate() == Constant.OrderStatusEnum.NO_PAY.getCode()) {
+            //未付款
+            order.setOstateMsg(Constant.OrderStatusEnum.NO_PAY.getValue());
+            //给前端传剩余付款时间数
+            int time= (int)((order.getcTime().getTime()+15*60*1000-System.currentTimeMillis())/1000);
+               order.setLeftPaySecond (time);
+        } else if(order.getOstate() == Constant.OrderStatusEnum.PAID.getCode()){
+            //已付款
+            //电影开场前30分钟支持退款，改签
+            if((order.getPalyTime().getTime()-System.currentTimeMillis())>30*1000){
+                 order.setOstateMsg(Constant.OrderStatusEnum.PAID.getValue());
+            }else {
+                 order.setOstateMsg("订单完成");
+            }
+        }else if (order.getOstate() == Constant.OrderStatusEnum.ORDER_CLOSE.getCode()){
+            order.setOstateMsg(Constant.OrderStatusEnum.ORDER_CLOSE.getValue());
+        } else if (order.getOstate() == Constant.OrderStatusEnum.ORDER_SUCCESS.getCode()){
+            order.setOstateMsg(Constant.OrderStatusEnum.ORDER_SUCCESS.getValue());
+        }
+         return order;
+    }
+
 
 }

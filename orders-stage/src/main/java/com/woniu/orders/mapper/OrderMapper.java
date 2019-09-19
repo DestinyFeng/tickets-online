@@ -22,7 +22,16 @@ public interface OrderMapper {
 
     int selectCount(int uid);
 
-    int delete (Integer oid);
+    int delete(Integer oid);
 
-    Order selectDetail(Integer oid);
+    Order selectDetail(String oid);
+    //更新订单状态
+    int updatepay(Map<String, Object> map);
+
+    /**
+     *
+     * @param oid 订单号
+     * @return
+     */
+    int deleteByOid(String oid);
 }

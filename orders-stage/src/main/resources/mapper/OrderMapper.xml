@@ -40,11 +40,11 @@
       LEFT JOIN cinema c on ms.cid = c.id
       LEFT JOIN movie m on ms.mid = m.id
       LEFT JOIN cinema_room cr on ms.room_id = cr.id
-      WHERE o.uid=#{uid}  and cr.cid=ms.cid  ORDER BY o.c_time asc LIMIT #{start}, #{num};
+      WHERE o.uid=#{uid}  and cr.cid=ms.cid and isdel!=1 and o.ostate between 1 and 49  ORDER BY o.c_time desc  LIMIT #{start}, #{num};
 
     </select>
   <select id="selectCount" resultType="java.lang.Integer">
-    select count(id) from orders where uid=#{uid}
+    select count(id) from orders where uid=#{uid} and isdel!=1
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
@@ -132,7 +132,7 @@
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.woniu.orders.entity.Order">
     <!--@mbg.generated-->
-    update order
+    update orders
     <set>
       <if test="uid != null">
         `uid` = #{uid,jdbcType=INTEGER},
@@ -166,7 +166,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="com.woniu.orders.entity.Order">
     <!--@mbg.generated-->
-    update order
+    update orders
     set `uid` = #{uid,jdbcType=INTEGER},
       c_time = #{cTime,jdbcType=TIMESTAMP},
       money = #{money,jdbcType=DOUBLE},
@@ -181,12 +181,28 @@
     <delete id="delete" parameterType="int">
           DELETE FROM orders where id=#{oid}
     </delete>
-  <select id="selectDetail" resultMap="BaseResultMap" parameterType="int">
+  <select id="selectDetail" resultMap="BaseResultMap" parameterType="string">
      SELECT o.c_time ,o.ostate,o.order_id ,o.seat,o.money ,cr.name ,o.pay_state,m.mpic ,m.mName,c.c_name,c.c_address,c.phone,ms.playtime  from `orders` o
       LEFT JOIN movie_showtime ms on o.movie_showtime_id = ms.id
       LEFT JOIN cinema c on ms.cid = c.id
       LEFT JOIN movie m on ms.mid = m.id
       LEFT JOIN cinema_room cr on ms.room_id = cr.id
-      WHERE o.order_id=#{oid}  and cr.cid=ms.cid
+      WHERE o.order_id=#{oid}  and cr.cid=ms.cid and o.ostate between 1 and 49;
   </select>
+
+  <update id="updatepay" parameterType="map">
+    update orders
+    <set>
+      <if test="ostate!= null">
+        ostate = #{ostate,jdbcType=TINYINT},
+      </if>
+      <if test="payinfo_id!= null">
+        payinfo_id = #{payinfo_id},
+      </if>
+    </set>
+    where order_id=#{oid}
+  </update>
+  <delete id="deleteByOid" parameterType="string">
+     update orders set isdel=1 where order_id=#{oid}
+  </delete>
 </mapper>
