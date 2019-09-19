@@ -38,6 +38,9 @@
 .marginTop {
 	margin-top: 30px;
 }
+.margin2Top {
+	margin-top: 40px;
+}
 
 .marginTop_2head {
 	margin-top: 100px;
@@ -124,13 +127,20 @@
 }
 
 .no_bottom_padding {
-	padding-bottom: 0;
+	padding-bottom: 0 !important;
 }
 
 .bottom_padding {
 	padding-bottom: 20px;
 }
-
+.no_bottom_but_top_padding{
+    padding-bottom: 0 !important;
+    padding-top: 10px !important;
+}
+.littlebottom_andlittletop_padding{
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+}
 .border_radius {
 	padding: 10px;
 	border: 1px solid #9acfea;
