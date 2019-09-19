@@ -161,4 +161,11 @@
     set mtype = #{mtype,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <resultMap id="map1" type="com.woniu.entity.Type">
+    <result property="id" column="tid"></result>
+    <result property="mtype" column="mtype"></result>
+  </resultMap>
+  <select id="getTypesById" parameterType="Integer" resultMap="map1">
+    select t.id tid,mtype from usertype ut left join type t on ut.tid=t.id where ut.uid=#{uid}
+  </select>
 </mapper>

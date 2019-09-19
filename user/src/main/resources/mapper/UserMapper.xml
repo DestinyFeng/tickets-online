@@ -188,6 +188,9 @@
       <if test="record.upic != null" >
         upic = #{record.upic,jdbcType=VARCHAR},
       </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -240,4 +243,21 @@
       upic = #{upic,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <resultMap id="usertype" type="com.woniu.entity.User">
+    <id column="uid" property="id" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="birth" property="birth" jdbcType="DATE" />
+    <result column="upic" property="upic" jdbcType="VARCHAR" />
+    <result column="sign" property="sign" jdbcType="VARCHAR" />
+    <collection property="types" ofType="com.woniu.entity.Type">
+      <id column="tid" property="id"></id>
+      <result property="mtype" column="mtype"></result>
+    </collection>
+  </resultMap>
+  <select id="getUser" parameterType="Integer" resultMap="usertype">
+    select u.id uid,username,phone,birth,upic,sex,sign,mtype,t.id tid from `user` u left join usertype ut on u.id=ut.uid
+    left join type t on t.id=ut.tid where u.id=#{uid}
+  </select>
 </mapper>
