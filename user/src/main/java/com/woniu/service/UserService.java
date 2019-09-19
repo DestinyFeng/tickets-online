@@ -10,6 +10,6 @@ public interface UserService {
     /*删除用户信息*/
     void deleteUser(Integer uid)throws Exception;
     /*新增用户信息*/
-//    void insert
+    void insertUser(User user)throws Exception;
 
 }

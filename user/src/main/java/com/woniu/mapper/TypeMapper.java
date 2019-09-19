@@ -28,4 +28,7 @@ public interface TypeMapper {
     int updateByPrimaryKeySelective(Type record);
 
     int updateByPrimaryKey(Type record);
+
+    /*根据id查询类型信息*/
+    List<Type> getTypesById(Integer id);
 }

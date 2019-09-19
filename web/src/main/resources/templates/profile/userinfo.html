@@ -96,6 +96,9 @@
 
         <div class="w3l_sign_in_register col-lg-1 col-xs-12 col-sm-6">
             <ul class="text-center">
+                <li>
+                    <img id="userimg" src="" class="dnone headimg">
+                </li>
                 <li id="p-info">
                     <img class="user-info" style="height: 40px;" src="/web/images/default_head.png"></img>
                     <span class="caret"></span>
@@ -256,7 +259,7 @@
                             <tr><td>性别：<span v-text="user.sex"></span></td></tr>
                             <tr><td>生日：<span v-text="user.birth"></span></td></tr>
                             <tr><td>电话：<span v-text="user.phone"></span></td></tr>
-                            <tr><td>喜欢的影片类型：<div v-for="type in user.types" class="mtype"><span v-if="type!=null" v-text="type.mtype">您暂未添加喜欢的电影类型哦</span></div></td></tr>
+                            <tr><td>喜欢的影片类型：<div v-if="user.types!=null" v-for="type in user.types" class="mtype"><span v-if="type!=null" v-text="type.mtype">您暂未添加喜欢的电影类型哦</span></div></td></tr>
                             <tr><td>个性签名：<span v-text="user.sign"></span></td></tr>
                         </table>
                     </div>
@@ -292,6 +295,10 @@
                         success:function (data) {
                             if(data.code=="success"){
                                 _data.user=data.object;
+                                // 设置头像样式
+                                $("#p-info").css("display","none");
+                                $("#userimg").css("display","block");
+                                $("#userimg").attr("src",data.object.upic);
                             }else{
                                 alert(data.message);
                             }

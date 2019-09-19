@@ -96,8 +96,11 @@
 
         <div class="w3l_sign_in_register col-lg-1 col-xs-12 col-sm-6">
             <ul class="text-center">
+                <li>
+                    <img id="userimg" src="" class="dnone headimg">
+                </li>
                 <li id="p-info">
-                    <img class="user-info" style="height: 40px;" src="/web/images/default_head.png"></img>
+                    <img class="user-info" style="height: 40px;" src="/web/images/default_head.png">
                     <span class="caret"></span>
                     <ul id="info" style="display:none;">
                         <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
@@ -228,7 +231,7 @@
                             <img class="J-setted-avatar" :src="user.upic">
                             <div class="J-upload-avatar-w upload-avatar-image">
                                 <input type="button" class="J-upload-avatar upload-btn" value="更换头像">
-                                <input type="file" id="fileUpload" name="file" onchange="imgshow(this)"
+                                <input type="file" id="fileUpload1" name="file" onchange="imgshow(this)"
                                        data-toggle="modal" data-target=".bs-example-modal-sm">
                                 <!--<div class="layui-input-block dis m-top" id="id_img"></div>-->
                             </div>
@@ -244,7 +247,7 @@
                         <div class="modal-content">
                             <span class="m-top dis">预览</span>
                             <div class="layui-input-block dis" id="id_img"></div>
-                            <button class="btn btn-success m-top m-bot">确定</button>
+                            <button class="btn btn-success m-top m-bot" onclick="upload()">确定</button>
                             <button class="btn btn-warning m-top m-left m-bot" onclick="hid()">取消</button>
                         </div>
                     </div>
@@ -254,16 +257,19 @@
                         <form id="updateForm">
                             <table class="table table-hover">
                                 <tr>
-                                    <td>姓名：<input id="username" class="form-control" :value="user.username"></td>
+                                    <td>姓名：<input name="username" class="form-control" :value="user.username">
+                                                <input type="hidden" :value="user.id" name="id">
+                                    </td>
+
                                 </tr>
                                 <tr>
-                                    <td>性别：<input id="sex" class="form-control" :value="user.sex"></td>
+                                    <td>性别：<input name="sex" class="form-control" :value="user.sex"></td>
                                 </tr>
                                 <tr>
-                                    <td>生日：<input id="birth" class="form-control" :value="user.birth"></td>
+                                    <td>生日：<input name="birth" class="form-control" :value="user.birth"></td>
                                 </tr>
                                 <tr>
-                                    <td>电话：<input id="phone" class="form-control" :value="user.phone"></td>
+                                    <td>电话：<input name="phone" class="form-control" :value="user.phone"></td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -273,10 +279,10 @@
                                 <tr>
                                     <td>
                                         <div style="width: 300px;margin-top: -20px;margin-left: -330px">
-                                            <div v-for="(type,index) in types" class="dis">
-                                                <input name="type" type="checkbox" class="box" :id="'s'+index"
+                                            <div v-if="types!=null" v-for="(type,index) in types" class="dis">
+                                                <input type="checkbox" class="box" :id="'s'+(index+1)"  name="type" :value="type.id"
                                                        style="margin-left: 15px;margin-top: 15px"><span
-                                                    style="color: #1da1f2" :value="type.mtype"></span>
+                                                style="color: #1da1f2" v-text="type.mtype" ></span>
                                             </div>
                                         </div>
                                     </td>
@@ -284,8 +290,8 @@
                                 <tr>
                                     <td>
                                         <div style="margin-top: -228px">个性签名：</div>
-                                        <textarea class="form-control" style="margin-top: 15px;margin-left: 40px"
-                                                  :value="user.sign"></textarea>
+                                        <input class="form-control" style="margin-top: 15px;margin-left: 40px" name="sign"
+                                                  :value="user.sign">
                                         <input style="width: 120px;height: 40px;margin-top: 50px;margin-left: 40px" type="button" class="btn btn-warning" value="保存修改" onclick="updateUser()">
                                     </td>
                                 </tr>
@@ -295,7 +301,6 @@
                     </div>
 
                 </div>
-
             </div>
         </div>
         <script src="/web/js/bootstrap.min.js"></script>
@@ -321,22 +326,6 @@
                 },
                 created: function () {
                     _data = this;
-                    /*查询用户信息*/
-                    $.ajax({
-                        url: "/api-user/user",
-                        type: "get",
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.code == "success") {
-                                _data.user = data.object;
-                                for (var i=0;i<data.object.types.length;i++) {
-                                    $("#s"+data.object.types[i].id).attr("checked","checked");
-                                }
-                            } else {
-                                alert(data.message);
-                            }
-                        }
-                    });
                     /*查询所有类型信息*/
                     $.ajax({
                         url: "/api-user/type",
@@ -345,21 +334,86 @@
                         success: function (data) {
                             if (data.code == "success") {
                                 _data.types = data.list;
+                                /*查询用户信息*/
+                                $.ajax({
+                                    url: "/api-user/user",
+                                    type: "get",
+                                    dataType: "json",
+                                    success: function (data) {
+                                        if (data.code == "success") {
+                                            _data.user = data.object;
+                                            /*选中喜欢的电影类型*/
+                                            for (var i=0;i<data.object.types.length;i++) {
+                                                $("#s"+data.object.types[i].id).attr("checked","checked");
+                                            }
+                                            // 设置头像样式
+                                            $("#p-info").css("display","none");
+                                            $("#userimg").css("display","block");
+                                            $("#userimg").attr("src",data.object.upic);
+
+                                        } else {
+                                            alert(data.message);
+                                        }
+                                    }
+                                });
                             } else {
                                 alert(data.message);
                             }
                         }
                     });
+
+
+
+                },
+                methods:{
+                    getImage:function (src) {
+                        alert(src);
+                        $.ajax({
+                            url:"/api-user/user/io",
+                            // data:{"img":src},
+                            type:"get",
+                            dataType:"json",
+                            success:function (data) {
+                                alert("success");
+                            }
+                        });
+
+                    }
                 }
             });
-
             // 隐藏图片预览div
             function hid() {
                 $("#img").css("display", "none");
             }
 
-            // 图片上传
-            
+            /*图片上传*/
+            function upload() {
+                //储存图片；
+                //先取出文件域中的所有文件
+                var files = $("#fileUpload1")[0].files;
+                //创建表单数据对象
+                var formData = new FormData();
+                //将一个文件放入到表单数据对象中
+                formData.append("file", files[0]);
+                $.ajax({
+                    url: "/api-user/user/upload",
+                    contentType: false,
+                    type: "POST",
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    processData: false,
+                    dataType: "json",
+                    success: function (data) {
+                        if(data.code=="success"){
+                            $("#img").css("display","none");
+                            history.go(0);
+                        }else{
+                            alert(data.message);
+                        }
+                    }
+                });
+            }
             // 图片预览
             window.URL = window.URL || window.webkitURL;
 
@@ -408,12 +462,14 @@
             function updateUser(){
                 $.ajax({
                     url:"/api-user/user",
-                    type:"post",
+                    type:"put",
                     data:$("#updateForm").serialize(),
                     dataType:"json",
                     success:function (data) {
                         if(data.code=="success"){
-                            alert("success")
+                            location.href="userinfo.html";
+                        }else{
+                            alert(data.message);
                         }
                     }
                 });
