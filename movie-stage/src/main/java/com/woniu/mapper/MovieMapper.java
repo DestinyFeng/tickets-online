@@ -23,4 +23,8 @@ public interface MovieMapper {
     List<Movie> selectMoviesByCid(Integer cid);
 //    List<Movie> selectMoviesBytid(Integer tid, String comntry, Date uptime, Integer pageIndex, Integer num)
     List<Movie> selectMOviesOnByCid(Integer cid);
+
+    List<Movie> selectMovieListByScore(Integer num);
+
+    List<Movie> selectMovieListByTime(Integer num);
 }
