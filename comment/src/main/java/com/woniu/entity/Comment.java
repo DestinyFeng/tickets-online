@@ -15,7 +15,16 @@ public class Comment {
 
     private Date time;
 
+    private Integer uid;
     private User user;
+
+    public Integer getUid() {
+        return uid;
+    }
+
+    public void setUid(Integer uid) {
+        this.uid = uid;
+    }
 
     public Integer getId() {
         return id;
