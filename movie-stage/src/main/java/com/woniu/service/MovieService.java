@@ -49,6 +49,23 @@ public interface MovieService {
      * @param cid
      * @return
      */
-    Map<String,List<Movie>> selectMoviesOnByCid(Integer cid);
+    Map<String,List<Movie>> selectMoviesOnByCid(Integer cid) throws Exception;
+
+
+    /**
+     * 查询所有的电影num个通过评分排序
+     * @param num
+     * @return
+     * @throws Exception
+     */
+    List<Movie> selectMovieListOrderByScore(Integer num) throws Exception;
+
+    /**
+     * 查询所有的电影num个通过上映时间排序
+     * @param num
+     * @return
+     * @throws Exception
+     */
+    List<Movie> selectMovieListOrderByTime(Integer num) throws Exception;
 
 }
