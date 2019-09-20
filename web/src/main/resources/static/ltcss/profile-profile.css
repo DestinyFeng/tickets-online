@@ -799,7 +799,7 @@
 .avatar-container .upload-avatar-image .upload-btn:hover{
  background-color: #5bc0de;
 }
-.avatar-container .upload-avatar-image #fileUpload {
+.avatar-container .upload-avatar-image #fileUpload1 {
 /* position:absolute;
  top:0;
  right:0;
@@ -814,7 +814,6 @@
  margin-left: -10%;
  width: 80%;
  opacity:0;
- cursor:pointer;
 }
 .avatar-container .tips {
  margin-top:10px;

@@ -5,8 +5,6 @@ import java.util.List;
 
 
 import com.woniu.orders.util.Seat;
-import lombok.Getter;
-import lombok.Setter;
 
 
 public class Order {
@@ -38,7 +36,7 @@ public class Order {
     /**
      * 订单状态，
      */
-    private Byte ostate;
+    private byte ostate;
 
     public String getOstateMsg() {
         return ostateMsg;
@@ -86,6 +84,18 @@ public class Order {
     private  String cinemaAddress;
     //电话
     private  String phone;
+
+    public int  getLeftPaySecond() {
+        return leftPaySecond;
+    }
+
+    public void setLeftPaySecond(int leftPaySecond) {
+        this.leftPaySecond = leftPaySecond;
+    }
+
+    //剩余支付时间
+    private int leftPaySecond;
+
 
     public String getPhone() {
         return phone;
@@ -135,7 +145,7 @@ public class Order {
         this.cid = cid;
     }
 
-    public Byte getOstate() {
+    public byte getOstate() {
         return ostate;
     }
 

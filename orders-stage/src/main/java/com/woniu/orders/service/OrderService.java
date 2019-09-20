@@ -17,9 +17,13 @@ import java.util.List;
 
 public interface OrderService {
 
-    List<Order> selectOrder(int uid,Integer PageIndex) throws ParseException;
-    int selectCount(int uid);
-    int delete(int oid);
-    Order selectDatail(Integer oid) throws ParseException;
+    List<Order> selectOrder(int uid, Integer PageIndex) throws Exception;
+    int selectCount(int uid)throws Exception;
+    int delete(int oid)throws Exception;
+    Order selectDatail(String oid) throws Exception;
+    void updatebyOid(String oid, Byte ostate, int a_pid)throws Exception;
+    int updateStateByOid(String oid, Byte ostate)throws Exception;
+    int deleteByOid(String Oid)throws Exception;
+
 }
   

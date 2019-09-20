@@ -58,3 +58,11 @@
 .m-left-2{
   margin-left: -340px;
 }
+.dnone{
+  display: none;
+}
+.headimg{
+  width: 45px;
+  height: 35px;
+  border-radius:50%;
+}

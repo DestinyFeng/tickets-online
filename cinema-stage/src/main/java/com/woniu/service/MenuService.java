@@ -11,4 +11,6 @@ public interface MenuService {
     public Integer deleteById(Integer mid);
     //新增一份套餐
     public Integer insert(Menu menu);
+    //根据id修改一份套餐
+    public Integer updateById(Menu menu);
 }

@@ -47,7 +47,7 @@
     <!-- start-smoth-scrolling -->
     <script type="text/javascript" src="/web/js/move-top.js"></script>
     <script type="text/javascript" src="/web/js/easing.js"></script>
-   <script type="text/javascript" src="/web/ltjs/profile-profile.59b4a3a3.js.下载"></script>
+    <script type="text/javascript" src="/web/ltjs/profile-profile.59b4a3a3.js.下载"></script>
 
 </head>
 
@@ -223,20 +223,20 @@
                         <div class="order-header">
                             <span class="order-date" v-text="orders.ctime">2019-09-09</span>
                             <span class="order-id" v-text="'爱乐订单号：'+orders.orderId"></span>
-                            <span class="del-order"  @click="del(this)" :data-orderid="orders.orderId"></span>
+                            <span class="del-order" @click="del($event)" :data-orderid="orders.orderId"></span>
                         </div>
 
                         <div class="order-body">
                             <div class="poster">
-                                <img :src="orders.posterUrl" >
+                                <img :src="orders.posterUrl">
                             </div>
 
                             <div class="order-content">
                                 <div class="movie-name" v-text="orders.movieName"></div>
                                 <div class="cinema-name" v-text="orders.cinemaName"></div>
-                                <div class="hall-ticket" v-for="seat in orders.seatList">
-                                    <span v-text="orders.roomName">2号厅</span>
-                                    <span v-text="seat.seatName">4排3座</span>
+                                <div class="hall-ticket">
+                                    <span v-text="orders.roomName"></span>
+                                    <span v-for="seat in orders.seatList" v-text="seat.seatName"></span>
                                 </div>
                                 <div class="show-time" v-html="orders.formatTime"></div>
                             </div>
@@ -249,12 +249,25 @@
                             <div class="actions">
                                 <div>
                                     <a v-if="orders.ostateMsg=='未支付'" class="pay-btn"
-                                       data-act="orders-pay-click" data-bid="b_d2ll8ybm">付款</a>
-                                    <a href="detail.html" class="order-detail" data-act="orders-detail-click"
+                                       :href="'detail.html?oid='+orders.orderId" data-act="orders-pay-click"
+                                       d>付款</a>
+
+                                    <a :href="'detail.html?oid='+orders.orderId" class="order-detail"
+                                       data-act="orders-detail-click"
                                        data-bid="b_y190atas">查看详情</a>
                                 </div>
                             </div>
                         </div>
+
+                    </div >
+                    <div>
+                        <div class="col-lg-6" style="color:  #FF8D1B;">
+                            <span v-text="'总共'+msg.object.pageCount+'页'"></span>
+                            <span v-text="'当前是第'+msg.object.pageIndex+'页'"></span></div>
+                       <div class="col-lg-offset-10" v-if="msg.object.pageCount>1">
+                           <a v-if="msg.object.pageIndex!=1" class="btn  btn-default" @click="prev()" style="background-color: #FF8D1B">上一页</a>
+                           <a v-if="msg.object.pageIndex!=msg.object.pageCount" class="btn btn-default" @click="next()" style="background-color: #FF8D1B">下一页</a>
+                       </div>
                     </div>
                     <div class="orders-pager">
                     </div>
@@ -263,37 +276,25 @@
         </div>
     </div>
 
-    <div class="mask3" style="background-color: #4dbcf3 ;border: 1px solid darkblue">
-        <div >
-            <div class="modal">
+    <div class="mask3">
+        <div class="modal-container" style="display:none">
+            <div class="modal1">
                 <span class="icon"></span>
                 <p class="tip">您确定要删除该订单嘛？删除后，不可恢复～</p>
-                <div class="short btn ok-btn">确定</div>
-                <div class="short btn cancel-btn">取消</div>
+                <div @click="btn()" class="short btn ok-btn">确定</div>
+                <div @click="cancel()" class="short btn cancel-btn">取消</div>
             </div>
         </div>
     </div>
-    <div class="mask2">
-        <div class="modal-container" style="display:none">
-            <div class="modal">
-                <span class="icon"></span>
 
-                <p class="tip">请联系客服10105335</p>
-
-                <div class="ok-btn btn">我知道了</div>
-            </div>
-        </div>
-
-    </div>
 
 </div>
 <script type="text/javascript">
 
-    function select(obj) {
-
+    function select(obj,pageIndex) {
         $.ajax({
             url: "/orders/profile/orders",
-            data: {"uid": "1"},
+            data: {"uid": "1","pageIndex":pageIndex},
             type: "get",
             dataType: "json",
             success: function (data) {
@@ -305,19 +306,51 @@
     $(function () {
         var app = new Vue({
             el: "#app",
-            data: {msg: ""},
+            data: {msg: "", oid: ""},
             created: function () {
                 var obj = this
                 select(obj);
             },
             methods: {
-                del(obj) {
-                    if(confirm("确实要删除吗？")){
-                      var id =$(obj).attr("data-orderid")
-                        alert(id);
-                  }else {
-                      alert("已经取消了删除操作");
-                  }
+                del(e) {
+                    $(".mask3").children().eq(0).show()
+                    this.oid = $(e.target).attr("data-orderid")
+
+
+                },
+                cancel() {
+                    $(".mask3").children().eq(0).hide();
+                },
+                btn() {
+                    var oid = this.oid;
+
+                    $.ajax({
+                        url: "/orders/profile/orders",
+                        data: {"oid": oid},
+                        type: "delete",
+                        dataType: "json",
+                        success: function (data) {
+                            if (data.code = "200") {
+                                 window.location.reload(true)
+                            } else {
+                                alert("删除失败")
+                            }
+
+                        }
+                    })
+                },
+                prev(){
+                    if (this.msg.object.pageIndex>1){
+                        var pageIndex=this.msg.object.pageIndex-1
+                          select(this,pageIndex)
+                    }
+                }
+                ,next(){
+                     if (this.msg.object.pageIndex<this.msg.object.pageCount){
+                         var pageIndex=this.msg.object.pageIndex+1
+
+                          select(this,pageIndex)
+                    }
                 }
             }
         });

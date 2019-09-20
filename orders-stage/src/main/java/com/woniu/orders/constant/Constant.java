@@ -16,11 +16,11 @@ public class Constant {
 
     }
       public enum OrderStatusEnum{
-        CANCELED(0,"已取消"),
+        CANCELED(0,"订单超时"),
         NO_PAY(10,"未支付"),
         PAID(20,"已付款"),
-        ORDER_SUCCESS(40,"订单完成"),
-        ORDER_CLOSE(50,"订单关闭");
+        ORDER_SUCCESS(30,"订单完成"),
+        ORDER_CLOSE(40,"已退款");
 
 
         OrderStatusEnum(int code,String value){
