@@ -355,8 +355,8 @@
                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
                            </div>
                        </div>
-                       <div style="width:100%;height: 30%;border: 1px solid #0000FF;background-color: transparent;position:absolute;bottom:0;left: 0">
-                           <div :id="'picdiv'+index" onclick="changepic(this)" v-for="(movie,index) in newMovie" style="width: 33.333333%;height: 100%;border: #4cae4c solid 1px;position: relative;float: left" >
+                       <div style="width:100%;height:50%;background-color: transparent;position:absolute;bottom:0;left: 0">
+                           <div v-if="index<3" :id="'picdiv'+index" onclick="changepic(this)" v-for="(movie,index) in newMovie" style="width: 33.333333%;height: 100%;;position: relative;float: left" >
                                <img :src="movie.mpic" alt="" style="width: 100%;height: 100%;">
                            </div>
                        </div>
@@ -374,31 +374,21 @@
                     <h1><i class="icofont icofont-movie"></i> Spotlight This Month</h1>
                 </div>
             </div>
-            <div class="col-lg-6 text-center text-lg-right">
-                <div class="portfolio-menu">
-                    <ul>
-                        <li data-filter="*" class="active">Latest</li>
-                        <li data-filter=".soon">Comming Soon</li>
-                        <li data-filter=".top">Top Rated</li>
-                        <li data-filter=".released">Recently Released</li>
-                    </ul>
-                </div>
-            </div>
         </div>
         <hr/>
         <div class="row">
             <div class="col-lg-9">
                 <div class="row portfolio-item">
-                    <div class="col-md-4 col-sm-6 soon released">
+                    <div class="col-md-4 col-sm-6 soon released" v-for="(movie,index) in newMovie">
                         <div class="single-portfolio">
                             <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio1.png" alt="portfolio"/>
+                                <img style="height: 357px" :src="movie.mpic" alt="portfolio"/>
                                 <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
                                     <i class="icofont icofont-ui-play"></i>
                                 </a>
                             </div>
                             <div class="portfolio-content">
-                                <h2>Boyz II Men</h2>
+                                <h4 v-text="movie.mname">Boyz II Men</h4>
                                 <div class="review">
                                     <div class="author-review">
                                         <i class="icofont icofont-star"></i>
@@ -407,122 +397,7 @@
                                         <i class="icofont icofont-star"></i>
                                         <i class="icofont icofont-star"></i>
                                     </div>
-                                    <h4>180k voters</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 top">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio2.png" alt="portfolio"/>
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                    <i class="icofont icofont-ui-play"></i>
-                                </a>
-                            </div>
-                            <div class="portfolio-content">
-                                <h2>Tale of Revemge</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                    </div>
-                                    <h4>180k voters</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 soon">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio3.png" alt="portfolio"/>
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                    <i class="icofont icofont-ui-play"></i>
-                                </a>
-                            </div>
-                            <div class="portfolio-content">
-                                <h2>The Lost City of Z</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                    </div>
-                                    <h4>180k voters</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 top released">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio4.png" alt="portfolio"/>
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                    <i class="icofont icofont-ui-play"></i>
-                                </a>
-                            </div>
-                            <div class="portfolio-content">
-                                <h2>Beast Beauty</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                    </div>
-                                    <h4>180k voters</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 released">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio5.png" alt="portfolio"/>
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                    <i class="icofont icofont-ui-play"></i>
-                                </a>
-                            </div>
-                            <div class="portfolio-content">
-                                <h2>In The Fade</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                    </div>
-                                    <h4>180k voters</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 soon top">
-                        <div class="single-portfolio">
-                            <div class="single-portfolio-img">
-                                <img src="/web/assets/img/portfolio/portfolio6.png" alt="portfolio"/>
-                                <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                    <i class="icofont icofont-ui-play"></i>
-                                </a>
-                            </div>
-                            <div class="portfolio-content">
-                                <h2>Last Hero</h2>
-                                <div class="review">
-                                    <div class="author-review">
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                        <i class="icofont icofont-star"></i>
-                                    </div>
-                                    <h4>180k voters</h4>
+                                    <h4 v-text="movie.score">180k voters</h4>
                                 </div>
                             </div>
                         </div>
@@ -554,12 +429,12 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="video-area">
-                    <img src="/web/assets/img/video/video1.png" alt="video"/>
+                    <img style="width:100%;height: 403px;" :src="topmovie.mpic" alt="video"/>
                     <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
                         <i class="icofont icofont-ui-play"></i>
                     </a>
                     <div class="video-text">
-                        <h2>Angle of Death</h2>
+                        <h2 v-text="topmovie.mname">Angle of Death</h2>
                         <div class="review">
                             <div class="author-review">
                                 <i class="icofont icofont-star"></i>
@@ -568,24 +443,16 @@
                                 <i class="icofont icofont-star"></i>
                                 <i class="icofont icofont-star"></i>
                             </div>
-                            <h4>180k voters</h4>
+                            <h4 v-text="topmovie.score">180k voters</h4>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="row">
-                    <div class="col-md-12 col-sm-6">
-                        <div class="video-area">
-                            <img src="/web/assets/img/video/video2.png" alt="video"/>
-                            <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
-                                <i class="icofont icofont-ui-play"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-sm-6">
-                        <div class="video-area">
-                            <img src="/web/assets/img/video/video3.png" alt="video"/>
+                    <div class="col-md-12 col-sm-6" v-for="(movie,index) in newMovie">
+                        <div v-if="index<3&index>0" class="video-area">
+                            <img style="width: 100%;height: 182px;" :src="movie.mpic" alt="video"/>
                             <a href="https://www.youtube.com/watch?v=RZXnugbhw_4" class="popup-youtube">
                                 <i class="icofont icofont-ui-play"></i>
                             </a>
@@ -596,94 +463,6 @@
         </div>
     </div>
 </section><!-- video section end -->
-<!-- news section start -->
-<section class="news">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title pb-20">
-                    <h1><i class="icofont icofont-coffee-cup"></i> Latest News</h1>
-                </div>
-            </div>
-        </div>
-        <hr/>
-    </div>
-    <div class="news-slide-area">
-        <div class="news-slider">
-            <div class="single-news">
-                <div class="news-bg-1"></div>
-                <div class="news-date">
-                    <h2><span>NOV</span> 25</h2>
-                    <h1>2017</h1>
-                </div>
-                <div class="news-content">
-                    <h2>The Witch Queen</h2>
-                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her
-                        hat, and teal eyes.</p>
-                </div>
-                <a href="#">Read More</a>
-            </div>
-            <div class="single-news">
-                <div class="news-bg-2"></div>
-                <div class="news-date">
-                    <h2><span>NOV</span> 25</h2>
-                    <h1>2017</h1>
-                </div>
-                <div class="news-content">
-                    <h2>The Witch Queen</h2>
-                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her
-                        hat, and teal eyes.</p>
-                </div>
-                <a href="#">Read More</a>
-            </div>
-            <div class="single-news">
-                <div class="news-bg-3"></div>
-                <div class="news-date">
-                    <h2><span>NOV</span> 25</h2>
-                    <h1>2017</h1>
-                </div>
-                <div class="news-content">
-                    <h2>The Witch Queen</h2>
-                    <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under her
-                        hat, and teal eyes.</p>
-                </div>
-                <a href="#">Read More</a>
-            </div>
-        </div>
-        <div class="news-thumb">
-            <div class="news-next">
-                <div class="single-news">
-                    <div class="news-bg-3"></div>
-                    <div class="news-date">
-                        <h2><span>NOV</span> 25</h2>
-                        <h1>2017</h1>
-                    </div>
-                    <div class="news-content">
-                        <h2>The Witch Queen</h2>
-                        <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under
-                            her hat, and teal eyes.</p>
-                    </div>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-            <div class="news-prev">
-                <div class="single-news">
-                    <div class="news-bg-2"></div>
-                    <div class="news-date">
-                        <h2><span>NOV</span> 25</h2>
-                        <h1>2017</h1>
-                    </div>
-                    <div class="news-content">
-                        <h2>The Witch Queen</h2>
-                        <p>Witch Queen is a tall woman with a slim build. She has pink hair, which is pulled up under
-                            her hat, and teal eyes.</p>
-                    </div>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- news section end -->
 <!-- footer section start -->
 <footer class="footer">
     <div class="container">
@@ -787,18 +566,20 @@
         data:{
             newMovie:[],
             activeIndex:0,
-            showmovie:{}
+            showmovie:{},
+            topmovie:{}
         },
         created:function () {
            var _this=this;
             //查询最新的3部电影
             $.ajax({
-                url:"/movie-stage/movie/orderbytime/3",
+                url:"/movie-stage/movie/orderbytime/6",
                 type:"get",
                 dataType:"json",
                 success:function (data) {
                     _this.newMovie=data.list;
                     _this.showmovie = data.list[0];
+                    _this.topmovie = data.list[0];
                     console.log(data);
                 }
 
