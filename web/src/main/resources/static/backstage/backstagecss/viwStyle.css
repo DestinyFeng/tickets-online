@@ -1,0 +1,1709 @@
+.tobody {
+	background-color: #E9E9E9;
+	background: url("../img/background.jpg") no-repeat fixed;
+	background-size: 100% 100%;
+}
+
+.background_box {
+	background-color: #E9E9E9;
+}
+
+.bco {
+	background-color: #FFFCF4;
+}
+
+.login_div {
+	margin-top: 300px;
+}
+
+.login_background {
+	background: url("../img/loginbackground.jpg") no-repeat fixed;
+	background-size: 100% 100%;
+}
+
+.regist_div {
+	margin-top: 250px;
+}
+
+.regist_background {
+	background: url("../img/registbackground.png") no-repeat fixed;
+	background-size: 100% 100%;
+}
+.leaderdiv{
+    width: 1200px;
+    height: 80px;
+    position: relative;
+    margin: 0 auto;
+}
+.marginTop {
+	margin-top: 30px;
+}
+.margin2Top {
+	margin-top: 40px;
+}
+
+.marginTop_2head {
+	margin-top: 100px;
+}
+
+.marginTop_md {
+	margin-top: 15px;
+}
+
+.marginTop_min {
+	margin-top: 5px;
+}
+
+.marginBottom {
+	margin-bottom: 30px;
+}
+
+.marginBottom_md {
+	margin-bottom: 15px;
+}
+
+.marginBottom_min {
+	margin-bottom: 5px;
+}
+
+.no_left_margin {
+	margin-left: 0;
+}
+
+.left_margin {
+	margin-left: 20px;
+}
+
+.no_right_margin {
+	margin-right: 0;
+}
+
+.right_margin {
+	margin-right: 20px;
+}
+
+.no_top_margin {
+	margin-top: 0;
+}
+
+.top_margin {
+	margin-top: 20px;
+}
+
+.no_bottom_margin {
+	margin-bottom: 0;
+}
+
+.bottom_margin {
+	margin-bottom: 20px;
+}
+
+.nopadding {
+	padding: 0;
+}
+
+.no_left_padding {
+	padding-left: 0;
+}
+
+.left_padding {
+	padding-left: 20px;
+}
+
+.no_right_padding {
+	padding-right: 0;
+}
+
+.right_padding {
+	padding-right: 20px;
+}
+
+.no_top_padding {
+	padding-top: 0;
+}
+
+.top_padding {
+	padding-top: 20px;
+}
+
+.no_bottom_padding {
+	padding-bottom: 0 !important;
+}
+
+.bottom_padding {
+	padding-bottom: 20px;
+}
+.no_bottom_but_top_padding{
+    padding-bottom: 0 !important;
+    padding-top: 10px !important;
+}
+.littlebottom_andlittletop_padding{
+    padding-bottom: 15px !important;
+    padding-top: 15px !important;
+}
+.border_radius {
+	padding: 10px;
+	border: 1px solid #9acfea;
+	border-radius: 15px;
+}
+a{
+    display: inline-block;
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    color: #666;
+    outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+.span_menu {
+	height: 35px;
+	display: block;
+	line-height: 35px;
+	background-color: #eeeeee;
+	border-bottom: 1px solid #3c3c3c;
+	text-align: center;
+	cursor: pointer;
+}
+
+.span_menu:hover {
+	background-color: #9d9d9d;
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+.full {
+	width: 100%;
+	height: 100%;
+}
+
+.select {
+	width: 160px;
+	height: 30px;
+	font-size: 14px;
+}
+
+.select_sex_en {
+	width: 130px;
+	height: 30px;
+	font-size: 16px;
+}
+
+.select_sex_cn {
+	width: 70px;
+	height: 30px;
+	font-size: 16px;
+}
+
+.font_login {
+	font-size: 20px;
+	color: #0f0f0f;
+}
+
+.font_regist {
+	font-size: 20px;
+	color: #a6e1ec;
+}
+
+.font_remember {
+	font-size: 18px;
+	color: #337ab7;
+}
+
+.font_success {
+	font-size: xx-large;
+	color: #5cb85c;
+}
+
+.font_error {
+	font-size: xx-large;
+	color: #c7254e;
+}
+
+.font_fail {
+	font-size: 20px;
+	color: #761c19;
+}
+
+.post_div {
+	box-sizing: border-box;
+	padding: 10px 4% 15px 4%;
+	width: 100%;
+	background-color: #d9edf7;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+
+/*评论区*/
+
+.article_div {
+	background-color: #ffffff;
+	padding-top: 20px;
+	margin: 20px auto;
+}
+
+.article {
+	padding-top: 10px;
+}
+
+.author,
+.a_time,
+.a_del {
+	clear: both;
+	margin-right: 25px;
+	font-size: 15px;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 30px;
+	text-align: center;
+}
+
+.a_content {
+	background: #ffffff;
+	clear: both;
+	padding: 1em 4em;
+	margin-top: 40px;
+}
+
+p {
+	text-indent: 2em;
+	font-size: 18px;
+}
+
+.headimg {
+	width: 80px;
+	height: 50px;
+}
+
+.headname {
+	height: 20px;
+}
+
+.user_name {
+	margin-left: 10px;
+	color: #3D9EEA;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+.show_reply {
+	margin-right: 1em;
+	color: #2aabd2;
+}
+
+.show_reply hover {
+	color: #122b40;
+}
+
+.comments {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.comment_reply {}
+
+.comment_content {
+	clear: both;
+	margin: 5px 50px;
+	font-size: 16px;
+}
+
+.headimage {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+
+.commentbox {
+	width: 100%;
+	margin: 20px auto;
+}
+
+.commentsbox {
+	border: 1px solid #337ab7;
+	display: none;
+}
+
+.replybox {
+	display: block;
+}
+
+.mytextarea {
+	width: 100%;
+	word-break: break-all;
+	height: 100px;
+	color: #000;
+	font-size: 1em;
+	resize: none;
+}
+
+.mytextarea_postname {
+	width: 100%;
+	height: 30px;
+	word-break: break-all;
+	color: #000;
+	font-size: 1em;
+	resize: none;
+}
+
+.mytextarea_postcontent {
+	width: 100%;
+	height: 200px;
+	word-break: break-all;
+	color: #000;
+	font-size: 1em;
+	resize: none;
+}
+
+.comment_list {
+	width: 100%;
+	margin: 0px auto;
+	clear: both;
+	padding-top: 5px;
+}
+
+.show_content {
+	width: 400px;
+	text-overflow: ellipsis;
+}
+
+.note-editable {
+	height: 300px;
+}
+
+.note-resizebar {
+	display: none;
+}
+
+
+/*四阶段项目*/
+
+.marginTop_2head {
+	margin-top: 100px;
+}
+.marginTop_indexhead {
+	margin-top: 135px;
+}
+
+.a_li {
+	width: 100%;
+	height: 100%;
+}
+
+.head_div {
+	position: fixed;
+	width: 100%;
+	height: 10%;
+	top: 0;
+	z-index: 999;
+	border: 1px solid #DBDBDB;
+	background-color: #FFFFFF;
+}
+.head_div2 {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	top: 0;
+	z-index: 999;
+	border: 1px solid #DBDBDB;
+	background-color: #FFFFFF;
+}
+
+.body_div {
+	overflow: hidden;
+	margin-top: 72px;
+}
+
+.logoimg {
+	margin-top: 10px;
+	width: 99%;
+}
+
+.navi {
+	display: inline-block;
+	background-color: #fff;
+	overflow: hidden;
+	float: left;
+}
+
+.navi ul {}
+
+.search {
+	border-radius: 30px;
+	width: 150px;
+	height: 20%;
+}
+
+.search_btn {
+	border-radius: 50%;
+	padding-top: 5px;
+	background: url(../img/search.png);
+	background-color: #DCA7A7;
+	height: 20%;
+}
+
+.foot {
+	color: #FFFF00;
+	height: 250px;
+	text-align: center;
+	margin-top: 50px;
+	padding-top: 30px;
+	background-color: #0F0F0F;
+}
+
+.main {
+	background-color: #DBDBDB;
+	padding: 0;
+}
+
+
+/*影院首页头部区*/
+
+.container-fluid {
+	margin-top: 66px;
+	margin-right: -15px;
+	margin-left: -15px;
+	padding: 0;
+	height: 50%;
+}
+
+.bodyheadimg_div {
+	background: url(../img/bodyheadbackground.png) repeat 50%;
+	height: 85%;
+	width: 100%;
+}
+
+.bodyhead_div {
+	height: 385px;
+	width: 100%;
+}
+
+.photos {
+	margin-top: 75px;
+	padding: 0;
+	width: 20%;
+	padding-right: 20px;
+	padding-left: 20px;
+	height: 97%;
+}
+
+.imagesdiv {
+	padding: 4px;
+	margin: 0;
+	background-color: #FFFFFF;
+	width: 100%;
+	height: 92%;
+	box-shadow: 0 2px 15px -2px #5E5E5E;
+}
+
+.headimages {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pics {
+	padding: 0;
+	margin: 0;
+}
+
+.massagesdiv {
+	margin-top: 75px;
+	padding: 4px;
+	width: 25%;
+	padding-left: 20px;
+	height: 75%;
+}
+
+.mescontent {
+	color: #fff !important;
+}
+
+.cinemaname {
+	margin: 0;
+	font-size: 26px;
+	margin-bottom: 9px;
+	color: #fff !important;
+	font-weight: 400;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.mapdiv {
+	padding-right: 0;
+	margin: 75px;
+	margin-left: 25px;
+	width: 20%;
+	height: 75%;
+}
+
+.filmmap {
+	width: 70%;
+	height: 87%;
+	margin-left: 30%;
+	background-color: #449D44;
+}
+
+
+/*排片区*/
+
+.moviecontainer {
+	position: relative;
+	overflow: hidden;
+}
+
+.leftbtn {
+	left: 0;
+	display: inline-block;
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	top: 0;
+	background-image: url(../img/leftbtn.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.rightbtn {
+	right: 0;
+	display: inline-block;
+	position: absolute;
+	width: 30px;
+	height: 100%;
+	top: 0;
+	background-image: url(../img/rightbtn.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+.moviepart {
+	display: inline-block;
+	padding: 0;
+	width: 2000px;
+	height: 210px;
+	margin: 10px 0px 10px 11px;
+	/*padding-bottom: 10px;*/
+	background-color: #DBDBDB;
+}
+
+.movielist {
+	padding: 0;
+	width: 160px;
+	height: 100%;
+	background-color: #DBDBDB;
+}
+
+.filmtable {
+	padding: 20px 20px;
+	width: 100%;
+	height: 100%;
+}
+
+.filmselected {
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid red;
+}
+
+
+/*排片详情*/
+
+.filmmessage-none {
+	display: none;
+	height: auto;
+	width: 100%;
+	padding: 0;
+	background-color: #FFFFFF;
+}
+.filmmessage-show{
+	display: block;
+	height: auto;
+	width: 100%;
+	padding: 0;
+	background-color: #FFFFFF;
+}
+.filmInfo {
+	height: 100px;
+	width: 100%;
+	padding: 15px 0;
+	border-bottom: 1px solid #E5E5E5;
+}
+
+.movie-name {
+	display: inline-block;
+	margin: 0 20px 20px 0;
+	font-size: 26px;
+	font-weight: 400;
+	color: #080808;
+}
+
+.score {
+	display: inline-block;
+	font-size: 24px;
+	color: #faaf00;
+}
+
+.sc {
+	font-size: 12px;
+}
+
+.movie-mes {
+	display: inline-block;
+	font-size: 14px;
+	margin-bottom: 20px;
+	margin-right: 40px;
+}
+
+.mestitle {
+	color: #ADADAD;
+}
+
+.mesvalue {
+	color: #222222;
+}
+
+.filmtime {
+	background-color: #FFFFFF;
+	padding: 30px 0;
+	font-size: 14px;
+	color: #999;
+}
+
+.datetable {
+	display: inline-block;
+	background-color: transparent;
+	color: #333;
+	border-radius: 100px;
+	padding: 2px 10px;
+	margin-left: 12px;
+	cursor: default;
+}
+
+.dateselected {
+	display: inline-block;
+	color: #fff;
+	background-color: #f03d37;
+	border-radius: 100px;
+	padding: 2px 10px;
+	margin-left: 12px;
+	cursor: default;
+}
+
+.filmmes {
+	width: 100%;
+	border: none;
+	display: table;
+	border-spacing: 0;
+	border-collapse: separate;
+}
+
+.filmmes_thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+	background-color: #f7f7f7;
+	color: #333;
+	font-size: 16px;
+	padding: 18px 0;
+}
+
+.infoTitle_th {
+	padding: 16px 0;
+	display: table-cell;
+	vertical-align: inherit;
+	font-weight: bold;
+	text-align: center;
+}
+
+.infoTitle_tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.infobody_tr_Odd {
+	height: 82px;
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+.infobody_tr_Even {
+	height: 82px;
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+	background-color: #F9F9F9;
+}
+
+.infobody_td {
+	display: table-cell;
+	vertical-align: inherit;
+	text-align: center;
+	width: 20%;
+}
+
+.btn-purchase {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	color: #fff;
+	background-color: #f03d37;
+	font-size: 14px;
+	line-height: 30px;
+	border-radius: 100px;
+	text-align: center;
+	box-shadow: 0 2px 10px -2px #f03d37;
+}
+
+.price {
+	font-size: 18px;
+	color: #f03d37;
+	font-weight: 700;
+}
+
+.price::before {
+	content: "\FFE5";
+	font-size: 12px;
+}
+
+.pricefont {
+	font-family: stonefont;
+}
+
+.starttime {
+	font-size: 18px;
+	color: #333;
+	font-weight: 700;
+}
+
+.endtime {
+	font-size: 12px;
+	color: #999;
+}
+
+.language {
+	font-size: 14px;
+	color: #333;
+}
+
+.room {
+	font-size: 14px;
+	color: #333;
+}
+
+
+/*影院主页*/
+._body{
+	background-color: transparent;
+    min-height: 100%;
+    height: auto !important;
+    
+}
+.allcontent {
+	background-color: transparent;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background: -moz-linear-gradient(top, none, none);
+	background: -webkit-gradient(linear, left top, left bottom, from(none), to(none));
+	background: -o-linear-gradient(top, none, none);
+	background: -ms-linear-gradient(top, none, none);
+	background: linear-gradient(top, none, none);
+	position: relative;
+	width: 100%;
+	min-width: 1200px;
+	background-size: auto;
+}
+.headerbackground{
+	background-color: #080808;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position:0 0;
+	background:-moz-linear-gradient(top, none, none);
+	background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));
+	background:-o-linear-gradient(top, none, none);
+	background:-ms-linear-gradient(top, none, none);
+	background:linear-gradient(top, none, none);
+	position: relative;
+	width: 100%;
+	min-width:1200px;
+	background-size: auto;
+}
+.headercontent{
+	width: 1200px;
+	height: 646px;
+	position: relative;
+	margin: 0 auto;
+	/*以下css  之后删除*/
+	/*background-color: #122B40;*/
+}
+.headtopdiv{
+	height: 80px;
+	width: 100%;
+	left: 0px;
+	top: 0px;
+	z-index:2;
+	position: absolute;
+}
+.topleaderdiv{
+	width:1200px;
+	background-color: transparent;
+    background-image: none;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+    position: relative;
+    margin: 0 auto;
+    height: 100%;
+}
+.cinemalogo{
+	height: 53px;
+	width: 170px;
+	left: 66px;
+	top: 21px;
+	z-index: 8;
+	position: absolute;
+    overflow: visible;
+    text-align: center;
+}
+.cinemalogoimg{
+    width: 170px;
+    height: 53px;
+    vertical-align: middle;
+    border: 0;
+}
+.cinemaleader{
+    height: 70px;
+    width: 600px;
+    left: 329px;
+    top: 4px;
+    z-index: 5;
+    position: absolute;
+    overflow: visible;
+    box-sizing: content-box;
+}
+.leaderul{
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    box-sizing: content-box;
+    list-style: none outside none;
+}
+.leaderul li{
+	height:70px;
+	line-height:70px;
+	width:20%;
+    padding: 0;
+    margin: 0;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto;
+}
+.leaderitem{
+	padding: 5px 0 0 0;
+    margin: 0;
+    position: relative;
+    height: 100%;
+    font-size: 16px;
+    line-height: inherit;
+    overflow: hidden;
+    box-sizing: content-box;
+    text-align: center;
+    
+}
+.topbackgrounddiv{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: -249px;
+	width: 1698px;
+	background-color: transparent;
+}
+.chartdiv{
+	height: 567px;
+	width: 100%;
+	left: 0px;
+	top: 79px;
+	z-index:0;
+	position: absolute;
+	
+}
+.charts{
+    left: -260px;
+    width: 1720px;
+    visibility: visible;
+    height: 567px;
+	margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0px;
+    overflow: hidden;
+    z-index: 1 !important;
+	
+}
+.picdiv{
+	position: absolute;
+	display: block;
+	top: 0px;
+	left: 0px;
+	width: 1720px;
+	height: 567px;
+	/*以下css  之后删除*/
+	/*background-color: #222222;*/
+}
+.chartsimg{
+    width: 1200px;
+    height: 567px;
+    left: 0;
+    margin: 0 auto;
+}
+.carousel-caption{
+	bottom: 80px;
+}
+.carousel{
+	height: 100%;
+}
+.bottombtn{
+	position: absolute;
+	display: block;
+	right: 16px;
+	bottom: 16px;
+	left: 840px;
+	width: 40px;
+	height: 15px;
+	/*以下css  之后删除*/
+	background-color: #23527C;
+}
+.left{
+	border: 0;
+	margin-left: 70px;
+}
+.right{
+	margin-right: 70px;
+}
+.prevbtn{
+	position: absolute;
+	display: block;
+	top: 273.5px;
+	left: 10px;
+	width: 20px;
+	height: 20px;
+	/*以下css  之后删除*/
+	background-color: #23527C;
+}
+.nextbtn{
+	position: absolute;
+	display: block;
+	top: 273.5px;
+	right: 65px;
+	width: 20px;
+	height: 20px;
+	/*以下css  之后删除*/
+	background-color: #23527C;
+}
+.maincontentdiv{
+	background-color: transparent;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position:0 0;
+	background:-moz-linear-gradient(top, none, none);
+	background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));
+	background:-o-linear-gradient(top, none, none);
+	background:-ms-linear-gradient(top, none, none);
+	background:linear-gradient(top, none, none);
+	;
+	background-size: auto;
+	position: relative;
+}
+.maindiv{
+	min-width:1200px;
+	position: relative;
+	background-color: none;
+	background-image: none;
+	background-repeat: no-repeat;
+	background:-moz-linear-gradient(top, none, none);
+	background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));
+	background:-o-linear-gradient(top, none, none);
+	background:-ms-linear-gradient(top, none, none);
+	background:linear-gradient(top, none, none);
+	;
+	background-position:0 0;
+	background-size:auto;
+}
+.maincontent{
+    margin: 0 auto;
+	min-height:400px;
+	width:1200px;
+	height:2750px;
+	position: relative;
+	/*以下css  之后删除*/
+	/*background-color : #FCF8E3;*/
+}
+.titlediv{
+	height: 93px;
+	width: 1198px;
+	left: 0px;
+	top: 74px;
+	z-index:10041;
+	position: absolute;
+	/*以下css  之后删除*/
+	/*background-color : #FFFFFF;*/
+}
+.titlecontentdiv{
+	overflow:hidden;
+	height: 100%;
+    color: inherit;
+    word-wrap: break-word;
+    /*以下css  之后删除*/
+	/*background-color : #245580;*/
+}
+.titletext{
+	line-height:1.2;
+	color:#666666;
+	font-size:36px;
+}
+.trailerdiv{
+	height: 690px;
+	width: 1200px;
+	left: 0px;
+	top: 200px;
+	z-index:10061;
+    position: absolute;
+	/*以下css  之后删除*/
+	/*background-color: #245580;*/
+}
+.playarea{
+	width: 1200px;
+    height: 690px;
+	color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    font-family: helvetica neue,hiragino sans gb,tahoma,microsoft yahei ui,microsoft yahei,simsun,"sans-serif";
+    position: relative;
+    margin: 0;
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    transition: opacity .5s;
+    /*background: #000;*/
+    text-align: left!important;
+    direction: ltr;
+}
+.playtrailer{
+	width: 1200px;
+	height: 690px;
+    margin-right: 10px;
+	/*以下css  之后删除*/
+	/*background-color: #255625;*/
+}
+.playview{
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: auto;
+}
+.playcontroller{
+    height: 63px;
+    overflow: visible!important;
+	overflow: hidden;
+    padding-top: 15px;
+    transition: height .4s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    user-select: none;
+    z-index: 1;
+    box-sizing: border-box;
+	/*以下css  之后删除*/
+	background-color: #262626;
+}
+.progressbar{
+	position: absolute;
+    height: 6px;
+    bottom: 100%;
+    margin-bottom: -16px;
+    cursor: pointer;
+    z-index: 2;
+    transition: transform .1s;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    /*以下css  之后删除*/
+	background-color: #265A88;
+}
+.feature{
+    height: 467px;
+    width: 100%;
+    left: 0px;
+    top: 853px;
+    z-index: 10044;
+    position: absolute;
+    /*以下css  之后删除*/
+    /*background-color: #269ABC;*/
+}
+.mainareadiv{
+	overflow:visible;
+	width:1200px;
+	height: 100%;
+	position: relative;
+	/*以下css  之后删除*/
+	/*background-color: #28A4C9;*/
+}
+.centertextdiv{
+    height: 400px;
+    width: 445px;
+    left: 248px;
+    top: 38px;
+    z-index: 10045;
+    position: absolute;
+    /*以下css  之后删除*/
+    /*background-color: #286090;*/
+}
+.contentarea{
+	overflow:visible;
+    height: 100%;
+    border: 0 none transparent;
+    border-radius: 0px;
+    background-color: rgb(92, 109, 126);
+    background-image: none;
+    background-repeat: repeat;
+    background-position: 0 0;
+    background-size: auto;
+    box-shadow: 0 5px 0 transparent;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+}
+.featureareatitle{
+    height: 84px;
+    width: 441px;
+    left: 1px;
+    top: 14px;
+    z-index: 3;
+    position: absolute;
+    /*以下css  之后删除*/
+    /*background-color: #2E6DA4;*/
+
+}
+.featureareatitletext{
+	height: 100%;
+	word-wrap:break-word;
+	overflow: hidden;
+    color: inherit;	
+}
+.featuretitletext{
+	font-size: 30px;
+	line-height:1.5;
+	color: #FFFFFF;
+    font-family: "微软雅黑";
+}
+p{
+	text-align:center; 
+	margin:0; 
+	padding: 0;
+}
+.moviesbox{
+	margin: 0;
+	padding: 0;
+	display: block;
+	list-style: none;
+	background-color: #FFFFFF;
+	height: 100%;
+}
+.moviesbox li{
+	height:auto;
+	line-height:255px;
+	width:20%;
+    padding: 0px 20px 10px 5px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto;
+}
+.moviesbox li div{
+	text-align: left;
+}
+.leaderitem a:hover{
+	color: #FFFFFF;
+}
+.itemname{
+	position: absolute;
+	text-align: center !important;
+    left: 0;
+    bottom: 0;
+    width: 215px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 8px;
+    background-color: rgba(0,0,0,0.6);
+    background-image: none;
+    background-repeat: repeat;
+    background-position: 0 0;
+    box-sizing: border-box;
+}
+.itemname h5{
+	padding-top: 0px;
+}
+.movie-img{
+	width: 215px;
+	height: 260px;
+
+
+}
+
+.roomtype{
+	height: 68px;
+	width: 102px;
+	left: 13px;
+	top: 105px;
+	z-index:14;
+	text-align: center;
+	position: absolute;
+	overflow: visible;
+    background-color: rgb(69, 81, 103);
+}
+.roomtypename{
+    margin: 0;
+    padding: 0;
+    border-top: 2px none #3099DD;
+    border-right: 2px none #3099DD;
+    border-bottom: 2px none #3099DD;
+    border-left: 1px none #3099DD;
+    box-shadow: 0 5px 0 transparent;
+	width: 99px;
+	height: 64px;
+	line-height: 64px;
+    font-size: 18px;
+	color: #FFFFFF;
+}
+.typesdiv{
+	height: 68px;
+	width: 300px;
+	left: 130px;
+	top: 105px;
+	z-index:16;
+	position: absolute;
+}
+.typesul{
+	margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+    border-radius: 0;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    box-sizing: content-box;
+    list-style: none outside none;
+}
+.typesul li{
+	height:70px;
+	line-height:70px;
+	width:25%;
+    padding: 0;
+    margin: 0;
+    display: list-item;
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: 400;
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto;
+}
+.roomvoice{
+	height: 68px;
+	width: 102px;
+	left: 13px;
+	top: 178px;
+	z-index:14;
+	text-align: center;
+	position: absolute;
+	overflow: visible;
+    background-color: rgb(69, 81, 103);
+}
+.room4d{
+	height: 68px;
+	width: 102px;
+	left: 13px;
+	top: 251px;
+	z-index:14;
+	text-align: center;
+	position: absolute;
+	overflow: visible;
+    background-color: rgb(69, 81, 103);
+}
+.roomjiguang{
+	height: 68px;
+	width: 102px;
+	left: 13px;
+	top: 324px;
+	z-index:14;
+	text-align: center;
+	position: absolute;
+	overflow: visible;
+    background-color: rgb(69, 81, 103);
+}
+.righttextdiv{
+	height: 400px !important;
+    width: 498px !important;
+	left: 703px;
+	top: 38px;
+	z-index:10047;
+	position: absolute;
+}
+.rightcontentdiv{
+	height: 400px;
+	text-align: center;
+    border: 0px solid #fff;
+    border-radius: 1px;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    box-shadow: 0 5px 0 transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.rightimg{
+	width: 498px;
+	height: 100%;
+	margin-left: 0px;
+	border: 0;
+    vertical-align: middle;
+}
+.lefttextdiv{
+	height: 400px !important;
+	width: 246px !important;
+	left: 0;
+	top: 38px;
+	z-index:10035;
+    position: absolute;
+	overflow: visible;
+	height: 100%;
+}
+.leftcontentdiv{
+	height: 400px;
+	text-align: center;
+    border: 0px solid #fff;
+    border-radius: 1px;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -ms-opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
+    box-shadow: 0 5px 0 transparent;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.leftimg{
+	width: 246px;
+	height: 100%;
+	margin-left: 0px;
+	border: 0;
+    vertical-align: middle;
+}
+.featureareabackground{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: -260px;
+	width: 1720px;
+	min-width: 1200px;
+    background-color: #080808;
+    background-image: none;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+}
+.hotfilmsdiv{
+	height: 746px;
+	width: 100%;
+	left: 0px;
+	top: 1359px;
+	z-index:10048;
+	position: absolute;
+	/*background-color: #398439;*/
+}
+.filmscontentdiv{
+    overflow: visible;
+    position: relative;
+    height: 100%;
+}
+.filmsdiv{
+	width: 1200px;
+    background-color: transparent;
+    background-image: none;
+    background-repeat: repeat;
+    background-position: 50% 50%;
+}
+.filmcontentdiv{
+    height: 450px;
+    width: 1200px;
+    left: 0px;
+    top: 164px;
+    z-index:5;
+    position: absolute;
+    
+    background-color: #FFFFFF;
+}
+.filmcontentbackground{
+	position: absolute;
+	top: -39px;
+	bottom: 0px;
+	left: -260px;
+    width: 1720px;
+    min-width: 1200px;
+	background-color: rgb(246, 246, 246);
+}
+.outerdiv{
+	margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    overflow: visible;
+}
+.filmstate{
+	margin: 0;
+	margin-bottom: 10px;
+    padding: 0;
+    height: 32px;
+    /*font-size: 0;*/
+    position: relative;
+    background-color: #f5f7fa;
+    background-size: auto;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: transparent;
+    border-bottom-color: #666666;
+    text-align: left;
+}
+.labletext{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    z-index: 12;
+    background-color: rgb(102, 102, 102);
+    background-image: none !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 50% !important;
+    background-size: auto;
+    display: inline-block;
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: top;
+    cursor: pointer;
+}
+li a{
+	color: #fff;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    border-right-color: transparent;
+}
+.partnerdiv{
+	height: 87px;
+	width: 1192px;
+	left: 3px;
+	top: 2207px;
+	z-index:10041;
+	position: absolute;
+}
+
+
+
+
+
+.footdiv{
+	background-color: rgb(0, 0, 0);
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position:0 0;
+	background:-moz-linear-gradient(top, none, none);
+	background:-webkit-gradient(linear, left top, left bottom, from(none), to(none));
+	background:-o-linear-gradient(top, none, none);
+	background:-ms-linear-gradient(top, none, none);
+	background:linear-gradient(top, none, none);
+	;
+	position: relative;
+	width: 100%;
+	min-width:1200px;
+	background-size: auto;
+}
+.footer{
+	width: 1200px;
+	height: 110px;
+	position: relative;
+	margin: 0 auto;
+}
+
+/*电影详情页面*/
+.mainfilmcontent{
+	min-height: 200px;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+.empty-full{
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+.titleleaderdiv{
+	min-height: 35px;
+	width: 850px;
+	left: 75px;
+	top: 32px;
+	z-index:3;
+    position: absolute;
+    overflow: visible;
+}
+.titleleader{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    line-height: 34px;
+    font-family: 'Microsoft YaHei';
+    text-align: left;
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.titleleader a{
+	padding: 0;
+    margin: 0;
+    display: inline-block;
+    font-family: 'Microsoft YaHei';
+    font-size: 12px;
+    color: #666;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.titleleader .glyphicon{
+	top: 4px;
+	line-height: 30px;
+	font-size: 16px;
+}
+.filmtitlediv{
+	min-height: 34px;
+	width: 800px;
+	left: 100px;
+	top: 85px;
+	z-index:2;
+	position: absolute;
+	overflow: visible;
+}
+.filmtitle{
+	font-size: 24px;
+	text-align: center;
+    font-family: 'Microsoft YaHei';
+    color: #404040;;
+}
+.filmpretimediv{
+	height: 20px;
+	width: 400px;
+	left: 323px;
+	top: 141px;
+	z-index:5;
+	position: absolute;
+	overflow: visible;
+}
+.filmpretime{
+    padding: 0 0 0 60px;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    font-family: 'Microsoft YaHei';
+    color: #999999;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-align: left;
+    word-wrap: break-word;
+    word-break: normal;
+}
+.filmpicdiv{
+	min-height: 72px;
+	width: 850px;
+	left: 75px;
+	top: 185px;
+	z-index:4;
+	position: absolute;
+	overflow: visible;	
+}
+.filmpicdiv p{
+	text-indent: 0 !important;
+	text-align: left;
+}
+.filmpic{
+	
+	width: 100% !important;
+    height: auto !important;
+}
+.prevfilmdiv{
+	min-height: 26px;
+	width: 400px;
+	left: 74px;
+	top: 1926px;
+	z-index: 8;
+	position: absolute;
+	overflow: visible;
+}
+
+
+.nextfilmdiv{
+	text-align: right;
+	min-height: 26px;
+	width: 400px;
+	left: 525px;
+	top: 1926px;
+	z-index: 9;
+	position: absolute;
+	overflow: visible;
+}
+.btndiv a span{
+	font-family: "microsoft yahei";
+    font-weight: 200;
+    font-size: 18px;
+}
