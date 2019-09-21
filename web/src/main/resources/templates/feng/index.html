@@ -24,9 +24,6 @@
 </head>
 <body>
 <div id="app">
-
-<!-- Page loader -->
-<div id="preloader"></div>
 <!-- header section start -->
 <header class="header">
     <div class="container">
@@ -331,300 +328,43 @@
     </div>
 </div><!-- header section end -->
 <!-- hero area start -->
-<section class="hero-area" id="home">
-    <div class="container">
-        <div class="hero-area-slider">
-            <div class="row hero-area-slide" v-for="movie in newMovie">
-                <div class="col-lg-6 col-md-5">
-                    <div class="hero-area-content">
-                        <img :src="movie.mpic" alt="about"/>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>The Devil Princess</h2>
-                        <div class="review">
-                            <div class="author-review">
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                            </div>
-                            <h4>180k voters</h4>
-                        </div>
-                        <p>She is a devil princess from the demon world. She grew up sheltered by her parents and
-                            doesn't really know how to be evil or any of the common actions, She is unable to cry due to
-                            Keita's accidental first wish, despite needed for him to wish...</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast1.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast2.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast3.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast4.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast5.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast6.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast7.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
-                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-<!--            <div class="row hero-area-slide">-->
-<!--                <div class="col-lg-6 col-md-5">-->
-<!--                    <div class="hero-area-content">-->
-<!--                        <img src="/web/assets/img/slide1.png" alt="about"/>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-lg-6 col-md-7">-->
-<!--                    <div class="hero-area-content pr-50">-->
-<!--                        <h2>Last Avatar</h2>-->
-<!--                        <div class="review">-->
-<!--                            <div class="author-review">-->
-<!--                                <i class="icofont icofont-star"></i>-->
-<!--                                <i class="icofont icofont-star"></i>-->
-<!--                                <i class="icofont icofont-star"></i>-->
-<!--                                <i class="icofont icofont-star"></i>-->
-<!--                                <i class="icofont icofont-star"></i>-->
-<!--                            </div>-->
-<!--                            <h4>180k voters</h4>-->
-<!--                        </div>-->
-<!--                        <p>She is a devil princess from the demon world. She grew up sheltered by her parents and-->
-<!--                            doesn't really know how to be evil or any of the common actions, She is unable to cry due to-->
-<!--                            Keita's accidental first wish, despite needed for him to wish...</p>-->
-<!--                        <h3>Cast:</h3>-->
-<!--                        <div class="slide-cast">-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast1.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast2.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast3.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast4.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast5.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast6.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast">-->
-<!--                                <img src="/web/assets/img/cast/cast7.png" alt="about"/>-->
-<!--                            </div>-->
-<!--                            <div class="single-slide-cast text-center">-->
-<!--                                5+-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="slide-trailor">-->
-<!--                            <h3>Watch Trailer</h3>-->
-<!--                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-            <div class="row hero-area-slide">
-                <div class="col-lg-6 col-md-5">
-                    <div class="hero-area-content">
-                        <img src="/web/assets/img/slide3.png" alt="about"/>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-7">
-                    <div class="hero-area-content pr-50">
-                        <h2>The Deer God</h2>
-                        <div class="review">
-                            <div class="author-review">
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                                <i class="icofont icofont-star"></i>
-                            </div>
-                            <h4>180k voters</h4>
-                        </div>
-                        <p>She is a devil princess from the demon world. She grew up sheltered by her parents and
-                            doesn't really know how to be evil or any of the common actions, She is unable to cry due to
-                            Keita's accidental first wish, despite needed for him to wish...</p>
-                        <h3>Cast:</h3>
-                        <div class="slide-cast">
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast1.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast2.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast3.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast4.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast5.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast6.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast">
-                                <img src="/web/assets/img/cast/cast7.png" alt="about"/>
-                            </div>
-                            <div class="single-slide-cast text-center">
-                                5+
-                            </div>
-                        </div>
-                        <div class="slide-trailor">
-                            <h3>Watch Trailer</h3>
-                            <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="hero-area" id="home">
+        <div class="container" >
+               <div class="row hero-area-slide"  >
+                   <div class="col-lg-6 col-md-5">
+                       <div class="hero-area-content" >
+                           <img style="height: 702.19px;opacity:0.8;" id="actpic" :src="showmovie.mpic" alt="about"/>
+                       </div>
+                   </div>
+                   <div class="col-lg-6 col-md-7" >
+                       <div class="hero-area-content pr-50">
+                           <h2 v-text="showmovie.mname"></h2>
+                           <div class="review">
+                               <div class="author-review">
+                                   <i class="icofont icofont-star"></i>
+                                   <i class="icofont icofont-star"></i>
+                                   <i class="icofont icofont-star"></i>
+                                   <i class="icofont icofont-star"></i>
+                                   <i class="icofont icofont-star"></i>
+                               </div>
+                               <h4 v-text="showmovie.score"></h4>
+                           </div>
+                           <p v-text="showmovie.shortStory"></p>
+                           <div class="slide-trailor">
+                               <h3>Watch Trailer</h3>
+                               <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i> Tickets</a>
+                           </div>
+                       </div>
+                       <div style="width:100%;height: 30%;border: 1px solid #0000FF;background-color: transparent;position:absolute;bottom:0;left: 0">
+                           <div :id="'picdiv'+index" onclick="changepic(this)" v-for="(movie,index) in newMovie" style="width: 33.333333%;height: 100%;border: #4cae4c solid 1px;position: relative;float: left" >
+                               <img :src="movie.mpic" alt="" style="width: 100%;height: 100%;">
+                           </div>
+                       </div>
+                   </div>
+
+               </div>
         </div>
-        <div class="hero-area-thumb">
-            <div class="thumb-prev">
-                <div class="row hero-area-slide">
-                    <div class="col-lg-6">
-                        <div class="hero-area-content">
-                            <img src="/web/assets/img/slide3.png" alt="about"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="hero-area-content pr-50">
-                            <h2>Last Avatar</h2>
-                            <div class="review">
-                                <div class="author-review">
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                </div>
-                                <h4>180k voters</h4>
-                            </div>
-                            <p>She is a devil princess from the demon world. She grew up sheltered by her parents and
-                                doesn't really know how to be evil or any of the common actions, She is unable to cry
-                                due to Keita's accidental first wish, despite needed for him to wish...</p>
-                            <h3>Cast:</h3>
-                            <div class="slide-cast">
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast1.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast2.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast3.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast4.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast5.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast6.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast7.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast text-center">
-                                    5+
-                                </div>
-                            </div>
-                            <div class="slide-trailor">
-                                <h3>Watch Trailer</h3>
-                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i>
-                                    Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="thumb-next">
-                <div class="row hero-area-slide">
-                    <div class="col-lg-6">
-                        <div class="hero-area-content">
-                            <img src="/web/assets/img/slide1.png" alt="about"/>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="hero-area-content pr-50">
-                            <h2>The Deer God</h2>
-                            <div class="review">
-                                <div class="author-review">
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                    <i class="icofont icofont-star"></i>
-                                </div>
-                                <h4>180k voters</h4>
-                            </div>
-                            <p>She is a devil princess from the demon world. She grew up sheltered by her parents and
-                                doesn't really know how to be evil or any of the common actions, She is unable to cry
-                                due to Keita's accidental first wish, despite needed for him to wish...</p>
-                            <h3>Cast:</h3>
-                            <div class="slide-cast">
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast1.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast2.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast3.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast4.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast5.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast6.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast">
-                                    <img src="/web/assets/img/cast/cast7.png" alt="about"/>
-                                </div>
-                                <div class="single-slide-cast text-center">
-                                    5+
-                                </div>
-                            </div>
-                            <div class="slide-trailor">
-                                <h3>Watch Trailer</h3>
-                                <a class="theme-btn theme-btn2" href="#"><i class="icofont icofont-play"></i>
-                                    Tickets</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- hero area end -->
+    </section><!-- hero area end -->
 <!-- portfolio section start -->
 <section class="portfolio-area pt-60">
     <div class="container">
@@ -1008,7 +748,8 @@
             </div>
         </div>
     </div>
-</footer><!-- footer section end -->
+</footer>
+</div>
 <!-- jquery main JS -->
     <script src="/web/js/vue.js" type="text/javascript"></script>
     <script src="/web/assets/js/jquery.min.js"></script>
@@ -1024,23 +765,41 @@
     <script src="/web/assets/js/main.js"></script>
 
 
-</div>
 <script type="text/javascript">
+    function changepic(obj) {
+        app1.showmovie = app1.newMovie[$(obj).index()];
+    };
+
+    $(function () {
+        var index=0;
+        setInterval(function(){
+            if(index <= 2){
+                $("#picdiv"+index).click();
+                index+=1;
+            }else{
+                index=0;
+                $("#picdiv"+index).click();
+            }
+        }, 3000);
+    })
     var app1=new Vue({
         el:"#app",
         data:{
-            newMovie:[]
+            newMovie:[],
+            activeIndex:0,
+            showmovie:{}
         },
         created:function () {
            var _this=this;
-            //查询最新的5部电影
+            //查询最新的3部电影
             $.ajax({
-                url:"/movie-stage/movie/orderbytime/5",
+                url:"/movie-stage/movie/orderbytime/3",
                 type:"get",
                 dataType:"json",
                 success:function (data) {
-                    console.log(data)
-                    _this.newMovie=data.list
+                    _this.newMovie=data.list;
+                    _this.showmovie = data.list[0];
+                    console.log(data);
                 }
 
             })
