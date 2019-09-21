@@ -409,7 +409,7 @@ p {
 	background-color: #FFFFFF;
 }
 .head_div2 {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: auto;
 	top: 0;

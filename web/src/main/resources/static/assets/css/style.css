@@ -725,11 +725,32 @@ hr {
 --------- footer AREA CSS START --------
 -----------------------------------*/
 .footer {
+    height: auto;
+    width: 100%;
+    margin-top: 150px;
 	background: url('../img/footer-bg.png') no-repeat bottom center / cover;
     position: relative;
 	padding: 90px 0 30px;
 }
 .footer::before {
+    position: absolute;
+    background: #13151f;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+}
+.footer1 {
+    height: auto;
+    width: 100%;
+    margin-top: 95px;
+    background: url('../img/footer-bg.png') no-repeat bottom center / cover;
+    position: relative;
+    padding: 90px 0 30px;
+}
+.footer1::before {
     position: absolute;
     background: #13151f;
     top: 0;
