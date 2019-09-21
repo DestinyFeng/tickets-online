@@ -1119,7 +1119,7 @@ hr {
 	display: none;
     height: 100%;
     background: rgba(0,0,0,0.4);
-    z-index: 99;
+    z-index: 1050;
 	padding: 0 15px;
 }
 

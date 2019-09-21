@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    	<meta name="robots" content="all,follow">
+    	<link rel="stylesheet" href="/web/backstage/backstagecss/bootstrap.min.css">
+		<link rel="stylesheet" href="/web/backstage/backstagecss/font-awesome.min.css">
+		<link rel="stylesheet" href="/web/backstage/backstagecss/fontastic.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+		<link rel="stylesheet" href="/web/backstage/backstagecss/cinemabackstage.css" id="theme-stylesheet">
+		<link rel="stylesheet" href="/web/backstage/backstagecss/custom.css">
+		<link rel="shortcut icon" href="/web/backstage/img/favicon.ico">
+		<script type="text/javascript" src="/web/backstage/js/jquery-3.4.0.min.js"></script>
+		<title></title>
+		<style type="text/css">
+			#pic{
+				padding-left: 15px;
+				margin-top: 30px;
+			}
+			
+			#imgPreview {
+				padding: 0;
+				width: 19.5%;
+				height: 195px;
+				margin: 0 2px;
+				float: left;
+				list-style: none;
+				border: 1px solid black;
+				position: relative;
+			}
+			
+			#prompt3 {
+				width: 100%;
+				height: 180px;
+				text-align: center;
+				position: relative;
+			}
+			
+			#imgSpan {
+				position: absolute;
+				top: 75px;
+				left: 125px;
+			}
+			
+			.filepath {
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+			}
+			
+			#img3 {
+				display: none;
+				background-color: #2F333E;
+				width: 100%;
+				height: 100%;
+			}
+			
+			.addpicbtn {
+				display: none;
+				float: left;
+				position: relative;
+				width: 20%;
+			}
+			
+			.addbtn {
+				width: 90px;
+				height: 35px;
+				float: left;
+				position: relative;
+				display: none;
+			}
+			
+			.uploadbtn {
+				width: 90px;
+				height: 35px;
+				float: left;
+				position: relative;
+			}
+		</style>
+	</head>
+
+	<body>
+	<div class="content-inner">
+		<!-- Page Header-->
+		<header class="page-header">
+			<div class="container-fluid">
+				<h2 class="no-margin-bottom">影院图片上传</h2>
+			</div>
+		</header>
+		<br />
+		<h5>&nbsp;&nbsp;&nbsp;&nbsp;请在下方添加影院图片:</h5>
+		<form id="filesupload" action="" method="post">
+			<ul id="pic">
+				<li id="imgPreview">
+					<div id="prompt3">
+						<span id="imgSpan">添加图片<br /></span>
+						<input type="file" id="file" class="filepath" onchange="addpic(this)" accept="image/jpg,image/jpeg,image/png,image/PNG">
+					</div>
+					<img class="" src="#" id="img3" onclick="changepic(this)" />
+				</li>
+			</ul>
+		</form>
+		<div class="addpicbtn">
+			<input class="addbtn" type="button" name="add" value="继续添加" onclick="clickhere(this)" />
+			<input class="uploadbtn" type="button" name="submit" value="提交上传" onclick="submitpics(this)"  />
+		</div>
+	</div>
+	<script type="text/javascript">
+		function addpic(obj) {
+			$(obj).parent().css("display", "none");
+			var reads = new FileReader();
+			var f = $(obj).get(0).files[0];
+			reads.readAsDataURL(f);
+			reads.onload = function(e) {
+				$(obj).parent().next().attr("src",this.result);
+				$(obj).parent().next().css("display", "block");
+				$(".addbtn").css("display", "block");
+				$(".addpicbtn").css("display", "block");
+				
+			};
+		};
+		function changepic(obj) {
+			$(obj).prev().children(":eq(1)").click();
+			$(obj).prev().css("display", "none");
+			
+		};
+		function clickhere(obj) {
+			var index = $(obj).parent().prev().children().children().length;
+			if(index < 4){
+				$("#pic").append($("#imgPreview").clone(true));
+				$("#pic").children(":eq("+index+")").children(":eq(0)").css("display", "block");
+				$("#pic").children(":eq("+index+")").children(":eq(1)").css("display", "none");
+				$(".addbtn").css("display", "none");
+			}else{
+				$(".addbtn").css("display", "none");
+				alert("最多只能上传4张图片");
+			}
+			
+		};
+		function submitpics(obj) {
+//			$("#filesupload").submit();
+		}
+	</script>
+</body>
+
+</html>
