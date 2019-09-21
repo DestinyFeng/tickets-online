@@ -27,7 +27,6 @@
 <!-- //font-awesome icons -->
 <!-- js -->
 <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="/web/js/vue.js"></script>
 <!-- //js -->
 <!-- banner-bottom-plugin -->
 <link href="/web/css/owl.carousel.css" rel="stylesheet" type="text/css" media="all">
@@ -67,18 +66,18 @@
 	}
 </style>
 <script>
-	$(document).ready(function() {
+	$(document).ready(function() { 
 		$("#owl-demo").owlCarousel({
-
+	 
 		  autoPlay: 3000, //Set AutoPlay to 3 seconds
-
+	 
 		  items : 5,
 		  itemsDesktop : [640,4],
 		  itemsDesktopSmall : [414,3]
-
+	 
 		});
-
-	});
+	 
+	}); 
 </script> 
 <!-- //banner-bottom-plugin -->
 <!---<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>--->
@@ -86,9 +85,6 @@
 <script type="text/javascript" src="/web/js/move-top.js"></script>
 <script type="text/javascript" src="/web/js/easing.js"></script>
 <script type="text/javascript">
-	
-
-	
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
 			event.preventDefault();
@@ -151,7 +147,7 @@
 						<nav>
 							<ul class="nav navbar-nav">
 								<li class="active"><a href="index.html">首页</a></li>
-								<li><a href="/web/tao/mtype.html">电影</a></li>
+								<li><a href="series.html">电影</a></li>
 								<li><a href="series.html">影院</a></li>
 								<li><a href="NEWs.html">热点</a></li>
 								<li><a href="short-codes.html">榜单</a></li>
@@ -227,7 +223,8 @@
 </div>
 <!-- //nav -->
 <!-- banner -->
-<div id="app">
+<div>
+
 	<div class="marginTop_indexhead" id="slidey" style="display:none;">
 		<ul>
 			<li><img src="images/5.jpg" alt=" "><p class='title'>Tarzan</p><p class='description'> Tarzan, having acclimated to life in London, is called back to his former home in the jungle to investigate the activities at a mining encampment.</p></li>
@@ -239,35 +236,9 @@
 		</ul>
 	</div>
 </div>
-
-
     <script src="js/jquery.slidey.js"></script>
     <script src="js/jquery.dotdotdot.min.js"></script>
 	   <script type="text/javascript">
-		   $(function () {
-			   var app1=new Vue({
-				   el:"#app",
-				   data:{
-					   newMovie:[]
-				   },
-				   created:function () {
-					   _this=this;
-					   //查询最新的5部电影
-					   $.ajax({
-						   url:"/movie-stage/movie/orderbytime/5",
-						   type:"get",
-						   dataType:"json",
-						   success:function (data) {
-							   console.log(data)
-							   _this.newMovie=data.list
-						   }
-
-					   })
-				   }
-			   })
-		   });
-		   
-		   
 			$("#slidey").slidey({
 				interval: 8000,
 				listCount: 5,
@@ -1512,12 +1483,12 @@ $(document).ready(function(){
 				containerID: 'toTop', // fading element id
 				containerHoverID: 'toTopHover', // fading element hover id
 				scrollSpeed: 1200,
-				easingType: 'linear'
+				easingType: 'linear' 
 				};
 			*/
-
+								
 			$().UItoTop({ easingType: 'easeOutQuart' });
-
+								
 			});
 	</script>
 <!-- //here ends scrolling icon -->

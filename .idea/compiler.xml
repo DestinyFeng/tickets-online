@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="web" />
+        <module name="gateway" />
+        <module name="tickets-online" />
+        <module name="eureka-server2" />
+        <module name="eureka-server1" />
+        <module name="cinema-stage" />
+        <module name="movie-stage" />
+        <module name="orders-stage" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cinema-stage" target="1.8" />
+      <module name="eureka-server1" target="1.8" />
+      <module name="eureka-server2" target="1.8" />
+      <module name="gateway" target="1.8" />
+      <module name="movie-stage" target="1.8" />
+      <module name="orders-stage" target="1.8" />
+      <module name="tickets-online" target="1.8" />
+      <module name="web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cinema-stage" options="-parameters" />
+      <module name="eureka-server1" options="-parameters" />
+      <module name="eureka-server2" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="movie-stage" options="-parameters" />
+      <module name="orders-stage" options="-parameters" />
+      <module name="tickets-online" options="-parameters" />
+      <module name="web" options="-parameters" />
+    </option>
+  </component>
+</project>
