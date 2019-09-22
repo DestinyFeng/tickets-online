@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.orders.mapper.MovieShowtimeMapper">
+    <resultMap id="BaseResultMap" type="com.woniu.orders.entity.MovieShowtime">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="cid" jdbcType="INTEGER" property="cid"/>
+        <result column="mid" jdbcType="INTEGER" property="mid"/>
+        <result column="playtime" jdbcType="TIMESTAMP" property="playtime"/>
+        <result column="room_id" jdbcType="INTEGER" property="roomId"/>
+        <result column="money" jdbcType="DOUBLE" property="money"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, cid, mid, playtime, room_id, money
+    </sql>
+    <select id="selectPrice" resultType="java.lang.Double">
+        select money from movie_showtime where id=#{msid}
+    </select>
+  <resultMap id="MovieShowInfoMap" type="com.woniu.orders.entity.MovieShowInfo">
+        <result column="c_name" jdbcType="VARCHAR" property="cName"/>
+       <result column="name" jdbcType="VARCHAR" property="rName"/>
+       <result column="playtime" jdbcType="TIMESTAMP" property="playTime"/>
+    <result column="money" jdbcType="DOUBLE" property="money"/>
+  </resultMap>
+    <select id="selectMovieShowInfo" resultType="com.woniu.orders.entity.MovieShowInfo" resultMap="MovieShowInfoMap">
+      select c.c_name ,cr.name ,ms.playtime,ms.money FROM movie_showtime ms INNER JOIN cinema  c on ms.mid = c.id
+        INNER JOIN cinema_room cr on ms.room_id = cr.id WHERE ms.id=#{msid}
+    </select>
+</mapper>

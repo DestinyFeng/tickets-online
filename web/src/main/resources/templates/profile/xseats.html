@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://maoyan.com/xseats/201909200322027?movieId=1277982&cinemaId=23966 -->
+<html><!--<![endif]-->
+<head>
+    <title>选座</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <script src="/web/js/vue.js"></script>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!-- //for-mobile-apps -->
+    <link rel="stylesheet" href="/web/ltcss/cinemas-seat.b8adee6e.css">
+    <link href="/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!--  <link rel="stylesheet" href="/web/css/faqstyle.css" type="text/css" media="all"/>-->
+    <!-- <link href="/web/css/medile.css" rel='stylesheet' type='text/css'/>
+     <link href="/web/css/single.css" rel='stylesheet' type='text/css'/>-->
+    <!--  <link rel="stylesheet" href="/web/css/contactstyle.css" type="text/css" media="all"/>-->
+    <!-- news-css -->
+    <!--<link rel="stylesheet" href="/web/news-css/news.css" type="text/css" media="all"/>-->
+    <!-- //news-css -->
+    <!-- list-css -->
+    <!-- <link rel="stylesheet" href="/web/list-css/list.css" type="text/css" media="all"/>-->
+    <!-- //list-css -->
+    <!-- font-awesome icons -->
+    <!--<link rel="stylesheet" href="/web/css/font-awesome.min.css"/>-->
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script type="text/javascript" src="/web/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!---<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>--->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="/web/js/move-top.js"></script>
+    <script type="text/javascript" src="/web/js/easing.js"></script>
+
+    <!-- start-smoth-scrolling -->
+    <!-- tables -->
+    <link rel="stylesheet" type="text/css" href="/web/ltcss/order-detail.3a8a0a18.css"/>
+    <link rel="stylesheet" type="text/css" href="/web/ltcss/profile-profile.13d06bf4.css"/>
+    <link rel="stylesheet" type="text/css" href="/web/list-css/basictable.css"/>
+    <script type="text/javascript" src="/web/list-js/jquery.basictable.min.js"></script>
+    <script type="text/javascript" src="/web/js/vue.js"></script>
+
+
+    <!-- //tables -->
+
+</head>
+</head>
+<body>
+
+<div class="header">
+    <div class="container container-head">
+        <div class="w3layouts_logo ">
+            <a href="/web/index.html">
+                <h1 class="title">爱乐<span id="webtitle-bottom">电影</span></h1></a>
+        </div>
+        <div class="w3l_search_city col-lg-3 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" list="city" value="重庆"/>
+                <datalist id="city">
+                    <option>北京</option>
+                </datalist>
+            </form>
+        </div>
+        <div class="w3_search col-lg-5 col-xs-12 col-sm-6">
+            <form action="#" method="post">
+                <input type="text" name="Search" placeholder="搜索一部你期待的电影吧" required="required">
+                <input type="submit" value="Go">
+            </form>
+        </div>
+
+        <div class="w3l_sign_in_register col-lg-1 col-xs-12 col-sm-6">
+            <ul class="text-center">
+                <li id="p-info">
+                    <img class="user-info" style="height: 40px;" src="/web/images/default_head.png"></img>
+                    <span class="caret"></span>
+                    <ul id="info" style="display:none;">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">登录</a></li>
+                        <li><a href="/web/profile/orders.html">我的订单</a></li>
+                        <li><a href="/web/profile/profile.html">我的信息</a></li>
+                        <li><a href="javascript:void 0">退出登录</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+
+        $("#p-info").mouseover(function () {
+            $("#info").show()
+        });
+        $("#p-info").click(function () {
+            $("#info").show()
+        });
+        $("#p-info").mouseout(function () {
+            $("#info").hide()
+        });
+    })
+</script>
+<!-- //header -->
+<!-- bootstrap-pop-up -->
+<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                欢迎使用爱乐电影
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <section>
+                <div class="modal-body">
+                    <div class="w3_login_module">
+                        <div class="module form-module">
+                            <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+                                <div class="tooltip">点击注册</div>
+                            </div>
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <div class="log-toggle"><i class="switch-log">账号密码登录</i>
+                                    </div>
+                                    <form action="#" method="post">
+                                        <input type="text" name="Username" placeholder="请输入用户名" required="required">
+                                        <input type="password" name="Password" placeholder="请输入密码" required="required">
+                                        <label class="check-lable"><input type="checkbox" name="remember"/>记住我</label>
+                                        <a href="#" class="forget-a">忘记密码？</a>
+                                        <input class="btn btn-success" type="submit" value="登录">
+                                    </form>
+                                </fieldset>
+                            </div>
+                            <!--
+                                作者：971872973@qq.com
+                                时间：2019-09-07
+                                描述：手机验证的表单
+                            -->
+                            <!--<div class="log-form">
+                                <fieldset>
+                                    <legend class="form-legend">账号登录</legend>
+                                    <form action="#" method="post">
+                                    <input type="text" name="Username" placeholder="请输入手机号" required="required">
+                                    <input type="password" name="Password" placeholder="请输入验证码" required="required">
+                                    <input type="button" class="code-button" name="getcode" value="获取验证码"/>
+                                    <input class="btn btn-success" type="submit" value="登录">
+                                  </form>
+                              </fieldset>
+                            </div>-->
+                            <div class="form">
+                                <fieldset>
+                                    <legend class="form-legend">注册账户</legend>
+                                    <form action="#" method="post">
+                                        <input type="text" name="username" placeholder="新用户名" required="">
+                                        <input type="password" name="password" placeholder="新密码" required="">
+                                        <input type="password" name="checkpwd" placeholder="请确认密码" required="">
+                                        <input type="text" name="phone" placeholder="电话" required="">
+                                        <input type="submit" value="注册">
+                                    </form>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $('.toggle').click(function () {
+        // Switches the Icon
+        $(this).children('i').toggleClass('fa-pencil');
+        // Switches the forms
+        $('.form').animate({
+            height: "toggle",
+            'padding-top': 'toggle',
+            'padding-bottom': 'toggle',
+            opacity: "toggle"
+        }, "slow");
+    });
+</script>
+
+
+<div class="container" id="app" style="margin-bottom: 100px">
+    <div class="order-progress-bar">
+        <div class="step first done">
+            <span class="step-num">1</span>
+            <div class="bar"></div>
+            <span class="step-text">选择影片场次</span>
+        </div>
+        <div class="step done">
+            <span class="step-num">2</span>
+            <div class="bar"></div>
+            <span class="step-text">选择座位</span>
+        </div>
+        <div class="step ">
+            <span class="step-num">3</span>
+            <div class="bar"></div>
+            <span class="step-text">14分钟内付款</span>
+        </div>
+        <div class="step last ">
+            <span class="step-num">4</span>
+            <div class="bar"></div>
+            <span class="step-text">影院取票观影</span>
+        </div>
+    </div>
+
+
+    <div class="main clearfix">
+        <div class="hall col-lg-9">
+            <div class="seat-example">
+                <div class="selectable-example example">
+                    <span>可选座位</span>
+                </div>
+                <div class="sold-example example">
+                    <span>已售座位</span>
+                </div>
+                <div class="selected-example example">
+                    <span>已选座位</span>
+                </div>
+                <div class="couple-example example">
+                    <span>情侣座位</span>
+                </div>
+            </div>
+
+
+            <div class="seats-block" data-cols="12" data-section-id="1" data-section-name="普通区"
+                 data-seq-no="201909200322027">
+                <div class="row-id-container">
+                    <span class="row-id" v-for="row in msg.list" v-text="row.row"></span>
+
+                </div>
+
+                <div class="seats-container">
+                    <div class="screen-container" style="left: 0px;">
+                        <div class="screen">银幕中央</div>
+                        <div class="c-screen-line"></div>
+                    </div>
+                    <div class="seats-wrapper">
+                        <div class="row" v-for="row in msg.list">
+                                <span v-for="son in row.son"
+                                      :class="son.state=='N'?'seat selectable':son.state=='E' ?'seat empty' :'seat sold'"
+                                      :data-column-id="son.column"
+                                      :data-row-id="son.row" :data-st="son.state" :data-index="son.row+'-'+son.column"
+                                      @click="choose($event)"></span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="side col-lg-3">
+            <div class="movie-info clearfix">
+                <div class="poster">
+                    <img :src="movie.object.movie.mpic">
+                </div>
+                <div class="content">
+                    <p class="name text-ellipsis" v-text="movie.object.movie.mname"></p>
+                    <div class="info-item">
+                        <span>类型 :</span>
+                        <span class="value" v-for="type in movie.object.movie.types" v-text="type.mtype"></span>
+                    </div>
+                    <div class="info-item">
+                        <span>时长 :</span>
+                        <span class="value" v-text="movie.object.movie.longtime+'分钟'"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="show-info">
+                <div class="info-item">
+                    <span>影院 :</span>
+                    <span class="value text-ellipsis" v-text="cinema.object.cName"></span>
+                </div>
+                <div class="info-item">
+                    <span>影厅 :</span>
+                    <span class="value text-ellipsis" v-text="cinema.object.rName"></span>
+                </div>
+                <div class="info-item">
+                    <span>国家/地区 :</span>
+                    <span class="value text-ellipsis" v-text="movie.object.movie.comntry"></span>
+                </div>
+                <div class="info-item">
+                    <span>场次 :</span>
+                    <span class="value text-ellipsis screen" v-text="cinema.object.formatTime"></span>
+                </div>
+                <div class="info-item">
+                    <span>票价 :</span>
+                    <span class="value text-ellipsis" v-text="'￥'+cinema.object.money+'/张'"></span>
+                </div>
+            </div>
+
+            <div class="ticket-info">
+                <!--  <div class="no-ticket">
+                      <p class="buy-limit">座位：一次最多选6个座位</p>
+                      <p class="no-selected">请<span>点击左侧</span>座位图选择座位</p>
+                  </div>-->
+                <div class="has-ticket">
+                    <span class="text">座位：</span>
+                    <div class="ticket-container">
+
+                        <span v-for=" (seat,index) in seatList" v-show="index>=0" class="ticket" :data-row-id="seat.row"
+                              :data-column-id="seat.column" :data-index="seat.row+'-'+seat.column"
+                              v-text="seat.row+'排'+seat.column+'座'" @click="cancelTicket($event)"></span>
+
+                    </div>
+                </div>
+
+                <div class="total-price">
+                    <span>总价 :</span>
+                    <span class="price" v-text="price"></span>
+                </div>
+            </div>
+
+            <div class="confirm-order">
+                <div class="cellphone">
+                    <span>手机号 :</span>
+                    <span class="phone-num">188****8460</span>
+                </div>
+                <div class="confirm-btn" data-act="confirm-click" data-bid="b_0a0ep6pp" @click="confirmTicket($event)">
+                    确认选座
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-container" style="display: none;">
+        <div class="modal1">
+            <span class="icon"></span>
+
+            <p class="tip">一次最多购买6张票</p>
+
+            <div class="ok-btn btn" @click="btn($event)">我知道了</div>
+        </div>
+    </div>
+    <!--    <div class="modal-container" style="display:none">
+            <div class="modal1">
+                <span class="icon"></span>
+                <p class="tip"></p>
+                <div class="ok-btn btn">我知道了</div>
+            </div>
+        </div>-->
+</div>
+<script type="text/javascript">
+    var href = window.location.href;
+    var id = href.split("=")[1];
+
+    function select(obj) {
+        $.ajax({
+            url: "/orders/selectSeat",
+            data: {"msid": id},
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                obj.msg = data;
+            }
+        })
+    }
+
+    function selectMovie(mid) {
+        $.ajax({
+            url: "/movie-stage/movie/bymid/" + mid,
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                app.movie = data;
+            }
+        })
+    }
+
+    function selectCinema(mid) {
+        $.ajax({
+            url: "/orders/selectCinema?msid=" + mid,
+            type: "get",
+            dataType: "json",
+            success: function (data) {
+                app.cinema = data;
+            }
+        })
+    }
+
+    $(function () {
+        $(".ticket").bind("click", function (e) {
+            alert(1)
+            $(this).hide();
+        });
+    })
+
+
+    var seatnum = 0;
+    var app = new Vue({
+        el: "#app",
+        data: {
+            msg: "",
+            movie: "",
+            cinema: "",
+            seatList: [],
+            price: ""
+
+
+        },
+        created: function () {
+            var obj = this
+            select(obj);
+            selectMovie(1)
+            selectCinema(1)
+
+        },
+        methods: {
+            choose(e) {
+                if ($(e.target).hasClass("seat selectable")) {
+                    seatnum++;
+                    if (seatnum <= 6) {
+                        var row = $(e.target).attr("data-row-id")
+                        var column = $(e.target).attr("data-column-id")
+                        $(e.target).removeClass("selectable");
+                        $(e.target).addClass("selected");
+                        this.seatList.push({"row": row, "column": column});
+                        this.price = this.cinema.object.money * seatnum;
+                    } else {
+                        seatnum--;
+                        this.price = this.cinema.object.money * seatnum;
+                        $(".modal-container").show()
+
+                    }
+                    /*var html = '<span  class="ticket" data-row-id=' + row + ' data-column-id=' + column + ' data-index='+ row + '-' + column + '>' + row + '排' + column + '座</span>'
+                    $(".ticket-container").append(html)*/
+
+                } else if ($(e.target).hasClass("seat selected")) {
+                    $(e.target).removeClass("selected");
+                    $(e.target).addClass("selectable");
+                    var row = $(e.target).attr("data-row-id");
+                    var column = $(e.target).attr("data-column-id");
+                    var es = $(e.target).data("index");
+                    let index = -1;
+                    for (var i = 0; i < this.seatList.length; i++) {
+                        if (this.seatList[i].row == row && this.seatList[i].column == column) {
+                            index = i;
+                        }
+                    }
+                    this.seatList.splice(index, 1)
+                    seatnum--;
+                    /* $(".ticket").each(function () {
+                         var e = $(this);
+                         if (e.data("index") === es) {
+                             e.remove();
+                             seatnum--;
+                         }
+                     })*/
+                    this.price = this.cinema.object.money * seatnum;
+                }
+            },
+            btn(e) {
+                $(e.target).parent().parent().hide();
+            },
+            cancel(e) {
+                $(e.target).empty()
+            },
+            cancelTicket(e) {
+                var row = $(e.target).attr("data-row-id");
+                var column = $(e.target).attr("data-column-id");
+                var s = $(e.target).attr("data-index");
+                let index = -1;
+                for (var i = 0; i < this.seatList.length; i++) {
+                    if (this.seatList[i].row == row && this.seatList[i].column == column) {
+                        index = i;
+                    }
+                }
+                this.seatList.splice(index, 1)
+                $(".selected").each(function () {
+                    var e = $(this);
+                    if (e.data("index") === s) {
+                        e.removeClass("selected");
+                        e.addClass("selectable");
+                    }
+                })
+                seatnum--;
+                this.price = this.cinema.object.money * seatnum;
+                /* $(e.target).remove();
+                 $(".selected").each(function () {
+                     var e = $(this);
+                     if (e.data("index") === s) {
+                         e.removeClass("selected");
+                         e.addClass("selectable");
+                         seatnum--;
+                     }
+                 })*/
+            }, confirmTicket(e) {
+             /*   var s;
+                //不知道序列化数组对象，只有拼接
+               for (var i = 0; i < this.seatList.length; i++) {
+                   var data =this.seatList[i].row +"排"+this.seatList[i].column+"座"
+                   if(i==0){
+                      s ="seat="+data
+                   }else {
+                       s=s+"&seat="+data;
+                   }
+s+"&msid="+1,
+                }*/
+                var obj = this;
+
+                $.ajax({
+                    url: "/orders/profile/orders/confirm",
+                    data:obj.seatList,
+                    type: "post",
+                    dataType: "json",
+                    success: function (data) {
+
+                    }
+                })
+                console.log(this.seatList.length)
+
+            }
+        }
+    })
+</script>
+
+
+<div class="footer">
+    <div class="container">
+        <div class="w3ls_footer_grid">
+            <div class="col-md-6 w3ls_footer_grid_left">
+                <div class="w3ls_footer_grid_left1">
+                    <h3>关于爱乐</h3>
+                    <div class="w3ls_footer_grid_left1_pos">
+                        <div class="bottom-row">
+                            <span>商务合作邮箱：971872973@qq.com</span>
+                            <span class="bt-line">|</span>
+                            <span>客服电话：17603649546</span>
+                        </div>
+                        <div class="bottom-row">
+                            <span>用户投诉邮箱：1099773854@qq.com</span>
+                            <span class="bt-line">|</span>
+                            <span>友情链接：<a href="https://cq.meituan.com/?utm_source=wwwmaoyan"
+                                          class="bottom-chain">美团网</a></span>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">中华人民共和国增值电信业务经营许可证&nbsp;渝A1-20190909</a>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">网络文化经营许可证&nbsp;京网文(2019)3897-330号</a>
+                        </div>
+                        <div class="bottom-row">
+                            <a href="#" class="bottom-chain">爱乐用户服务协议</a>
+                            <span class="bt-line">|</span>
+                            <a href="#" class="bottom-chain">爱乐平台交易规则总则</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 w3ls_footer_grid_right">
+                <a href="index.html"><h2 class="title">爱乐<span id="webtitle-bottom">电影</span></h2></a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="col-md-5 w3ls_footer_grid1_left">
+            <p>重庆爱乐文化传媒有限公司©2016 爱乐电影 aiyue.com </p>
+        </div>
+        <div class="col-md-7 w3ls_footer_grid1_right">
+            <div class="col-lg-6 card-left">
+                <a href="#"><img src="images/web-permission.png"/></a>
+
+            </div>
+            <div class="col-lg-6 card-right">
+                <a href="#"><img src="images/permission-card.png"/></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+</body>
+</html>

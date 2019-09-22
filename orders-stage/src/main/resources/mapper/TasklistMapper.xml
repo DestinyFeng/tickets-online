@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.orders.mapper.TasklistMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.orders.entity.Tasklist">
+    <!--@mbg.generated-->
+    <id column="taskid" jdbcType="INTEGER" property="taskid" />
+    <result column="taskname" jdbcType="VARCHAR" property="taskname" />
+    <result column="taskdesc" jdbcType="VARCHAR" property="taskdesc" />
+    <result column="taskmessage" jdbcType="VARCHAR" property="taskmessage" />
+    <result column="taskdataid" jdbcType="INTEGER" property="taskdataid" />
+    <result column="tasktime" jdbcType="TIMESTAMP" property="tasktime" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    taskid, taskname, taskdesc, taskmessage, taskdataid, tasktime
+  </sql>
+  <select id="selectByExample" parameterType="com.woniu.orders.entity.TasklistExample" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tasklist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tasklist
+    where taskid = #{taskid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tasklist
+    where taskid = #{taskid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.woniu.orders.entity.TasklistExample">
+    <!--@mbg.generated-->
+    delete from tasklist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="taskid" keyProperty="taskid" parameterType="com.woniu.orders.entity.Tasklist" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tasklist (taskname, taskdesc, taskmessage, 
+      taskdataid, tasktime)
+    values (#{taskname,jdbcType=VARCHAR}, #{taskdesc,jdbcType=VARCHAR}, #{taskmessage,jdbcType=VARCHAR}, 
+      #{taskdataid,jdbcType=INTEGER}, #{tasktime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="taskid" keyProperty="taskid" parameterType="com.woniu.orders.entity.Tasklist" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tasklist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="taskname != null">
+        taskname,
+      </if>
+      <if test="taskdesc != null">
+        taskdesc,
+      </if>
+      <if test="taskmessage != null">
+        taskmessage,
+      </if>
+      <if test="taskdataid != null">
+        taskdataid,
+      </if>
+      <if test="tasktime != null">
+        tasktime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="taskname != null">
+        #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="taskdesc != null">
+        #{taskdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="taskmessage != null">
+        #{taskmessage,jdbcType=VARCHAR},
+      </if>
+      <if test="taskdataid != null">
+        #{taskdataid,jdbcType=INTEGER},
+      </if>
+      <if test="tasktime != null">
+        #{tasktime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.woniu.orders.entity.TasklistExample" resultType="java.lang.Long">
+    <!--@mbg.generated-->
+    select count(*) from tasklist
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--@mbg.generated-->
+    update tasklist
+    <set>
+      <if test="record.taskid != null">
+        taskid = #{record.taskid,jdbcType=INTEGER},
+      </if>
+      <if test="record.taskname != null">
+        taskname = #{record.taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taskdesc != null">
+        taskdesc = #{record.taskdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taskmessage != null">
+        taskmessage = #{record.taskmessage,jdbcType=VARCHAR},
+      </if>
+      <if test="record.taskdataid != null">
+        taskdataid = #{record.taskdataid,jdbcType=INTEGER},
+      </if>
+      <if test="record.tasktime != null">
+        tasktime = #{record.tasktime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--@mbg.generated-->
+    update tasklist
+    set taskid = #{record.taskid,jdbcType=INTEGER},
+      taskname = #{record.taskname,jdbcType=VARCHAR},
+      taskdesc = #{record.taskdesc,jdbcType=VARCHAR},
+      taskmessage = #{record.taskmessage,jdbcType=VARCHAR},
+      taskdataid = #{record.taskdataid,jdbcType=INTEGER},
+      tasktime = #{record.tasktime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.orders.entity.Tasklist">
+    <!--@mbg.generated-->
+    update tasklist
+    <set>
+      <if test="taskname != null">
+        taskname = #{taskname,jdbcType=VARCHAR},
+      </if>
+      <if test="taskdesc != null">
+        taskdesc = #{taskdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="taskmessage != null">
+        taskmessage = #{taskmessage,jdbcType=VARCHAR},
+      </if>
+      <if test="taskdataid != null">
+        taskdataid = #{taskdataid,jdbcType=INTEGER},
+      </if>
+      <if test="tasktime != null">
+        tasktime = #{tasktime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where taskid = #{taskid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.orders.entity.Tasklist">
+    <!--@mbg.generated-->
+    update tasklist
+    set taskname = #{taskname,jdbcType=VARCHAR},
+      taskdesc = #{taskdesc,jdbcType=VARCHAR},
+      taskmessage = #{taskmessage,jdbcType=VARCHAR},
+      taskdataid = #{taskdataid,jdbcType=INTEGER},
+      tasktime = #{tasktime,jdbcType=TIMESTAMP}
+    where taskid = #{taskid,jdbcType=INTEGER}
+  </update>
+</mapper>

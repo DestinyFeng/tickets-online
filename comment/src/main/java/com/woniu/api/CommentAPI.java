@@ -1,15 +1,12 @@
 package com.woniu.api;
 
 import com.woniu.entity.Comment;
-import com.woniu.entity.User;
 import com.woniu.service.CommentService;
 import com.woniu.util.Page;
 import com.woniu.util.Result;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -37,6 +34,8 @@ public class CommentAPI {
         List<Comment> comments = commentService.getComments(pageIndex, num);
         /*封装page对象*/
         Page page=new Page(pageIndex,pageCount,dataCount);
+        System.out.println("page________________:"+page);
+        System.out.println("comments____________:"+comments);
         return new Result("success",null,page,comments);
     }
 
@@ -47,12 +46,7 @@ public class CommentAPI {
      * @throws Exception
      */
     @PostMapping
-    public Result insertComment(Comment comment,HttpSession session)throws Exception{
-        Date date=new Date();
-        User user = (User) session.getAttribute("user");
-        comment.setTime(date);
-        comment.setUid(user.getId());
-        System.out.println("uid_________________________________:"+user.getId());
+    public Result insertComment(Comment comment)throws Exception{
         commentService.insertComment(comment);
         return new Result("success",null,null,null);
     }

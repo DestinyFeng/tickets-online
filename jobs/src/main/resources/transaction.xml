@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!--声明式事务 -->
+	<!--事务处理器 -->
+	<!--创建事务管理器对象 -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<!--将Spring创建的数据源对象注入到事务管理器对象中 -->
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!--事务通知-->
+    <!--定义在程序执行到切入点以后  具体的切面织入方式(哪些方法需要使用事务管理 哪些不需要)-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager" >
+       <tx:attributes>
+       	   <!--配置方法名的规则  前缀是insert  delete update的所有方法  需要事务控制-->
+           <tx:method name="insert*" propagation="REQUIRED"/>
+           <tx:method name="delete*" propagation="REQUIRED"/>
+           <tx:method name="update*" propagation="REQUIRED"/>
+           <!--其他方法不需要事务控制   read-only为只读 -->
+           <tx:method name="*" read-only="true"/>
+       </tx:attributes>
+    </tx:advice>
+    <!--定义切面-->
+    <aop:config>
+    	<!--定义切入点-->
+    	<aop:pointcut expression="execution(* com.woniu.jobs.service.*.*(..))" id="transactionPoint"/>
+    	<!--织入 在某个切入点执行通知-->
+    	<aop:advisor advice-ref="txAdvice" pointcut-ref="transactionPoint"/>
+    </aop:config>
+</beans>

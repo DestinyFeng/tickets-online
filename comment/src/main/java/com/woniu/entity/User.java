@@ -1,11 +1,8 @@
 package com.woniu.entity;
-import com.woniu.entity.Type;
-import org.springframework.format.annotation.DateTimeFormat;
 
-import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 
-public class User implements Serializable {
+public class User {
     private Integer id;
 
     private String username;
@@ -13,26 +10,12 @@ public class User implements Serializable {
     private String password;
 
     private String phone;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private String birth;
+
+    private Date birth;
 
     private Byte state;
 
     private String upic;
-
-    private String sex;
-
-    private String sign;
-
-    private List<Type> types;
-
-    public List<Type> getTypes() {
-        return types;
-    }
-
-    public void setTypes(List<Type> types) {
-        this.types = types;
-    }
 
     public Integer getId() {
         return id;
@@ -66,11 +49,11 @@ public class User implements Serializable {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 
@@ -88,37 +71,5 @@ public class User implements Serializable {
 
     public void setUpic(String upic) {
         this.upic = upic == null ? null : upic.trim();
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
-    }
-
-    public String getSign() {
-        return sign;
-    }
-
-    public void setSign(String sign) {
-        this.sign = sign == null ? null : sign.trim();
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", birth=" + birth +
-                ", state=" + state +
-                ", upic='" + upic + '\'' +
-                ", sex='" + sex + '\'' +
-                ", sign='" + sign + '\'' +
-                ", types=" + types +
-                '}';
     }
 }

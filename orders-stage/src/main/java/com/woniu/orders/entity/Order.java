@@ -84,6 +84,20 @@ public class Order {
     private  String cinemaAddress;
     //电话
     private  String phone;
+    //放映表id
+    private Integer msid;
+
+    public void setOstate(byte ostate) {
+        this.ostate = ostate;
+    }
+
+    public Integer getMsid() {
+        return msid;
+    }
+
+    public void setMsid(Integer msid) {
+        this.msid = msid;
+    }
 
     public int  getLeftPaySecond() {
         return leftPaySecond;

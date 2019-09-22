@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.orders.mapper.SeatinfoMapper">
+    <resultMap id="BaseResultMap" type="com.woniu.orders.entity.Seatinfo">
+        <!--@mbg.generated-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="row" jdbcType="VARCHAR" property="row"/>
+        <result column="column" jdbcType="VARCHAR" property="column"/>
+        <result column="state" jdbcType="VARCHAR" property="state"/>
+        <result column="msid" jdbcType="INTEGER" property="msid"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--@mbg.generated-->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--@mbg.generated-->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="("
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `row`, `column`, `state`, msid
+    </sql>
+    <select id="selectByExample" parameterType="com.woniu.orders.entity.SeatinfoExample" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from seatinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        <!--@mbg.generated-->
+        select
+        <include refid="Base_Column_List"/>
+        from seatinfo
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByExample" parameterType="com.woniu.orders.entity.SeatinfoExample">
+        <!--@mbg.generated-->
+        delete from seatinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.woniu.orders.entity.Seatinfo"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into seatinfo (`row`, `column`, `state`,
+        msid)
+        values (#{row,jdbcType=VARCHAR}, #{column,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR},
+        #{msid,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.woniu.orders.entity.Seatinfo"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into seatinfo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="row != null">
+                `row`,
+            </if>
+            <if test="column != null">
+                `column`,
+            </if>
+            <if test="state != null">
+                `state`,
+            </if>
+            <if test="msid != null">
+                msid,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="row != null">
+                #{row,jdbcType=VARCHAR},
+            </if>
+            <if test="column != null">
+                #{column,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="msid != null">
+                #{msid,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.woniu.orders.entity.SeatinfoExample" resultType="java.lang.Long">
+        <!--@mbg.generated-->
+        select count(*) from seatinfo
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--@mbg.generated-->
+        update seatinfo
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.row != null">
+                `row` = #{record.row,jdbcType=VARCHAR},
+            </if>
+            <if test="record.column != null">
+                `column` = #{record.column,jdbcType=VARCHAR},
+            </if>
+            <if test="record.state != null">
+                `state` = #{record.state,jdbcType=VARCHAR},
+            </if>
+            <if test="record.msid != null">
+                msid = #{record.msid,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--@mbg.generated-->
+        update seatinfo
+        set id = #{record.id,jdbcType=INTEGER},
+        `row` = #{record.row,jdbcType=VARCHAR},
+        `column` = #{record.column,jdbcType=VARCHAR},
+        `state` = #{record.state,jdbcType=VARCHAR},
+        msid = #{record.msid,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.woniu.orders.entity.Seatinfo">
+        <!--@mbg.generated-->
+        update seatinfo
+        <set>
+            <if test="row != null">
+                `row` = #{row,jdbcType=VARCHAR},
+            </if>
+            <if test="column != null">
+                `column` = #{column,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                `state` = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="msid != null">
+                msid = #{msid,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.woniu.orders.entity.Seatinfo">
+        <!--@mbg.generated-->
+        update seatinfo
+        set `row` = #{row,jdbcType=VARCHAR},
+        `column` = #{column,jdbcType=VARCHAR},
+        `state` = #{state,jdbcType=VARCHAR},
+        msid = #{msid,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <resultMap id="seatinfo" type="com.woniu.orders.entity.Seatinfo">
+            <result column="row" jdbcType="VARCHAR" property="row"/>
+        <collection property="son" ofType="com.woniu.orders.entity.Seatinfo">
+            <result column="row" jdbcType="VARCHAR" property="row"/>
+            <result column="column" jdbcType="VARCHAR" property="column"/>
+            <result column="state" jdbcType="VARCHAR" property="state"/>
+        </collection>
+    </resultMap>
+    <select id="selectSeat" resultMap="seatinfo" parameterType="int">
+    select * from seatinfo WHERE msid=1
+    </select>
+
+</mapper>

@@ -36,7 +36,7 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public Map<String, List<Movie>> selectMoviesOnByCid(Integer cid) throws Exception {
+    public Map<String, List<Movie>> selectMoviesOnByCid(Integer cid) {
         //查询出当前影院所有已经拍片的所有电影
         List<Movie> movies = movieMapper.selectMOviesOnByCid(cid);
 
@@ -63,16 +63,6 @@ public class MovieServiceImpl implements MovieService {
         map.put("willShow",willShow);
 
         return map;
-    }
-
-    @Override
-    public List<Movie> selectMovieListOrderByScore(Integer num) throws Exception {
-        return movieMapper.selectMovieListByScore(num);
-    }
-
-    @Override
-    public List<Movie> selectMovieListOrderByTime(Integer num) throws Exception {
-        return movieMapper.selectMovieListByTime(num);
     }
 
 }

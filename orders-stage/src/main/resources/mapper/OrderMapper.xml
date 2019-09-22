@@ -21,6 +21,8 @@
      <result column="name"  property="roomName"/>
     <result column="money"  property="money"/>
       <result column="phone"  property="phone"/>
+    <result column="movie_showtime_id" jdbcType="INTEGER" property="msid" />
+
 
   </resultMap>
   <sql id="Base_Column_List">
@@ -44,7 +46,7 @@
 
     </select>
   <select id="selectCount" resultType="java.lang.Integer">
-    select count(id) from orders where uid=#{uid} and isdel!=1
+    select count(id) from orders where uid=#{uid} and ostate between 1 and 49 and isdel!=1
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--@mbg.generated-->
@@ -64,11 +66,11 @@
   </insert>
   <insert id="insertSelective" parameterType="com.woniu.orders.entity.Order">
     <!--@mbg.generated-->
-    insert into order
+    insert into orders
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+
         id,
-      </if>
+
       <if test="uid != null">
         `uid`,
       </if>
@@ -96,11 +98,17 @@
       <if test="orderId != null">
         order_id,
       </if>
+      <if test="msid != null">
+        movie_showtime_id ,
+      </if>
+      <if test="seat != null">
+        seat ,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
+
+      NULL,
+
       <if test="uid != null">
         #{uid,jdbcType=INTEGER},
       </if>
@@ -127,6 +135,12 @@
       </if>
       <if test="orderId != null">
         #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="msid != null">
+      #{msid} ,
+    </if>
+      <if test="seat != null">
+        #{seat},
       </if>
     </trim>
   </insert>
@@ -187,7 +201,7 @@
       LEFT JOIN cinema c on ms.cid = c.id
       LEFT JOIN movie m on ms.mid = m.id
       LEFT JOIN cinema_room cr on ms.room_id = cr.id
-      WHERE o.order_id=#{oid}  and cr.cid=ms.cid and o.ostate between 1 and 49;
+      WHERE o.order_id=#{oid}  and cr.cid=ms.cid and o.ostate between 0 and 49;
   </select>
 
   <update id="updatepay" parameterType="map">

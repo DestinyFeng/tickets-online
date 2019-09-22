@@ -39,7 +39,7 @@ public class GateFilter extends ZuulFilter {
         HttpSession session = request.getSession();
         User user=new User();
         user.setId(1);
-        user.setUsername("xiaoming");
+        user.setUsername("小蓝");
         session.setAttribute("user",user);
         //登录验证信息可以存入session中
         //可以通过下述代码响应错误信息

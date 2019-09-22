@@ -242,10 +242,4 @@
     select distinct mid from movie_showtime
     where cid=#{cid}) order by uptime asc
   </select>
-    <select id="selectMovieListByTime" resultMap="BaseResultMap" parameterType="int">
-      select * from movie order by uptime desc limit 0,#{num}
-    </select>
-  <select id="selectMovieListByScore" resultMap="BaseResultMap" parameterType="int">
-    select * from movie order by score desc limit 0,#{num}
-  </select>
 </mapper>

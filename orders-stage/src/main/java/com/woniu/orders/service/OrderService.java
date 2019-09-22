@@ -24,6 +24,7 @@ public interface OrderService {
     void updatebyOid(String oid, Byte ostate, int a_pid)throws Exception;
     int updateStateByOid(String oid, Byte ostate)throws Exception;
     int deleteByOid(String Oid)throws Exception;
+    String insertCreateOrders(String seat [],Integer uid ,Integer msid)throws Exception;
 
 }
   

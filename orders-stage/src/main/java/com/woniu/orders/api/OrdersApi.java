@@ -17,6 +17,7 @@ import com.woniu.orders.service.OrderService;
 import com.woniu.orders.util.Page;
 import com.woniu.orders.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,13 +25,29 @@ import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("profile/orders")
 public class OrdersApi {
     //查询用户所有订单
     @Autowired
     private OrderService orderService;
+    //创建订单
+    @RequestMapping("confirm")
+    @ResponseBody
+    public  Result createOrders (String seat[],Integer msid,HttpSession session) throws Exception {
+//     User user =(User)session.getAttribute("user");
+//     user.getId();
+     if (seat.length<=0||msid==null){
+         return new Result("500","选座失败",null,null);
+     }
+        String orderId = orderService.insertCreateOrders(seat, 1, 2);
+
+        return new Result("500","选座成功","/web/profile/detail.html?oid="+orderId,null);
+
+
+    }
     @GetMapping
+    @ResponseBody
     public Result selectOrders(Integer uid, Integer pageIndex) throws Exception {
         System.out.println(pageIndex);
         if (pageIndex ==null){
@@ -46,19 +63,11 @@ public class OrdersApi {
         return result;
     }
 
-    //删除订单
-    @DeleteMapping("/{id}")
-    public Result delete (@PathVariable("id") Integer oid, HttpSession session) throws Exception {
-        User user = (User)session.getAttribute("user");
-        if(user==null){
-            return new Result("500","用户未登录",null,null);
-        }
-        orderService.delete(oid);
-        return  new Result("200","删除成功",null,null);
-    }
+
     //查看订单详情
     @RequestMapping("detail")
     //根据订单号参看详情
+    @ResponseBody
     public Result  detail( String oid) throws Exception {
 
         Order order = orderService.selectDatail(oid);
@@ -66,8 +75,8 @@ public class OrdersApi {
     }
     //用户删除订单，改变数据库字段，不物理删除，方便统计数据
     @DeleteMapping
+    @ResponseBody
     public Result  del(String oid) throws Exception {
-        System.out.println("请求进来了");
         if (oid==null){
             return new Result("500","删除失败",null,null);
         }

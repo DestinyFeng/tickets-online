@@ -57,7 +57,7 @@ public class PayApi {
     //这是异步通知
     @RequestMapping("alipay_callback")
     @ResponseBody
-    public Object personal(Product product, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public Object personal( HttpServletRequest request, HttpServletResponse response) throws Exception {
         System.out.println("异步请求进来了");
                Map<String, String[]> aliParams = request.getParameterMap();
         //用以存放转化后的参数集合

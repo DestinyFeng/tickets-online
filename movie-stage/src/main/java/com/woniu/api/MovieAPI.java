@@ -34,35 +34,6 @@ public class MovieAPI {
         return new Result("success",null,map,null);
     }
 
-    /**
-     * 查询所有的电影num个，按照上映时间排序
-     * @param num 查询数量
-     * @return
-     * @throws Exception
-     */
-    @GetMapping
-    @RequestMapping("/orderbytime/{num}")
-    public Result selectMovieListOrderByTime(@PathVariable Integer num)throws Exception{
-        List<Movie> movies = movieService.selectMovieListOrderByTime(num);
-
-        return new Result("success",null,null,movies);
-    }
-
-    /**
-     * 查询所有的电影num个通过评分排序
-     * @param num
-     * @return
-     * @throws Exception
-     */
-    @GetMapping
-    @RequestMapping("/orderbyscore/{num}")
-    public Result selectMovieListOrderByScore(@PathVariable Integer num)throws Exception{
-        List<Movie> movies = movieService.selectMovieListOrderByScore(num);
-
-        return new Result("success",null,null,movies);
-    }
-
-
     @GetMapping
     @RequestMapping("/bycid/{cid}")
     public Result selectMoviesByCid(@PathVariable Integer cid) throws Exception{

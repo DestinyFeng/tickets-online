@@ -439,7 +439,8 @@
     bottom: 0;
     left: 0;
     background-color: #fff;
-    text-align: center
+    text-align: center;
+
 }
 
 .modal-container .icon {

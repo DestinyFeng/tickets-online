@@ -265,14 +265,14 @@
         </div>
     </div>
 
-    <div v-if="msg.object.leftPaySecon>0" class="modal-container" style="display:none">
+    <div v-if="msg.object.ostate==10" id="ordertime" class="modal-container" style="display: none" >
         <div class="modal1">
             <span class="icon"></span>
             <p class="tip">支付超时，该订单已失效，请重新购买</p>
             <div class="ok-btn btn">我知道了</div>
         </div>
     </div>
-        <div class="mask2" style="display: none">
+        <div v-if="msg.object.ostate==20" class="mask2" style="display: none">
         <div class="modal-container" >
             <div class="modal1" style="height: 450px">
                 <span>请输入退款原因</span>
@@ -340,10 +340,12 @@
             paytime() {
                 var time = parseInt(this.time)
                 if (time <= 0) {
+
                     clearInterval(timer);
-                    $(".modal-container").show();
+                    $("#ordertime").show();
+                    console.log(2)
                     $(".ok-btn").click(function () {
-                        $(".modal-container").hide();
+                        $("#ordertime").hide();
                     })
                 }
                 this.time = time - 1;

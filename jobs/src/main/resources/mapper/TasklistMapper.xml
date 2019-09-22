@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.jobs.mapper.TasklistMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.jobs.entity.Tasklist">
+    <!--@mbg.generated-->
+    <id column="taskid" jdbcType="INTEGER" property="taskid" />
+    <result column="taskname" jdbcType="VARCHAR" property="taskname" />
+    <result column="taskdesc" jdbcType="VARCHAR" property="taskdesc" />
+    <result column="taskmessage" jdbcType="VARCHAR" property="taskmessage" />
+    <result column="taskdataid" jdbcType="INTEGER" property="taskdataid" />
+    <result column="tasktime" jdbcType="TIMESTAMP" property="tasktime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    taskid, taskname, taskdesc, taskmessage, taskdataid, tasktime
+  </sql>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.jobs.entity.Tasklist">
+    <!--@mbg.generated-->
+    update tasklist
+    set taskname = #{taskname,jdbcType=VARCHAR},
+      taskdesc = #{taskdesc,jdbcType=VARCHAR},
+      taskmessage = #{taskmessage,jdbcType=VARCHAR},
+      taskdataid = #{taskdataid,jdbcType=INTEGER},
+      tasktime = #{tasktime,jdbcType=TIMESTAMP}
+    where taskid = #{taskid,jdbcType=INTEGER}
+  </update>
+    <select id="select" resultMap="BaseResultMap" parameterType="string">
+      select * from tasklist where taskname=#{type}
+    </select>
+  <delete id="deleteById" parameterType="string">
+    delete  from  tasklist where taskdataid=#{id}
+  </delete>
+</mapper>

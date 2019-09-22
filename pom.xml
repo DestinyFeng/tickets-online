@@ -25,6 +25,7 @@
         <module>cinema-stage</module>
         <module>orders-stage</module>
         <module>movie-stage</module>
+        <module>jobs</module>
     </modules>
     <dependencies>
         <!--<dependency>

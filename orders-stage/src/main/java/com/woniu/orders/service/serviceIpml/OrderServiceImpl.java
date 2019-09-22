@@ -12,7 +12,10 @@ package com.woniu.orders.service.serviceIpml;
 
 import com.woniu.orders.constant.Constant;
 import com.woniu.orders.entity.Order;
+import com.woniu.orders.entity.Tasklist;
+import com.woniu.orders.mapper.MovieShowtimeMapper;
 import com.woniu.orders.mapper.OrderMapper;
+import com.woniu.orders.mapper.TasklistMapper;
 import com.woniu.orders.service.OrderService;
 import com.woniu.orders.util.DateUtil;
 import com.woniu.orders.util.Seat;
@@ -27,6 +30,10 @@ import java.util.*;
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMapper orderMapper;
+    @Autowired
+    private MovieShowtimeMapper movieShowtimeMapper;
+    @Autowired
+    private TasklistMapper tasklistMapper;
 
     @Override
     //分页查询订单
@@ -120,6 +127,47 @@ public class OrderServiceImpl implements OrderService {
     public int deleteByOid(String Oid) throws Exception {
        return orderMapper.deleteByOid(Oid);
     }
+    //创建订单
+    @Override
+    public String insertCreateOrders(String[] seat,Integer uid, Integer msid) throws Exception {
+       //查询还有这些票吗
+        
+        //根据放映表id，查询票价
+        Double aDouble = movieShowtimeMapper.selectPrice(msid);
+        //创建订单
+        Order order = new Order();
+        order.setMoney(aDouble*seat.length);
+        //获取当前时间
+        Date date = new Date();
+        //创建订单号
+        order.setOrderId(DateUtil.dateToFormatStr(date)+uid);
+        order.setcTime(date);
+        StringBuffer stringBuffer = new StringBuffer();
+        for (int i = 0; i < seat.length; i++) {
+            if(i<seat.length-1) {
+                stringBuffer.append(seat[i] + "=");
+            }else {
+                stringBuffer.append(seat[i]);
+            }
+
+
+        }
+        order.setSeat(stringBuffer.toString());
+        order.setUid(uid);
+        order.setOstate((byte) Constant.OrderStatusEnum.NO_PAY.getCode());
+        order.setMsid(msid);
+        int i = orderMapper.insertSelective(order);
+        int index=0;
+        if(i!=0){
+            Tasklist tasklist = new Tasklist();
+            tasklist.setTaskdataid(order.getOrderId());
+            tasklist.setTasktime(new Date(date.getTime()+15*60*1000));
+            tasklist.setTaskname("订单超时");
+            index= tasklistMapper.insertSelective(tasklist);
+        }
+        return order.getOrderId();
+
+    }
 
     //一个工具将订单状态转为字符串信息
     public Order ostateToString (Order order){
@@ -141,7 +189,9 @@ public class OrderServiceImpl implements OrderService {
             order.setOstateMsg(Constant.OrderStatusEnum.ORDER_CLOSE.getValue());
         } else if (order.getOstate() == Constant.OrderStatusEnum.ORDER_SUCCESS.getCode()){
             order.setOstateMsg(Constant.OrderStatusEnum.ORDER_SUCCESS.getValue());
-        }
+        }else if (order.getOstate() == Constant.OrderStatusEnum.CANCELED.getCode()){
+             order.setOstateMsg(Constant.OrderStatusEnum.CANCELED.getValue());
+         }
          return order;
     }
 

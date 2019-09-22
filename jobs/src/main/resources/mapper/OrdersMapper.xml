@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.jobs.mapper.OrdersMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.jobs.entity.Orders">
+    <!--@mbg.generated-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="c_time" jdbcType="TIMESTAMP" property="cTime" />
+    <result column="money" jdbcType="DOUBLE" property="money" />
+    <result column="ostate" jdbcType="TINYINT" property="ostate" />
+    <result column="pay_state" jdbcType="TINYINT" property="payState" />
+    <result column="payway" jdbcType="TINYINT" property="payway" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="movie_showtime_id" jdbcType="INTEGER" property="movieShowtimeId" />
+    <result column="payinfo_id" jdbcType="INTEGER" property="payinfoId" />
+    <result column="seat" jdbcType="VARCHAR" property="seat" />
+    <result column="isdel" jdbcType="TINYINT" property="isdel" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--@mbg.generated-->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, `uid`, c_time, money, ostate, pay_state, payway, code, order_id, movie_showtime_id, 
+    payinfo_id, seat, isdel
+  </sql>
+  <select id="selectByExample" parameterType="com.woniu.jobs.entity.OrdersExample" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByExample" parameterType="com.woniu.jobs.entity.OrdersExample">
+    <!--@mbg.generated-->
+    delete from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.woniu.jobs.entity.Orders" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into orders (`uid`, c_time, money, 
+      ostate, pay_state, payway, 
+      code, order_id, movie_showtime_id, 
+      payinfo_id, seat, isdel
+      )
+    values (#{uid,jdbcType=INTEGER}, #{cTime,jdbcType=TIMESTAMP}, #{money,jdbcType=DOUBLE}, 
+      #{ostate,jdbcType=TINYINT}, #{payState,jdbcType=TINYINT}, #{payway,jdbcType=TINYINT}, 
+      #{code,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR}, #{movieShowtimeId,jdbcType=INTEGER}, 
+      #{payinfoId,jdbcType=INTEGER}, #{seat,jdbcType=VARCHAR}, #{isdel,jdbcType=TINYINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.woniu.jobs.entity.Orders" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="cTime != null">
+        c_time,
+      </if>
+      <if test="money != null">
+        money,
+      </if>
+      <if test="ostate != null">
+        ostate,
+      </if>
+      <if test="payState != null">
+        pay_state,
+      </if>
+      <if test="payway != null">
+        payway,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="movieShowtimeId != null">
+        movie_showtime_id,
+      </if>
+      <if test="payinfoId != null">
+        payinfo_id,
+      </if>
+      <if test="seat != null">
+        seat,
+      </if>
+      <if test="isdel != null">
+        isdel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cTime != null">
+        #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="ostate != null">
+        #{ostate,jdbcType=TINYINT},
+      </if>
+      <if test="payState != null">
+        #{payState,jdbcType=TINYINT},
+      </if>
+      <if test="payway != null">
+        #{payway,jdbcType=TINYINT},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="movieShowtimeId != null">
+        #{movieShowtimeId,jdbcType=INTEGER},
+      </if>
+      <if test="payinfoId != null">
+        #{payinfoId,jdbcType=INTEGER},
+      </if>
+      <if test="seat != null">
+        #{seat,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        #{isdel,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.woniu.jobs.entity.OrdersExample" resultType="java.lang.Long">
+    <!--@mbg.generated-->
+    select count(*) from orders
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--@mbg.generated-->
+    update orders
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.uid != null">
+        `uid` = #{record.uid,jdbcType=INTEGER},
+      </if>
+      <if test="record.cTime != null">
+        c_time = #{record.cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.money != null">
+        money = #{record.money,jdbcType=DOUBLE},
+      </if>
+      <if test="record.ostate != null">
+        ostate = #{record.ostate,jdbcType=TINYINT},
+      </if>
+      <if test="record.payState != null">
+        pay_state = #{record.payState,jdbcType=TINYINT},
+      </if>
+      <if test="record.payway != null">
+        payway = #{record.payway,jdbcType=TINYINT},
+      </if>
+      <if test="record.code != null">
+        code = #{record.code,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderId != null">
+        order_id = #{record.orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.movieShowtimeId != null">
+        movie_showtime_id = #{record.movieShowtimeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.payinfoId != null">
+        payinfo_id = #{record.payinfoId,jdbcType=INTEGER},
+      </if>
+      <if test="record.seat != null">
+        seat = #{record.seat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isdel != null">
+        isdel = #{record.isdel,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--@mbg.generated-->
+    update orders
+    set id = #{record.id,jdbcType=INTEGER},
+      `uid` = #{record.uid,jdbcType=INTEGER},
+      c_time = #{record.cTime,jdbcType=TIMESTAMP},
+      money = #{record.money,jdbcType=DOUBLE},
+      ostate = #{record.ostate,jdbcType=TINYINT},
+      pay_state = #{record.payState,jdbcType=TINYINT},
+      payway = #{record.payway,jdbcType=TINYINT},
+      code = #{record.code,jdbcType=VARCHAR},
+      order_id = #{record.orderId,jdbcType=VARCHAR},
+      movie_showtime_id = #{record.movieShowtimeId,jdbcType=INTEGER},
+      payinfo_id = #{record.payinfoId,jdbcType=INTEGER},
+      seat = #{record.seat,jdbcType=VARCHAR},
+      isdel = #{record.isdel,jdbcType=TINYINT}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.jobs.entity.Orders">
+    <!--@mbg.generated-->
+    update orders
+    <set>
+      <if test="uid != null">
+        `uid` = #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="cTime != null">
+        c_time = #{cTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="money != null">
+        money = #{money,jdbcType=DOUBLE},
+      </if>
+      <if test="ostate != null">
+        ostate = #{ostate,jdbcType=TINYINT},
+      </if>
+      <if test="payState != null">
+        pay_state = #{payState,jdbcType=TINYINT},
+      </if>
+      <if test="payway != null">
+        payway = #{payway,jdbcType=TINYINT},
+      </if>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="orderId != null">
+        order_id = #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="movieShowtimeId != null">
+        movie_showtime_id = #{movieShowtimeId,jdbcType=INTEGER},
+      </if>
+      <if test="payinfoId != null">
+        payinfo_id = #{payinfoId,jdbcType=INTEGER},
+      </if>
+      <if test="seat != null">
+        seat = #{seat,jdbcType=VARCHAR},
+      </if>
+      <if test="isdel != null">
+        isdel = #{isdel,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.jobs.entity.Orders">
+    <!--@mbg.generated-->
+    update orders
+    set `uid` = #{uid,jdbcType=INTEGER},
+      c_time = #{cTime,jdbcType=TIMESTAMP},
+      money = #{money,jdbcType=DOUBLE},
+      ostate = #{ostate,jdbcType=TINYINT},
+      pay_state = #{payState,jdbcType=TINYINT},
+      payway = #{payway,jdbcType=TINYINT},
+      code = #{code,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR},
+      movie_showtime_id = #{movieShowtimeId,jdbcType=INTEGER},
+      payinfo_id = #{payinfoId,jdbcType=INTEGER},
+      seat = #{seat,jdbcType=VARCHAR},
+      isdel = #{isdel,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateOstate" parameterType="string">
+        update orders set `ostate` =0 where `order_id` ={#oid} and `ostate`=10
+  </update>
+
+
+</mapper>
